@@ -20,6 +20,15 @@ public class CannonManagement : MonoBehaviour
 
     public void ShootUp(int up) {
         damage += up;
+        LvlUpSkin();
+        Debug.Log("Cannon damage increased to: " + damage);
+
+    }
+
+    public void LvlUpSkin()
+    {
+        deployCannon.GetComponentInChildren<LvlUpCannonSkin>().SetLevel(damage);
+        createCannon.GetComponentInChildren<LvlUpCannonSkin>().SetLevel(damage);
     }
 
     public void Shoot()
@@ -59,7 +68,7 @@ public class CannonManagement : MonoBehaviour
     public void UnsetCannon() => isSetCannon = false;
 
     public void SetCannon() => isSetCannon = true;
-    public void ToggleFindBarral() => findBarral = !findBarral ;
+    public void SetFindBarral(bool value) => findBarral = value;
 
 
     private Vector3 MousePos => Camera.main.WorldToScreenPoint(transform.position);
@@ -71,7 +80,7 @@ public class CannonManagement : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isSetCannon)
+        if (isSetCannon) // deberia dejarse arrastrar aunque ya se haya seteado, validar esta parte primero antes de modificar 
         {
             return;
         }

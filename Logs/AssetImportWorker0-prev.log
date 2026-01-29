@@ -1,0 +1,1831 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.2f1 (a9779f353c9b) revision 11106207'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'es' Physical Memory: 16311 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-01-28T03:35:01Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-01-28T03:35:01.3108308Z"
+
+COMMAND LINE ARGUMENTS:
+E:\versionesUnity\6000.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/User/Desktop/juegos unity/Cannons
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57276
+-licensingIpc
+LicenseClient-User
+-job-worker-count
+3
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/User/Desktop/juegos unity/Cannons
+C:/Users/User/Desktop/juegos unity/Cannons
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [33004]  Target information:
+
+Player connection [33004]  * "[IP] 192.168.100.2 [Port] 0 [Flags] 2 [Guid] 514888770 [EditorId] 514888770 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-SFTAVVG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [33004] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [33004] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 3
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.2f1 (a9779f353c9b)
+[Subsystems] Discovering subsystems at path E:/versionesUnity/6000.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/User/Desktop/juegos unity/Cannons/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GT 1030 (ID=0x1d01)
+    Vendor:   NVIDIA
+    VRAM:     1967 MB
+    Driver:   32.0.15.7688
+Initialize mono
+Mono path[0] = 'E:/versionesUnity/6000.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'E:/versionesUnity/6000.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/versionesUnity/6000.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56008
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/versionesUnity/6000.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              37666dcb7ed345599684e4d55be9f344
+  Correlation Id:          9cdee449a7fc0bc7fb21a58abb9825d7
+  External correlation Id: 6297825933198800761
+  Machine Id:              lBJT4iwfeci4h6Y4ZX8rp4w7Mys=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User" (connect: 0.00s, validation: 0.00s, handshake: 1.31s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-notifications" at "2026-01-28T03:35:02.6251692Z"
+[Licensing::Module] Licensing Background thread has ended after 1.31s
+[Licensing::Module] Licensing is initialized (took 0.09s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8EMQ-W5QE-CAWU-6P63-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 4673051777600-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: E:/versionesUnity/6000.3.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.095525 seconds.
+- Loaded All Assemblies, in  0.852 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 373 ms
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.236 seconds
+Domain Reload Profiling: 2085ms
+	BeginReloadAssembly (272ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (74ms)
+	RebuildNativeTypeToScriptingClass (30ms)
+	initialDomainReloadingComplete (182ms)
+	LoadAllAssembliesAndSetupDomain (291ms)
+		LoadAssemblies (269ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (285ms)
+			TypeCache.Refresh (283ms)
+				TypeCache.ScanAssembly (262ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1237ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1180ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (497ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (254ms)
+			ProcessInitializeOnLoadAttributes (298ms)
+			ProcessInitializeOnLoadMethodAttributes (122ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8EMQ-W5QE-CAWU-6P63-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 4673051777600-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.028 seconds
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.225 seconds
+Domain Reload Profiling: 2250ms
+	BeginReloadAssembly (409ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (31ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (87ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (56ms)
+	LoadAllAssembliesAndSetupDomain (479ms)
+		LoadAssemblies (478ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (203ms)
+			TypeCache.Refresh (166ms)
+				TypeCache.ScanAssembly (148ms)
+			BuildScriptInfoCaches (28ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1226ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1058ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (250ms)
+			ProcessInitializeOnLoadAttributes (722ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2015 unused Assets / (0.6 MB). Loaded Objects now: 2633.
+Memory consumption went from 101.6 MB to 101.0 MB.
+Total: 14.988900 ms (FindLiveObjects: 0.763700 ms CreateObjectMapping: 0.283800 ms MarkObjects: 12.676000 ms  DeleteObjects: 1.263200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 707127.872825 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_15.png
+  artifactKey: Guid(01c99082312f9409aae48e62111c79a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_15.png using Guid(01c99082312f9409aae48e62111c79a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f024296050ee8c0078f87cc01f64c432') in 0.331418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Snow hit.prefab
+  artifactKey: Guid(0edef91621bb6b34384ccc9dbb98729c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Snow hit.prefab using Guid(0edef91621bb6b34384ccc9dbb98729c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9f023a66e39039f65de81f932a7fc9ee') in 0.1832852 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_everyplay.png
+  artifactKey: Guid(569c0054e3a444388b7024f1e820f2a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_everyplay.png using Guid(569c0054e3a444388b7024f1e820f2a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0e815179b1c41dc71edc59d7fcaa954b') in 0.045815 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_minus_one.png
+  artifactKey: Guid(52030647551234c8fad8a38b77be8c71) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_minus_one.png using Guid(52030647551234c8fad8a38b77be8c71) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '46276332e038bae1f8c056aee046ef5a') in 0.0431079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/StoneUI/Buttons_512x512/Moss_Blue/button_moss_blue45.png
+  artifactKey: Guid(4589e2bdcae0eff469f70f0d960d36d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/Buttons_512x512/Moss_Blue/button_moss_blue45.png using Guid(4589e2bdcae0eff469f70f0d960d36d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3dd95f4f10e009a718e7de3c20df3c77') in 0.044583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/StoneUI/Buttons_512x512/Moss_Blue/button_moss_blue7.png
+  artifactKey: Guid(8a6330648fa06c9408c7a3bb2d0cb8f3) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/Buttons_512x512/Moss_Blue/button_moss_blue7.png using Guid(8a6330648fa06c9408c7a3bb2d0cb8f3) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '54e1ed700de868501b01e03754f779dc') in 0.047189 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_50.png
+  artifactKey: Guid(305b37887c7eb4723bdd859407e6538f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_50.png using Guid(305b37887c7eb4723bdd859407e6538f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2b04cad7f66c5cd5448947c6550a60c0') in 0.0416766 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_store.png
+  artifactKey: Guid(f3a52a16d816d477daff557c2cde5332) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_store.png using Guid(f3a52a16d816d477daff557c2cde5332) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b9fdd6b7cb61e9eea09d082a5d4bda93') in 0.0419926 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Love aura.prefab
+  artifactKey: Guid(43d1d06cf70fcb2488255051aaae40a5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Love aura.prefab using Guid(43d1d06cf70fcb2488255051aaae40a5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'c543ce885ce53ee440985cfd3c76c773') in 0.0909127 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_400.png
+  artifactKey: Guid(41ab82738c2114684922be225b01b95c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_400.png using Guid(41ab82738c2114684922be225b01b95c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7e90d843b066871d8bdff61393bdfbc2') in 0.0420865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_twitter.png
+  artifactKey: Guid(c54e6ae567e294bf8ad3da80b47f32be) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_twitter.png using Guid(c54e6ae567e294bf8ad3da80b47f32be) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '78f77e92f820f5f0d4d571d576f475e0') in 0.0477637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash blue.prefab
+  artifactKey: Guid(8b20002c2b69a9d44ab5bae8e1d923cd) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash blue.prefab using Guid(8b20002c2b69a9d44ab5bae8e1d923cd) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '12a13c5dde01bf62a46ab43da423e4e8') in 0.1107041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_10.png
+  artifactKey: Guid(5db305966d26c41018b08ac1dbccc8f2) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_10.png using Guid(5db305966d26c41018b08ac1dbccc8f2) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2a447cecd18b9df47ab4f12e2fbe59ac') in 0.0508816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_2.png
+  artifactKey: Guid(4652fa3c0ec9649d489cb697afa91b7d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_2.png using Guid(4652fa3c0ec9649d489cb697afa91b7d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '686cf489d2da188a5c73d4eaec4d0fff') in 0.049968 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_200.png
+  artifactKey: Guid(09af6ea9cef62411aa95c90025fa9358) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_200.png using Guid(09af6ea9cef62411aa95c90025fa9358) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3f9412dbaf9aa7dcba0d608cbcca5d02') in 0.0526535 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Magic circles/Freeze circle.prefab
+  artifactKey: Guid(0e5709a7ddb77924090c112cf73bb98a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Magic circles/Freeze circle.prefab using Guid(0e5709a7ddb77924090c112cf73bb98a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '48081579a537aba8116509b20f070b48') in 0.0940475 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 24
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_plus_one.png
+  artifactKey: Guid(3bd20d99e615b475e87c14309e24c331) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_plus_one.png using Guid(3bd20d99e615b475e87c14309e24c331) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '82e98d53c19c998cdc4ff93bc7e357e7') in 0.0514009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Green hit.prefab
+  artifactKey: Guid(3138a83bedbd6ad4481ba0b061da2eb6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Green hit.prefab using Guid(3138a83bedbd6ad4481ba0b061da2eb6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3500a3cff42d939af907089a5dda5061') in 0.0752008 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/AoE effects/Snow AOE.prefab
+  artifactKey: Guid(05ce920d629922a4eb4795ef7494ce5c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/AoE effects/Snow AOE.prefab using Guid(05ce920d629922a4eb4795ef7494ce5c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '96dfddcb96e5905812f16b798d6dc2d8') in 0.0803206 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 35
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_50.png
+  artifactKey: Guid(875d16c13600c4ccc9d44ddb618ca592) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_50.png using Guid(875d16c13600c4ccc9d44ddb618ca592) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6df999f4366187ee7b809684303379fa') in 0.0430699 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_400.png
+  artifactKey: Guid(21371dd4cbe7e41cb89950173cb92156) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_400.png using Guid(21371dd4cbe7e41cb89950173cb92156) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '5500cff4f34830e76ad63e71fc8cb1ab') in 0.0404181 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_550.png
+  artifactKey: Guid(3b3cc4e74b099475783668381a8bbfaa) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_550.png using Guid(3b3cc4e74b099475783668381a8bbfaa) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'de55fb0d4b76ad9db2be5897989595de') in 0.0432756 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_950.png
+  artifactKey: Guid(fb8f4feaf201d4a41ad2f9a0ce8ccad8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_950.png using Guid(fb8f4feaf201d4a41ad2f9a0ce8ccad8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '03de916e337922591905b2aec31b051a') in 0.0425667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Magic shields/Magic shield blue.prefab
+  artifactKey: Guid(b99922c2f59b1a542bdd06ae8bee47ae) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Magic shields/Magic shield blue.prefab using Guid(b99922c2f59b1a542bdd06ae8bee47ae) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0c41dd6d1727c4432b5f119a8423e166') in 0.0746378 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/_Recovery/0.unity
+  artifactKey: Guid(42995fe8d0e51e1469eda19c4065f621) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/_Recovery/0.unity using Guid(42995fe8d0e51e1469eda19c4065f621) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '1eb4a1efafbd02a1abb63105f22cc815') in 0.0169865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_150.png
+  artifactKey: Guid(912f13ab5e34e424682a483f43c19bef) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_150.png using Guid(912f13ab5e34e424682a483f43c19bef) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '5236da0e1ce98ededd8988e5ade22ddc') in 0.0435565 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_7.png
+  artifactKey: Guid(18411d59e0dec478b9c00d05eef31117) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_7.png using Guid(18411d59e0dec478b9c00d05eef31117) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'e04d82ac772777e8f3fde18a9a709ef7') in 0.0345597 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_facebook.png
+  artifactKey: Guid(c5d42c6e6a9214c429af3c9782c679cc) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_facebook.png using Guid(c5d42c6e6a9214c429af3c9782c679cc) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '92a4285d7cd63408e827d54ae9a18148') in 0.0470536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_info.png
+  artifactKey: Guid(db4b98b56f64f479db383c054d9d5c44) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_info.png using Guid(db4b98b56f64f479db383c054d9d5c44) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '13eb65be447152f6b557c277970207e6') in 0.0453596 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_facebook.png
+  artifactKey: Guid(240c09b172532463dbee8d039cd1ee72) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_facebook.png using Guid(240c09b172532463dbee8d039cd1ee72) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '75412a3f448128080b0305a016efd262') in 0.0460553 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Portals/Portal blue.prefab
+  artifactKey: Guid(45e0f06c750176947862c10346226439) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Portals/Portal blue.prefab using Guid(45e0f06c750176947862c10346226439) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '1d9cab77365bf9c4d429b1b1f686b107') in 0.0760247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Piratas/anim/acciones generales/Atacar.fbx
+  artifactKey: Guid(a0e271c97a247ec4abfb4aab124d295e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Prefabs/Piratas/anim/acciones generales/Atacar.fbx using Guid(a0e271c97a247ec4abfb4aab124d295e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0ac26c1b065c371cf4a5c574d1d3e683') in 0.3430372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 240
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Inspector Info/PublisherReadme.asset
+  artifactKey: Guid(83c2ed8eea8c74b779a4c823d16594b1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Inspector Info/PublisherReadme.asset using Guid(83c2ed8eea8c74b779a4c823d16594b1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2946f35aceed762a8138eefc67210674') in 0.0461843 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash purple.prefab
+  artifactKey: Guid(df9374346b76e444dbbb2b019de4da25) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash purple.prefab using Guid(df9374346b76e444dbbb2b019de4da25) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '52b8c048e57795b380029562eaf3d7ca') in 0.0763695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_2.fbx
+  artifactKey: Guid(539835f5aa8affc4da8041d192cff277) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_2.fbx using Guid(539835f5aa8affc4da8041d192cff277) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '8a4e226651330a96e81b775272c6bcef') in 0.0689161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Debuff.prefab
+  artifactKey: Guid(a58aa9a78f2b45b45bb0f3e2e1e3ad3c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Debuff.prefab using Guid(a58aa9a78f2b45b45bb0f3e2e1e3ad3c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '07484c2679187c5cda5f5987ff1e8479') in 0.0726305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_15.png
+  artifactKey: Guid(8a61bde1d252641979c702bc78ae34d6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_15.png using Guid(8a61bde1d252641979c702bc78ae34d6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '76fc3aa95f3ca1587168a0e18fedd4a0') in 0.0429135 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Snow slash.prefab
+  artifactKey: Guid(ca6705a3f9070d14d819d179493bcfa0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Snow slash.prefab using Guid(ca6705a3f9070d14d819d179493bcfa0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '20e04523bc4db4424d6863532b75c856') in 0.071886 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_350.png
+  artifactKey: Guid(159421a9278b54b5db15fe4343a1e74b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_350.png using Guid(159421a9278b54b5db15fe4343a1e74b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '15212bc4d9bbf961a9742ec0ca39ae55') in 0.0440457 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Star aura.prefab
+  artifactKey: Guid(354b6251e950209409c75ab984acf000) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Star aura.prefab using Guid(354b6251e950209409c75ab984acf000) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'bfbf99fa58d5edf5999613dd07ba0f32') in 0.0777061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_leaderboard.png
+  artifactKey: Guid(e4b88c4195f8c41efbc312a8693ea0ee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_leaderboard.png using Guid(e4b88c4195f8c41efbc312a8693ea0ee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '10213c02b05bcc5dd04c9d652a747be9') in 0.0459426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_600.png
+  artifactKey: Guid(927a5625ba466474aa1f4eb82ac9c08a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_600.png using Guid(927a5625ba466474aa1f4eb82ac9c08a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'c63521598f448d8f6a3a10634c20f726') in 0.0435168 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/Background/Wooden Background.png
+  artifactKey: Guid(e1a4e4f1c031d486391427e975c21485) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/Background/Wooden Background.png using Guid(e1a4e4f1c031d486391427e975c21485) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ca18ceda145d0d106eaaa37aca78374e') in 0.0412461 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Crate_3.fbx
+  artifactKey: Guid(1bfd54d226df73a47a1043fc694d508f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Crate_3.fbx using Guid(1bfd54d226df73a47a1043fc694d508f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'a253eacdd4076130df9c2cac19f80b36') in 0.0472521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Crate_2.fbx
+  artifactKey: Guid(42386b16574d80c4b82fdad4fb7e7bee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Crate_2.fbx using Guid(42386b16574d80c4b82fdad4fb7e7bee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0e3d89f1469b8925bb6e54204cc1309f') in 0.0464596 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/01_House_4.fbx
+  artifactKey: Guid(92f4be17233cddb409e8c73c4bfee43c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/01_House_4.fbx using Guid(92f4be17233cddb409e8c73c4bfee43c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'c6cf92bb036378cbf26535da4aab3b80') in 0.0493302 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Stones hit.prefab
+  artifactKey: Guid(9b21333b068a5084ba09535839bee3c8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Stones hit.prefab using Guid(9b21333b068a5084ba09535839bee3c8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b6efa7e164d74870db30984987b3e675') in 0.0767005 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Lightning aura.prefab
+  artifactKey: Guid(4d9a3b35b3bc07649b697df7fb497b6d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Character auras/Lightning aura.prefab using Guid(4d9a3b35b3bc07649b697df7fb497b6d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9398cd45c6909727535595396859057b') in 0.0718387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Prefabs/Piratas/anim/Moverse hacia delante/Walk Forward Arc.fbx
+  artifactKey: Guid(cbe07f5a37bb7f3449fe6a3ab74df59d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Prefabs/Piratas/anim/Moverse hacia delante/Walk Forward Arc.fbx using Guid(cbe07f5a37bb7f3449fe6a3ab74df59d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0d1e45cde4564bc8eb5f464e66003b34') in 0.1626429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 240
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_350.png
+  artifactKey: Guid(17ef65f6be7f84fe18accc831792e7eb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_350.png using Guid(17ef65f6be7f84fe18accc831792e7eb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'aa2a4b277594c17eb03dd12d515455ba') in 0.0488238 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_CannonBalls_Crate.fbx
+  artifactKey: Guid(da6e08c241dc94f4da2d13c17b6a349e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_CannonBalls_Crate.fbx using Guid(da6e08c241dc94f4da2d13c17b6a349e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9e6f3c37a281d076bd9892f8ea5ff39e') in 0.0472037 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_Banner_Cannon.fbx
+  artifactKey: Guid(43fb5ebd9bcd33b4b9531f3337abb147) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_Banner_Cannon.fbx using Guid(43fb5ebd9bcd33b4b9531f3337abb147) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2cb33f0666cffa8e69b740f31a250670') in 0.0446428 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_Bucket_Fishes.fbx
+  artifactKey: Guid(a9174aa2b234a8c4b97a89d3948e47f0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_Bucket_Fishes.fbx using Guid(a9174aa2b234a8c4b97a89d3948e47f0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '725985c8324c5039449dfd645578f904') in 0.0452426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_Cannon.fbx
+  artifactKey: Guid(021f63718ae0ac84cabb4c89d60ae2ca) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_Cannon.fbx using Guid(021f63718ae0ac84cabb4c89d60ae2ca) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '921a8a91b7f7387722abbd40e9420cc0') in 0.0454048 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Barrel_Stack_3.fbx
+  artifactKey: Guid(811e88832050cd1429a156d3a8ec939d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Barrel_Stack_3.fbx using Guid(811e88832050cd1429a156d3a8ec939d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '98ea19574bed6fc28dbd60a171b3941a') in 0.0457043 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_CannonBall_Single.fbx
+  artifactKey: Guid(e292a3fe037823d4c814a1a2f1fe05d9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/04_CannonShop_CannonBall_Single.fbx using Guid(e292a3fe037823d4c814a1a2f1fe05d9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3726a03bdc9fe845d8f2808f258a5898') in 0.0428359 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Barrel_WithCrane.fbx
+  artifactKey: Guid(f3c8c3810406e2a488350d3ac348382c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/02_Market_Barrel_WithCrane.fbx using Guid(f3c8c3810406e2a488350d3ac348382c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '88ed4c96c5b30a983afc0c4abb975521') in 0.0451099 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_Banner_BigFish.fbx
+  artifactKey: Guid(64b87c95d9fee68428983f637295527e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_Banner_BigFish.fbx using Guid(64b87c95d9fee68428983f637295527e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '109e7570ade1a11a9e19296f589b7545') in 0.0552262 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_everyplay.png
+  artifactKey: Guid(e493664dc53744080b06d317949a46eb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_everyplay.png using Guid(e493664dc53744080b06d317949a46eb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '736cf42c9c5da701d733f25686cca693') in 0.0603622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_leaderboard.png
+  artifactKey: Guid(840cab56e186b46c3a39932fb0f38d59) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_leaderboard.png using Guid(840cab56e186b46c3a39932fb0f38d59) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4d71d1eef4bff0e9efafbc4cab810fc6') in 0.0524574 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_infinity.png
+  artifactKey: Guid(8f0d79c4783b9475a9890115ef682c0e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_infinity.png using Guid(8f0d79c4783b9475a9890115ef682c0e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7a5022dec0819542516f5892800e4ac5') in 0.0515723 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_BigTank.fbx
+  artifactKey: Guid(1e60dad19ce51aa4da8ea364b3c4195f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_BigTank.fbx using Guid(1e60dad19ce51aa4da8ea364b3c4195f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '306a1d7ae4461ce0baf837742a6376bf') in 0.0538707 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Barrel_GunPowder.fbx
+  artifactKey: Guid(704c43ee395b6ea4e95a229d192b30db) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Barrel_GunPowder.fbx using Guid(704c43ee395b6ea4e95a229d192b30db) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2dde9d19b83772cb27cf31d465576266') in 0.0536126 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Bottle_2.fbx
+  artifactKey: Guid(29f07245333b7b6478d7178baca95c66) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Bottle_2.fbx using Guid(29f07245333b7b6478d7178baca95c66) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'a87f03f9173baca56632973e4e9caf9e') in 0.0485244 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Pistol.fbx
+  artifactKey: Guid(74404cbd51bc26749b6f778713af0d94) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Pistol.fbx using Guid(74404cbd51bc26749b6f778713af0d94) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '38e0e4d143f3fa4f2beb0da40d8303c7') in 0.0533071 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_1k.png
+  artifactKey: Guid(50f672dd1335941dd8950c75ea3b63a8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_1k.png using Guid(50f672dd1335941dd8950c75ea3b63a8) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0ea6a98610e7c0a98bb8df565605e96a') in 0.0436392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_3.png
+  artifactKey: Guid(34a13a0a361114d0e9dad82a52acc36c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_3.png using Guid(34a13a0a361114d0e9dad82a52acc36c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '72a8acc984afd5e28de83eb1062a47ab') in 0.0320238 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_500.png
+  artifactKey: Guid(aaebef56ccf7e4bda80ce26821387c8c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_500.png using Guid(aaebef56ccf7e4bda80ce26821387c8c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'dc7bda79b06e4cbe73b6a546f7ddf60f') in 0.046142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_twitter.png
+  artifactKey: Guid(e45cc4a02a63e4a7ea3bf6eb40852f77) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_twitter.png using Guid(e45cc4a02a63e4a7ea3bf6eb40852f77) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'a994cd9d9eea32d0b05e539d40e11b9d') in 0.0463936 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_1.fbx
+  artifactKey: Guid(f503d54e588bb1e4789d0dcc232e3619) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_1.fbx using Guid(f503d54e588bb1e4789d0dcc232e3619) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6edb4636ff4c93879dc5ffa32a1aed9c') in 0.0632845 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_75.png
+  artifactKey: Guid(596149c01dd48480787a19a26c116b6b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_75.png using Guid(596149c01dd48480787a19a26c116b6b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '14ffd37e6833b51ae4626dae8a89f7b7') in 0.0494109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/99_Ship_L2.fbx
+  artifactKey: Guid(a9180d5d5cc1c8049bf936db99461006) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/99_Ship_L2.fbx using Guid(a9180d5d5cc1c8049bf936db99461006) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7cd00059e3f11b09ad84a6eee75bf7bd') in 0.0711067 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 98
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_7.prefab
+  artifactKey: Guid(7e0ec412034c76d44a0889e92c219b16) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_7.prefab using Guid(7e0ec412034c76d44a0889e92c219b16) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'aebe9e59c1b26b5b0c09aaabd6c6b821') in 0.0560947 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 38
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/99_Sea.fbx
+  artifactKey: Guid(0f33e4bf7ecde364ea8d35ee0f960f83) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/99_Sea.fbx using Guid(0f33e4bf7ecde364ea8d35ee0f960f83) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'e6f9b95160d5ca501ee5bba1c634e684') in 0.0554939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_4.prefab
+  artifactKey: Guid(a9b4030b71d90474d80a59d6f29c3d8e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_4.prefab using Guid(a9b4030b71d90474d80a59d6f29c3d8e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '5e0a05df690fd9c968ddfe6cab2fb35b') in 0.0580057 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Rifle_2.fbx
+  artifactKey: Guid(28808b202d70f384ea741e8370cb0ebe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Rifle_2.fbx using Guid(28808b202d70f384ea741e8370cb0ebe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '675529bdf5eb512bcb2246175a2e9c61') in 0.0528566 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Stander_Full.fbx
+  artifactKey: Guid(0bbf98f6d65921f448250a45c7908583) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/06_MusketShop_Stander_Full.fbx using Guid(0bbf98f6d65921f448250a45c7908583) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9e997183596283adcd47f9038bc3cd2a') in 0.0482582 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_2.prefab
+  artifactKey: Guid(598309a395a3c944191f405347a9495a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_2.prefab using Guid(598309a395a3c944191f405347a9495a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'db5c5ee207eb4e4dedc72e8f02676ab2') in 0.036764 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_info.png
+  artifactKey: Guid(34643356f54be4d7a8a46241e5151f20) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_info.png using Guid(34643356f54be4d7a8a46241e5151f20) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '36f7a023cd3fabf285c19be1385dfa2e') in 0.03994 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_4.png
+  artifactKey: Guid(c21855fb91d2d4dff9f88b37c91aba69) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_4.png using Guid(c21855fb91d2d4dff9f88b37c91aba69) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f5a0ad6a505920e703836b08416eed8f') in 0.0385807 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/07_Tavern_UmbrelaTable_1.fbx
+  artifactKey: Guid(d725f4d99a81de54992fb075b2b6bdf4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/07_Tavern_UmbrelaTable_1.fbx using Guid(d725f4d99a81de54992fb075b2b6bdf4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f08427c35e8bdc373f8d510c6756ff35') in 0.0436803 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Crate_2.prefab
+  artifactKey: Guid(ee3e1c46b473f744bb23691f03d6d290) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Crate_2.prefab using Guid(ee3e1c46b473f744bb23691f03d6d290) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'a39b7af88c11b917ae6cc634d8503dac') in 0.0472894 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_4.prefab
+  artifactKey: Guid(87f3870237b133e4bb0d429e8e4bcb61) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_4.prefab using Guid(87f3870237b133e4bb0d429e8e4bcb61) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '254af6f94225c4e39bbda391abf15d9b') in 0.038575 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_Banner_BigFish.prefab
+  artifactKey: Guid(2685b11b50a4a9143ad61cec63d3d166) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_Banner_BigFish.prefab using Guid(2685b11b50a4a9143ad61cec63d3d166) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '25695ed25b10e1ec35fddcb7947518ab') in 0.0361286 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Crate_1.prefab
+  artifactKey: Guid(44f6a110ca225fb4bb4436e90d0b6314) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Crate_1.prefab using Guid(44f6a110ca225fb4bb4436e90d0b6314) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '375e1af00de496d646d66a837b7bceaa') in 0.0338651 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Single_Closed.prefab
+  artifactKey: Guid(d51ff2188494a8e4587a4ba203ba03fe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Single_Closed.prefab using Guid(d51ff2188494a8e4587a4ba203ba03fe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'aada697ce52df5fc67eb71c0d0297654') in 0.0493298 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanCart.prefab
+  artifactKey: Guid(3fa76355d12594143a30d5539b6b75e1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanCart.prefab using Guid(3fa76355d12594143a30d5539b6b75e1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '616f1a8e84f269560da07f8545dce4c9') in 0.0356404 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_3.prefab
+  artifactKey: Guid(b37af54fc6755e842adb1a2d53dc295e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_3.prefab using Guid(b37af54fc6755e842adb1a2d53dc295e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'da44d401c28314d604d0cf889aa7c1f4') in 0.0358854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_5.prefab
+  artifactKey: Guid(b568ad3ae8d22a54383ca664b77b58cd) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_FishermanStand_5.prefab using Guid(b568ad3ae8d22a54383ca664b77b58cd) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ce4386bba7d4eea9898cd91900122b20') in 0.0471346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_0.png
+  artifactKey: Guid(e0608c3460f81470e9095cc7c1297528) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_0.png using Guid(e0608c3460f81470e9095cc7c1297528) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '137bfe5c10d93d7c3a475a9cb1756f2f') in 0.0436746 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Crate_2.fbx
+  artifactKey: Guid(def21c7a91fc2ef40a74b196f9f84ae7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Crate_2.fbx using Guid(def21c7a91fc2ef40a74b196f9f84ae7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '45b5fb719391474c07a39ed68e48fa1b') in 0.0422405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_750.png
+  artifactKey: Guid(2a39910e765d84e53b49cca23b6f77c0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_750.png using Guid(2a39910e765d84e53b49cca23b6f77c0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9d71365a2f9829a262f9fa76eae107e2') in 0.0544446 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_lock.png
+  artifactKey: Guid(fa7715c04f6ef417595dcd8c8f43862d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_lock.png using Guid(fa7715c04f6ef417595dcd8c8f43862d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'dc49fb995ab4599c14946fcef884eb86') in 0.0439354 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_CannonBall_Stack.prefab
+  artifactKey: Guid(9bb1d9f26fdd6d343bd427c6a98f4ac9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_CannonBall_Stack.prefab using Guid(9bb1d9f26fdd6d343bd427c6a98f4ac9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ad40b1a1ab9a087fd07a59f2baaa069c') in 0.0350767 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Cart.prefab
+  artifactKey: Guid(7e24fb19154ee244698c74e28dcfc51c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Cart.prefab using Guid(7e24fb19154ee244698c74e28dcfc51c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '1181efa3aa044abb728f8f9b3c43058b') in 0.0367118 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Mold_Crashed.prefab
+  artifactKey: Guid(c9fe8eb81ebdfaa42b1ff2f2f3f83a4e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Mold_Crashed.prefab using Guid(c9fe8eb81ebdfaa42b1ff2f2f3f83a4e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '650c25e8e83cc86954248af86217a8bb') in 0.047713 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_3.prefab
+  artifactKey: Guid(10b87e9de5680434f9ab8c50536dd25a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_3.prefab using Guid(10b87e9de5680434f9ab8c50536dd25a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '031af532ba63cd77c79d375668b8e385') in 0.0496685 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Crate_2.prefab
+  artifactKey: Guid(62fe7dc6b33113c49874afdfe4c468ad) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Crate_2.prefab using Guid(62fe7dc6b33113c49874afdfe4c468ad) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3d73492b5f93845575d8ae8265051a7d') in 0.0425624 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_1.prefab
+  artifactKey: Guid(86b8a3fb474b5e2438ebc8b7758eabd5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_1.prefab using Guid(86b8a3fb474b5e2438ebc8b7758eabd5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ff148cdb676bedc604f435a29410ef73') in 0.035215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Barrel_GunPowder.prefab
+  artifactKey: Guid(d791c2d20444822428f350f6f31e21de) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Barrel_GunPowder.prefab using Guid(d791c2d20444822428f350f6f31e21de) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7262b1c3f0d6034947ca82c6662c45d3') in 0.0384584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_BigTank.prefab
+  artifactKey: Guid(1ca9bf76b2304564aaec878383d64bff) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_BigTank.prefab using Guid(1ca9bf76b2304564aaec878383d64bff) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '063cae93c89978763143234f1ef28ef2') in 0.0344648 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_650.png
+  artifactKey: Guid(bffdb66f163e94eb48cacc02fc99d270) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_650.png using Guid(bffdb66f163e94eb48cacc02fc99d270) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4313b27ff0e2d5ff954f7f6887e134ea') in 0.0431344 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_store.png
+  artifactKey: Guid(4b813d10e994144db8d27b90c1f4ce47) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_store.png using Guid(4b813d10e994144db8d27b90c1f4ce47) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f4c59851b7ffd31e7df930bd27d73ecd') in 0.0417942 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_2k.png
+  artifactKey: Guid(d9087ef3426094135aa8078b77c4d146) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_2k.png using Guid(d9087ef3426094135aa8078b77c4d146) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '22f0bd60f76c1ecb07476bdf57ab078a') in 0.0428438 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_4.prefab
+  artifactKey: Guid(3f875203e6580d247a02b6bd3ac8a366) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_4.prefab using Guid(3f875203e6580d247a02b6bd3ac8a366) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4f77fa9ce3ea6cf72722fdf7de0ff2cd') in 0.0396876 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_RiffleBox_Closed.prefab
+  artifactKey: Guid(3ab6ecd809b6fda4a8e019087500ac62) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_RiffleBox_Closed.prefab using Guid(3ab6ecd809b6fda4a8e019087500ac62) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7c7b62f930ab534e09a27bdb40f96095') in 0.0343111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/99_Ship_L2.prefab
+  artifactKey: Guid(a0de0a21bf9c7fa478938b5d66a18878) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/99_Ship_L2.prefab using Guid(a0de0a21bf9c7fa478938b5d66a18878) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'bd993095d4fa2ca8b595f7765bc88548') in 0.0401062 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 124
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Animation/CanvasScreenFaderOverlay.controller
+  artifactKey: Guid(54cb8d58b5b61444d91fe9aa8c7a5b34) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Animation/CanvasScreenFaderOverlay.controller using Guid(54cb8d58b5b61444d91fe9aa8c7a5b34) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6ded3ad5aa82c1b18e1e771d5ae57be1') in 0.0680435 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Scenes/Demo_Island_2.unity
+  artifactKey: Guid(ef13319444cc04e4982a12cc10a50ab2) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Scenes/Demo_Island_2.unity using Guid(ef13319444cc04e4982a12cc10a50ab2) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9fec55b3da04f93056524420c9325649') in 0.0170698 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Stander_Full.prefab
+  artifactKey: Guid(3002a69289076d0409281f610aef5376) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Stander_Full.prefab using Guid(3002a69289076d0409281f610aef5376) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'd3bbff0c86c39a7b4df1fb7f0ca71824') in 0.0346639 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Unity UI Samples/Textures and Sprites/SF UI/Background/SF Background.png
+  artifactKey: Guid(39939fe0b3df2b741aca15c2accaf90a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Unity UI Samples/Textures and Sprites/SF UI/Background/SF Background.png using Guid(39939fe0b3df2b741aca15c2accaf90a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9ea779cc79470da8f737f00c19cb20cd') in 0.1722685 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Rifle_2.prefab
+  artifactKey: Guid(b72a676fdf113de4ab4e96931bbb8dad) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Rifle_2.prefab using Guid(b72a676fdf113de4ab4e96931bbb8dad) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '1c6ee2d01896987630f4ec82518be8b9') in 0.0394384 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Stander_Empty.prefab
+  artifactKey: Guid(c1396b1b0a8cafd4cbf9bc5de702b189) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Stander_Empty.prefab using Guid(c1396b1b0a8cafd4cbf9bc5de702b189) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4b1082f9df862c9e24c6f040938db325') in 0.0367664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Rifle_1.prefab
+  artifactKey: Guid(38754b419e0428749afcecc83a18c182) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Rifle_1.prefab using Guid(38754b419e0428749afcecc83a18c182) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '136d9f6b139d8f8b569148c367df1fec') in 0.0406274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_Bucket_Empty.prefab
+  artifactKey: Guid(2410a82b7edd12b4a8eadd1f615c3502) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/03_FishermanHouse_Bucket_Empty.prefab using Guid(2410a82b7edd12b4a8eadd1f615c3502) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'dbf675b54dce0970ebb6db10de807dd7') in 0.0366252 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Docs.png
+  artifactKey: Guid(4aa9c4b878bff480fb63b72cc5b7d29f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Docs.png using Guid(4aa9c4b878bff480fb63b72cc5b7d29f) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '19a689911ca1d2f8669f549e0cec2de5') in 0.0410607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Animation/Fade In Long Start Animation.anim
+  artifactKey: Guid(488b4091221af4b6dadc13cd810ff95a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Animation/Fade In Long Start Animation.anim using Guid(488b4091221af4b6dadc13cd810ff95a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ac79445f8a4bddbb12194baaa2bd8055') in 0.0187151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Header.png
+  artifactKey: Guid(efec01e8ffb674794b91ba14cdca28e3) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Header.png using Guid(efec01e8ffb674794b91ba14cdca28e3) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0f002208235b3b69796a609e0a5308eb') in 0.0922046 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Toggle Circle Checkmark.png
+  artifactKey: Guid(c76790b2b19544acda4d7dcb1efa2eec) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Toggle Circle Checkmark.png using Guid(c76790b2b19544acda4d7dcb1efa2eec) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f482445d19a13fc2f44a3d5cdc535a05') in 0.0448829 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/$.prefab
+  artifactKey: Guid(fd55cb294a892433d9a6eca904bfd2a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/$.prefab using Guid(fd55cb294a892433d9a6eca904bfd2a6) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '5f6e69f0746145b2d3644a02a4314888') in 0.0386677 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Info.png
+  artifactKey: Guid(d884a0de641a6460bbe9dbfe7764e339) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Info.png using Guid(d884a0de641a6460bbe9dbfe7764e339) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '0399bdc11ab22f949f3ad682d0166a53') in 0.0439706 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Circle.png
+  artifactKey: Guid(4543d9f14f4456e449876b2d89cbd79b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Circle.png using Guid(4543d9f14f4456e449876b2d89cbd79b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '166d7a4d89304448868bb378aea5548a') in 0.0429516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/SceneControl.cs
+  artifactKey: Guid(914a2b9fa27b4a71accc44b13e066626) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/SceneControl.cs using Guid(914a2b9fa27b4a71accc44b13e066626) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'dc14b1b7b81666b24225e8d166543dc5') in 0.0198456 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Menu.png
+  artifactKey: Guid(16b7e932d35e04ab6a62ea42653b865d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Menu.png using Guid(16b7e932d35e04ab6a62ea42653b865d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '05a9382f6c44706922945097939b8370') in 0.0487057 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Rectangle Rounded.png
+  artifactKey: Guid(abab1c8395f5d4ae29b3959e028e93f5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Textures/Icon Rectangle Rounded.png using Guid(abab1c8395f5d4ae29b3959e028e93f5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b164968d7c0c6ebd61e850fcb57f7f7a') in 0.043945 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Box_Full.prefab
+  artifactKey: Guid(d3a032d40f8f1804a8f9e0b611f94a62) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/06_MusketShop_Box_Full.prefab using Guid(d3a032d40f8f1804a8f9e0b611f94a62) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'cd33bfc30b8e3a3cb75d01780d71b352') in 0.036956 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_7.fbx
+  artifactKey: Guid(fac4db536483c0b4bb5369e0ae62af43) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_7.fbx using Guid(fac4db536483c0b4bb5369e0ae62af43) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b84139d17b5370a267814028fdd07bf7') in 0.0464119 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 38
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Buttons/ButtonMenuShadow.prefab
+  artifactKey: Guid(51922986a537d4c9ab4bcad1786e09f4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Buttons/ButtonMenuShadow.prefab using Guid(51922986a537d4c9ab4bcad1786e09f4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '59d0c8e07d8c20e9dc2cbd8fd38b6183') in 0.0813953 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scripts/Terrain/Niveles/nivel1/Filas/Fila 2.asset
+  artifactKey: Guid(1f5a391298f601a4496a547a2b93ece4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scripts/Terrain/Niveles/nivel1/Filas/Fila 2.asset using Guid(1f5a391298f601a4496a547a2b93ece4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ac8ed89d3e4ed0ed17f6b89aae592ec1') in 0.0179236 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Demo/Demo/HDRP/Light inf/Global Volume Profile.asset
+  artifactKey: Guid(f83a19eb7a29591449275cb0deee646d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Demo/Demo/HDRP/Light inf/Global Volume Profile.asset using Guid(f83a19eb7a29591449275cb0deee646d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '8cc2696bd7128324a74ed69b54cc8640') in 0.0408954 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/LoadScreen/LoadScreenControl.cs
+  artifactKey: Guid(179c5bda532f4474a460ba895c1aeb1a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/LoadScreen/LoadScreenControl.cs using Guid(179c5bda532f4474a460ba895c1aeb1a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b2f50cfe132f789472c35915a0891cea') in 0.0182655 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Support.png
+  artifactKey: Guid(e3801cd4c17544f4fad1ea7c8f9a87a7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Support.png using Guid(e3801cd4c17544f4fad1ea7c8f9a87a7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '26d3283eae048a6468fc9756343aee94') in 0.0418119 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Buttons/ButtonInfo.prefab
+  artifactKey: Guid(81ae98aa5f9574e409c61f0e365aaf27) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Buttons/ButtonInfo.prefab using Guid(81ae98aa5f9574e409c61f0e365aaf27) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2ed81667df1403d7b5fcb3fbdd365f5a') in 0.0694235 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Map.png
+  artifactKey: Guid(bd50f5ae7ee2a46a7b6dcb589aca2a0b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Resources/Icon Map.png using Guid(bd50f5ae7ee2a46a7b6dcb589aca2a0b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b5e653bfe75b140825a199db8b7f1756') in 0.0534798 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Canvases/CanvasMenu.prefab
+  artifactKey: Guid(0a5fb0050f29d4e5cacd3496795c50ee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/Canvases/CanvasMenu.prefab using Guid(0a5fb0050f29d4e5cacd3496795c50ee) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2228c4fd87e1180a66f24bbdb2eb62f5') in 0.0570602 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Demo/Demo/HDRP/Light inf/Sky and Fog Settings Profile 1.asset
+  artifactKey: Guid(62bd747a7b13d3845ade7b11fb46e24d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Demo/Demo/HDRP/Light inf/Sky and Fog Settings Profile 1.asset using Guid(62bd747a7b13d3845ade7b11fb46e24d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f9b40dc7af1a95f7e5f2b843751ad66a') in 0.0522457 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/LoadScreen/Particle System LoadScreen.prefab
+  artifactKey: Guid(79e28f7a8dbe946e0be221eeb46138d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Prefabs/LoadScreen/Particle System LoadScreen.prefab using Guid(79e28f7a8dbe946e0be221eeb46138d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '918bdff9e580dde68169fe755b3152d1') in 0.0898142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Scripts/Editor/PublisherWelcomeScreen.cs
+  artifactKey: Guid(bf7ef028cdfa342079e953b576a86de1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Welcome Screen/Scripts/Editor/PublisherWelcomeScreen.cs using Guid(bf7ef028cdfa342079e953b576a86de1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '56ba45a217a91ddbb9b62b06c9d67d5e') in 0.0193953 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Makaka Games/Publisher/Publisher Window/Inspector Info/Scripts/Editor/PublisherReadmeEditor.cs
+  artifactKey: Guid(476cc7d7cd987cc16adc216baab94a0a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Publisher Window/Inspector Info/Scripts/Editor/PublisherReadmeEditor.cs using Guid(476cc7d7cd987cc16adc216baab94a0a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f2924d6c83e44bd01368c9e0657b10ca') in 0.0202665 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/LoadingAnimation/ButtonLoadingAnimationControl.cs
+  artifactKey: Guid(8b1a726ecba154caa8552652486c3a6d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/SceneControl/Scripts/LoadingAnimation/ButtonLoadingAnimationControl.cs using Guid(8b1a726ecba154caa8552652486c3a6d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '40b410968c434f6a9fba492bd3ae3450') in 0.0186695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_1.png
+  artifactKey: Guid(e6f0b671fa768455ba13a47e55071566) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_1.png using Guid(e6f0b671fa768455ba13a47e55071566) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '51aad9a8f9cef76a517eee1fe40314d8') in 0.0340654 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Sack_Stack.prefab
+  artifactKey: Guid(ff4f86447611312488abf22d86ee07a5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Sack_Stack.prefab using Guid(ff4f86447611312488abf22d86ee07a5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '57299129c3214a0437b14763c5e28f00') in 0.0387001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Star hit.prefab
+  artifactKey: Guid(98c4704d0fd7211449bcf5c451095a60) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Star hit.prefab using Guid(98c4704d0fd7211449bcf5c451095a60) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '044943147271d8dbe2e7b1bcf7edea26') in 0.0804733 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_restore_purchases.png
+  artifactKey: Guid(f14526acb0a19479a8fac86bf010f190) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_restore_purchases.png using Guid(f14526acb0a19479a8fac86bf010f190) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'fed865311ed209d9188a6a38c2452502') in 0.0733656 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_500.png
+  artifactKey: Guid(10e996886e09c48a7b6982f9cf7b1b51) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_500.png using Guid(10e996886e09c48a7b6982f9cf7b1b51) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '31b07a19176231bfe1534500d278beb8') in 0.0568989 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_700.png
+  artifactKey: Guid(e73046614de5341cab936328eccef5b5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_700.png using Guid(e73046614de5341cab936328eccef5b5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '83e511f95844f99edf9e7fccbd583e64') in 0.0519319 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishTrap.fbx
+  artifactKey: Guid(f5516ef24675b334590fe8082b5ef832) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishTrap.fbx using Guid(f5516ef24675b334590fe8082b5ef832) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6912b554941a48cf32c1f8f6cdcdb26f') in 0.1317012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_no_ads.png
+  artifactKey: Guid(e7c188d1612c84e37836ce3072f465c7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_no_ads.png using Guid(e7c188d1612c84e37836ce3072f465c7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'e58d8254d124d6ba3e7286615f09dddd') in 0.0505682 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/Debugging/DebugPrinter.cs
+  artifactKey: Guid(7675e239b4f154ac7b730bdccd60b3d9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/Debugging/DebugPrinter.cs using Guid(7675e239b4f154ac7b730bdccd60b3d9) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '77b2d0f380b72fd5d695b602450b9c88') in 0.0192968 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_6.prefab
+  artifactKey: Guid(759f1923cf69d1c4e9348fc95e1e9042) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_6.prefab using Guid(759f1923cf69d1c4e9348fc95e1e9042) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '03098fa8e8f64ee9a78177b07aecb4ae') in 0.057818 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Single_Open.prefab
+  artifactKey: Guid(69eee11787343a143ad850f77705bb4d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Single_Open.prefab using Guid(69eee11787343a143ad850f77705bb4d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ec8f5ad6482557b039dde4f992bc3cf1') in 0.0423348 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_2.png
+  artifactKey: Guid(1baabd3da4f994cf1b2f79ffead97462) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_2.png using Guid(1baabd3da4f994cf1b2f79ffead97462) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '46ee59cf84a85d724a9e3aa7da54de71') in 0.0327125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_1.prefab
+  artifactKey: Guid(f707191a539c0ae4989d856bea091177) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/00_Island_1.prefab using Guid(f707191a539c0ae4989d856bea091177) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '69099737781a3a0dd46ae804722cb8d5') in 0.0522325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_2.prefab
+  artifactKey: Guid(ee7949998c0b4fc4993de37bc53400b5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/05_Destilery_Rum_Bottle_2.prefab using Guid(ee7949998c0b4fc4993de37bc53400b5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'a65f00109735a38b8c5c799bce97a62e') in 0.0363702 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_3.png
+  artifactKey: Guid(f08e78a627bb6496588af2ac4125d711) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_3.png using Guid(f08e78a627bb6496588af2ac4125d711) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'bd4f85b65dc8134f750058abd21c6ab4') in 0.0412221 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_900.png
+  artifactKey: Guid(372740e8640aa43109205908e2b00583) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_900.png using Guid(372740e8640aa43109205908e2b00583) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '174af3168e0de51d2323b01536a3cb2b') in 0.0433078 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash red.prefab
+  artifactKey: Guid(000832214335ffd4782827d2a4510f4a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Slash effects/Charge slash red.prefab using Guid(000832214335ffd4782827d2a4510f4a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3757c037fd9460ab8ee90d28bf679242') in 0.0716365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/Button Buy/button_buy_1.99_big.png
+  artifactKey: Guid(a746dfc7cb3be4cd69c3c54f7cc1defe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/Button Buy/button_buy_1.99_big.png using Guid(a746dfc7cb3be4cd69c3c54f7cc1defe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7d490ae66b569a2197eb89e76e736e6d') in 0.046548 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Unity UI Samples/Animation/Settings/Open.anim
+  artifactKey: Guid(8fb70f3506a535246be122751945de67) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Unity UI Samples/Animation/Settings/Open.anim using Guid(8fb70f3506a535246be122751945de67) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4fba830b583ec0c3ee46f9280f5c5916') in 0.0326167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_700.png
+  artifactKey: Guid(2adafba36bdfc4b37bded3e0523abf1d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_700.png using Guid(2adafba36bdfc4b37bded3e0523abf1d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3dfc4d2517e4699b316689fe7d7ba601') in 0.0431103 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_1.fbx
+  artifactKey: Guid(58d502e922409424cacc17041a4fbd21) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/00_Island_1.fbx using Guid(58d502e922409424cacc17041a4fbd21) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ea253b4c5aba6731730e9c1769e84b35') in 0.0389184 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Unity UI Samples/Textures and Sprites/Decoration/Icon2.png
+  artifactKey: Guid(fccea209f9ea7b1488225287813f4e38) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Unity UI Samples/Textures and Sprites/Decoration/Icon2.png using Guid(fccea209f9ea7b1488225287813f4e38) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '4d944daa4e91097e9f9cd06b35bf79ce') in 0.0450991 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Holy hit.prefab
+  artifactKey: Guid(e190bf97c041e58448af6b043116cba0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Hits and explosions/Holy hit.prefab using Guid(e190bf97c041e58448af6b043116cba0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '3ed60edfd3a6448575287423662b4943') in 0.0752273 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Crate_1.fbx
+  artifactKey: Guid(4c83659745a37c74a821769a0a2646bc) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Crate_1.fbx using Guid(4c83659745a37c74a821769a0a2646bc) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '239be8bf1ba5bf6c4da3cdd1cd7f757f') in 0.0341032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_2.fbx
+  artifactKey: Guid(84dd2bbf01ae20c4a8f1c5d2bb025338) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_2.fbx using Guid(84dd2bbf01ae20c4a8f1c5d2bb025338) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '8d6cb6586f2ee8c440dcc6993f8cef29') in 0.0336429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_10.png
+  artifactKey: Guid(f237a88a297a549889e14655ce9d87e7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/128x128/button_score_10.png using Guid(f237a88a297a549889e14655ce9d87e7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'f164e3e503d0191128ce9f7d2fa52782') in 0.0311098 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_5.prefab
+  artifactKey: Guid(b5b2be1faa1821a4e83b8067df74c09a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/01_House_5.prefab using Guid(b5b2be1faa1821a4e83b8067df74c09a) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '80b6b14c43fb247b4f855bb14492f7f6') in 0.0339161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Stack_3.prefab
+  artifactKey: Guid(4ab2a9173bca1d748b8bef2716372344) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/02_Market_Barrel_Stack_3.prefab using Guid(4ab2a9173bca1d748b8bef2716372344) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'be9e234c134e60dd3cb70384615e5fce') in 0.0347564 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Banner_Destilary.fbx
+  artifactKey: Guid(d6c63fd5005a1074195572db56702461) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Banner_Destilary.fbx using Guid(d6c63fd5005a1074195572db56702461) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'ec87f229c4385caad900c888301498a9') in 0.0324407 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/StoneUI/Buttons_512x512/Rock_Yellow/button_rock_yellow50.png
+  artifactKey: Guid(e4950ecd39e829f45aa57c255c1e6bb7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/Buttons_512x512/Rock_Yellow/button_rock_yellow50.png using Guid(e4950ecd39e829f45aa57c255c1e6bb7) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'e784e8203a16ec619eccd6f84f4a82f7') in 0.1007494 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000928 seconds.
+  path: Assets/Makaka Games/Publisher/Everyday Tools/Debugging/MaterialCounter.cs
+  artifactKey: Guid(4646dc0aaf4cb48a685b870c329d8b1c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Publisher/Everyday Tools/Debugging/MaterialCounter.cs using Guid(4646dc0aaf4cb48a685b870c329d8b1c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '14a032cc41c5c2ef519127b574de7d00') in 0.0265974 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000116 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Mold.prefab
+  artifactKey: Guid(e3618e5d2fc09d646aebb4ac2e0cbf58) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Prefabs/04_CannonShop_Cannon_Mold.prefab using Guid(e3618e5d2fc09d646aebb4ac2e0cbf58) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b794a5481bb36cffc2ee0c5dda5fb4bf') in 0.0419468 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Piratas/anim/idles/Idle esperando.fbx
+  artifactKey: Guid(0ba83ea623fd8584ebb7a227abec2732) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Prefabs/Piratas/anim/idles/Idle esperando.fbx using Guid(0ba83ea623fd8584ebb7a227abec2732) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '671488a5bd187a628f46131878332a24') in 0.1746938 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 240
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_5.fbx
+  artifactKey: Guid(1d3d8ed0cd0d8c34092b150338efaa02) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/03_FishermanHouse_FishermanStand_5.fbx using Guid(1d3d8ed0cd0d8c34092b150338efaa02) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '447b26a77072e6c660ede8c890fc99b3') in 0.0334505 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button90.png
+  artifactKey: Guid(ab3e3f07d6ca3e24ea65bcc6c3bd9faf) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button90.png using Guid(ab3e3f07d6ca3e24ea65bcc6c3bd9faf) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'd5a507e7c41f24ff6aebb66d4322d7d9') in 0.044893 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_7.png
+  artifactKey: Guid(03b438b6ea550430eba9515cd0305e64) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Makaka Games/Mobile Game Icon Pack/Sprites/64x64/button_score_7.png using Guid(03b438b6ea550430eba9515cd0305e64) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '1845d298f7db79871d1c2aeb07d7c79c') in 0.0780988 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Pirate Music Album - 050418/wav - 1411kbps/10. Great Sails.wav
+  artifactKey: Guid(e8dc8f6acae632742a27da68867fd78d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Pirate Music Album - 050418/wav - 1411kbps/10. Great Sails.wav using Guid(e8dc8f6acae632742a27da68867fd78d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'da7f0f822df7af08223984085ad2ebeb') in 0.5624818 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button14.png
+  artifactKey: Guid(b049791805ba43545aa537d028efa8c1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button14.png using Guid(b049791805ba43545aa537d028efa8c1) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b238e8d12c589f38b093a8c2724a17dc') in 0.051098 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button6.png
+  artifactKey: Guid(0b95e5ec97878fd4b91de7267f2a6157) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button6.png using Guid(0b95e5ec97878fd4b91de7267f2a6157) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '03d916a7995551e2059f6043a55fc3e8') in 0.0505874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button23.png
+  artifactKey: Guid(9b80b37517ba4e14ca0e8b12e36d41c5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button23.png using Guid(9b80b37517ba4e14ca0e8b12e36d41c5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '73b1c75a44d8d3f6a228dd425718d759') in 0.044747 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/01_House_6.fbx
+  artifactKey: Guid(110a2612c691f2b479c49b7f5d2e32d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/01_House_6.fbx using Guid(110a2612c691f2b479c49b7f5d2e32d4) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b2ae530261977dedefea295423002b64') in 0.0361654 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scripts/Cannons/CannonManagement.cs
+  artifactKey: Guid(34f964a447b0bc546b35a27fb2647c92) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scripts/Cannons/CannonManagement.cs using Guid(34f964a447b0bc546b35a27fb2647c92) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '15879d2ecf01231791d0d96d29f10bc0') in 0.019154 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/PolyAngel-Mini Pirates Island/Prefabs/Ship(Whiite)03.prefab
+  artifactKey: Guid(24c84ab79f65b4a1f84f7a6c81304816) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/PolyAngel-Mini Pirates Island/Prefabs/Ship(Whiite)03.prefab using Guid(24c84ab79f65b4a1f84f7a6c81304816) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b43a15e0c039b5dfe3509a91da45eabd') in 0.0367944 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Demo scene/ReflectionProbe-0.exr
+  artifactKey: Guid(b437cf6f67f5f1c4e9f1876cbbb8aceb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Demo scene/ReflectionProbe-0.exr using Guid(b437cf6f67f5f1c4e9f1876cbbb8aceb) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6ac53bf8c6d3fcfe7581934809fd5f9e') in 0.0504192 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/StoneUI/Samples/button_rock_Play2.png
+  artifactKey: Guid(86492a545bbb94c46b3ce240614b620b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/Samples/button_rock_Play2.png using Guid(86492a545bbb94c46b3ce240614b620b) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '857d58961937173e8b7ffa1311bb2862') in 0.0506072 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Unity UI Samples/Materials/Window.mat
+  artifactKey: Guid(3cc66b78ab25c204f9b4d415d02e3abe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Unity UI Samples/Materials/Window.mat using Guid(3cc66b78ab25c204f9b4d415d02e3abe) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'd282711fc49d40f6d2396fed971923cd') in 0.3044053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/PolyAngel-Mini Pirates Island/Models/Barrals.fbx
+  artifactKey: Guid(05c87a63741664e3aadc7a6595160a50) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/PolyAngel-Mini Pirates Island/Models/Barrals.fbx using Guid(05c87a63741664e3aadc7a6595160a50) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'aa1c5caea398b48fc6159167391fc489') in 0.037504 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Hovl Studio/Magic effects pack/Prefabs/Portals/Portal yellow.prefab
+  artifactKey: Guid(5ad33d58a66ab154a89c9e88255601e5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Hovl Studio/Magic effects pack/Prefabs/Portals/Portal yellow.prefab using Guid(5ad33d58a66ab154a89c9e88255601e5) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9c06dc6c8981c8295e4e80bdbf61e9ac') in 0.1043373 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/StoneUI/OtherUI_2-1K/button_rock_Play3.png
+  artifactKey: Guid(b4bbe250b0c4afe438a61f92fb3e3682) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_2-1K/button_rock_Play3.png using Guid(b4bbe250b0c4afe438a61f92fb3e3682) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6ac13f8222a9c31227be1784e5c773c5') in 0.1397814 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/StoneUI/Samples/button_moss_purple.png
+  artifactKey: Guid(cf7177ee4c05a384ea7288d459e91994) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/Samples/button_moss_purple.png using Guid(cf7177ee4c05a384ea7288d459e91994) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '7d78b38621b76ff1c80e8c1a81d2cd62') in 0.0567786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Textures/Silver/Silver_BaseMap.png
+  artifactKey: Guid(d437c3bff3c1b3e4ea31fdde199b8899) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Textures/Silver/Silver_BaseMap.png using Guid(d437c3bff3c1b3e4ea31fdde199b8899) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '9a4c4cd1a6ba2a96cc392fae37ee8355') in 0.0597058 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Materials/Silver.mat
+  artifactKey: Guid(d308cdf0bcb0a174eb321157e4172e60) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Materials/Silver.mat using Guid(d308cdf0bcb0a174eb321157e4172e60) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'cfca511c406e7f78fdb4693d4768a953') in 0.0431197 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/StoneUI/OtherUI_2-1K/4.png
+  artifactKey: Guid(1a6a09d346d070341809e5f3b9a2e40d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_2-1K/4.png using Guid(1a6a09d346d070341809e5f3b9a2e40d) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '2ca83d885e730100b5bd6646698fdaf5') in 0.1763481 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/StoneUI/OrherUI_4-2K/3.png
+  artifactKey: Guid(bf863c1f5968393428ffda61834c097c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OrherUI_4-2K/3.png using Guid(bf863c1f5968393428ffda61834c097c) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'c11da9aec04345a500a567b3e9f87558') in 0.2581849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Models/PirateCoin.fbx
+  artifactKey: Guid(5d0dbe9cd045eb6458b6aa0a6ffc0235) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Models/PirateCoin.fbx using Guid(5d0dbe9cd045eb6458b6aa0a6ffc0235) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'b53101c85dfe2a2fb8294fad973ae986') in 0.0406704 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button43.png
+  artifactKey: Guid(bab4243e7031d48478a92f8f6e3451c0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button43.png using Guid(bab4243e7031d48478a92f8f6e3451c0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '81938573a92677d1d049b4a6fd51bba2') in 0.0520048 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Bottle_3.fbx
+  artifactKey: Guid(617ed56b92ac61e499fc81dfb91b06b0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/Scenes/CatBorg Studio/3D Pirates Lowpoly Pack/Models/05_Destilery_Rum_Bottle_3.fbx using Guid(617ed56b92ac61e499fc81dfb91b06b0) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: 'bc06d8bcf532e3bc04d009cd47b59215') in 0.037573 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/StoneUI/OtherUI_4k+/button49.png
+  artifactKey: Guid(6fd2c74b0f6ddd24985ba59ade960f6e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/StoneUI/OtherUI_4k+/button49.png using Guid(6fd2c74b0f6ddd24985ba59ade960f6e) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '6b51e901329902edd5c03baa3c89a1c3') in 0.0574812 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/DavePixel/PirateCoin HDRP/Prefabs/PirateCoin (Silver) Variant.prefab
+  artifactKey: Guid(3d707ce65015cee4190386624e1c0713) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e)
+Start importing Assets/DavePixel/PirateCoin HDRP/Prefabs/PirateCoin (Silver) Variant.prefab using Guid(3d707ce65015cee4190386624e1c0713) Importer(2089858483,d624ce77472d68a35037170ec1d2d27e) (ScriptedImporter) -> (artifact id: '32f59668dc039a8d02e22d1ff9b8d634') in 0.0499973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 9281.363068 seconds.
+  path: Assets/_Recovery/0.unity
+  artifactKey: Guid(42995fe8d0e51e1469eda19c4065f621) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Recovery/0.unity using Guid(42995fe8d0e51e1469eda19c4065f621) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45c7b12d5a99ce4fc4bf9f266106d337') in 0.022392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+

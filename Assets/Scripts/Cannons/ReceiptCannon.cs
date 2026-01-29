@@ -32,7 +32,7 @@ public class ReceiptCannon : MonoBehaviour
                 managementCannon.getCreateCannon().SetActive(false);
                 managementCannon.getDeployCannon().SetActive(true);
                 managementCannon.getDeployCannon().GetComponent<Transform>().position = parent.position;
-                managementCannon.ToggleFindBarral();
+                managementCannon.SetFindBarral(true);
                 managementCannon.SetReceipt(this);
             }
         }
@@ -51,7 +51,7 @@ public class ReceiptCannon : MonoBehaviour
                 managementCannon.getCreateCannon().SetActive(true);
                 managementCannon.getDeployCannon().SetActive(false);
                 Debug.Log("exit");
-                managementCannon.ToggleFindBarral();
+                managementCannon.SetFindBarral(false);
 
             }
 
