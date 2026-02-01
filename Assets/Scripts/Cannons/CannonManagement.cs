@@ -43,6 +43,8 @@ public class CannonManagement : MonoBehaviour
 
     public void SetManager(GameManager newManager) => manager = newManager;
 
+    public GameManager GetManager() => manager;
+
     public void SetCenter(Transform newCenter) => center = newCenter;
 
     public void SetReceipt(ReceiptCannon newReceipt) => receipt = newReceipt;

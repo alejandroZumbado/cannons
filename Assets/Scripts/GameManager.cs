@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private CannonCreator spawnCannon;
+    private CannonManagement newCannon;
     public List<CannonManagement> cannons;
     public List<PirateManager> pirates;
     public AudioManager AudioManager;
@@ -89,16 +90,27 @@ public class GameManager : MonoBehaviour
 
     void GameFlow1()
     {
-        //NextPirate();
-        CannonManagement newCannon = spawnCannon.SpawnCannon();
-        newCannon.SetManager(this);
-        newCannon.SetCenter(centerCannon);
-        newCannon.CenterCannon();
+        if (newCannon == null || cannons.Contains(newCannon))
+        {
+            newCannon = spawnCannon.SpawnCannon();
+            newCannon.SetManager(this);
+            newCannon.SetCenter(centerCannon);
+            newCannon.CenterCannon();
+        }
+
         foreach (CannonManagement cannon in cannons)
         {
             cannon.UnsetCannon();
         }
-        cannons.Add(newCannon);
+    }
 
+    public void AddCannonInTable(CannonManagement cannon)
+    {
+        cannons.Add(cannon);
+    }
+
+    public void RemoveCannonInTable(CannonManagement cannon)
+    {
+        cannons.Remove(cannon);
     }
 }
