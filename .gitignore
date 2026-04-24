@@ -53,3 +53,10 @@ ehthumbs.db
 
 # Claude Code
 .claude/
+
+# Unity editor auto-generated
+Logs/
+UserSettings/
+
+# Local notes
+init.txt
