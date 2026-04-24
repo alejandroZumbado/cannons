@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Matriz matriz;
     public Cuadricula cuadricula;
     public int round = 0;
+    public bool canDrag = false; // solo true durante fase de agarre (GameFlow1)
     void Start()
     {
         matriz = GetComponent<Matriz>();
@@ -55,7 +56,14 @@ public class GameManager : MonoBehaviour
     public void RemovePirate(PirateManager pirate)
     {
         pirates.Remove(pirate);
+        // win: no quedan piratas y ya se spawnearon todas las rondas
+        if (pirates.Count == 0 && round >= cuadricula.filas.Count)
+            Win();
     }
+
+    public void Win() => Debug.Log("Win");
+
+    public void GameOver() => Debug.Log("Game Over");
     public void PirateAdvance()
     {
         foreach (PirateManager pirate in pirates)
@@ -67,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void GameFlow2()
     {
+        canDrag = false; // bloquea drag al entrar en fase de acción
         foreach (CannonManagement cannon in cannons)
         {
             cannon.SetCannon();
@@ -90,6 +99,7 @@ public class GameManager : MonoBehaviour
 
     void GameFlow1()
     {
+        canDrag = true; // habilita drag en fase de agarre
         if (newCannon == null || cannons.Contains(newCannon))
         {
             newCannon = spawnCannon.SpawnCannon();

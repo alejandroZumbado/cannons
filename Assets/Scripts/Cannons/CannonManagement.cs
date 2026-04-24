@@ -82,16 +82,13 @@ public class CannonManagement : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isSetCannon) // deberia dejarse arrastrar aunque ya se haya seteado, validar esta parte primero antes de modificar 
-        {
-            return;
-        }
+        if (!manager.canDrag) return; // solo permite drag en fase de agarre
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
-        
     }
 
     private void OnMouseUp()
     {
+        if (!manager.canDrag) return; // ignora soltar fuera de fase de agarre
         if (findBarral && receipt)
         {
             receipt.UnsetReceipt();

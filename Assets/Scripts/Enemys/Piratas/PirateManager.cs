@@ -73,6 +73,7 @@ public class PirateManager : MonoBehaviour
         else
         {
             animatorManager.PlayAttack();
+            manager.GameOver(); // pirata llegó al frente → game over
         }
     }
     IEnumerator RelocatePirate(GameObject nextBarrel)

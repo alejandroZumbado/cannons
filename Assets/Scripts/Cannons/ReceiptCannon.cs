@@ -44,6 +44,7 @@ public class ReceiptCannon : MonoBehaviour
                 managementCannon.getDeployCannon().SetActive(true);
                 managementCannon.getDeployCannon().GetComponent<Transform>().position = parent.position;
                
+                managementCannon.SetReceipt(this); // enlaza receipt para que OnMouseUp pueda colocar/merge
                 managementCannon.SetFindBarral(true);
                 managementCannon.getDeployCannon().GetComponent<Transform>().parent = null;
             }
@@ -63,6 +64,7 @@ public class ReceiptCannon : MonoBehaviour
                 managementCannon.getCreateCannon().SetActive(true);
                 managementCannon.getDeployCannon().SetActive(false);
                 Debug.Log("exit");
+                managementCannon.SetReceipt(null); // limpia receipt al salir del trigger
                 managementCannon.SetFindBarral(false);
 
             }
