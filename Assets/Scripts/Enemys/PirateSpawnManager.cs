@@ -10,9 +10,9 @@ public class PirateSpawnManager : MonoBehaviour
     {
         matriz = GetComponent<Matriz>();
     }
-    public PirateManager SpawnPirate(Fila.Cuadro cuadro)
+    public PirateManager SpawnPirate(Level.Cuadro cuadro)
     {
-        GameObject barrel = matriz.GetFirstElementOfColumn(cuadro.Index);
+        GameObject barrel = matriz.GetFirstElementOfColumn(cuadro.index);
         Transform newTransform = barrel.transform.GetChild(0).transform;
         PirateManager newPirate = Instantiate(pirate).GetComponent<PirateManager>();
         newPirate.SetHp(cuadro.hp);

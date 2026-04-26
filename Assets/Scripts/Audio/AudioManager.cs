@@ -9,25 +9,26 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip menu;
     public AudioClip normalLvl;
+    public AudioClip normalFinalLvl;
     public AudioClip hardLvl;
-    public AudioClip endLvl;
+    public AudioClip hardFinalLvl;
     public AudioClip winLvl;
     public AudioClip loseLvl;
-    public AudioClip bossLvl;
 
+    public void PlayMenu()           => PlayClip(menu);
+    public void PlayNormalLvl()      => PlayClip(normalLvl);
+    public void PlayNormalFinalLvl() => PlayClip(normalFinalLvl);
+    public void PlayHardLvl()        => PlayClip(hardLvl);
+    public void PlayHardFinalLvl()   => PlayClip(hardFinalLvl);
+    public void PlayWinLvl()         => PlayClip(winLvl);
+    public void PlayLoseLvl()        => PlayClip(loseLvl);
 
-    private void Start()
+    // cambia a la musica "final" segun si el nivel es hard o no
+    public void PlayFinalLvl(bool isHard)
     {
+        if (isHard) PlayHardFinalLvl();
+        else        PlayNormalFinalLvl();
     }
-
-
-    public void PlayMenu() => PlayClip(menu);
-    public void PlayNormalLvl() => PlayClip(normalLvl);
-    public void PlayHardLvl() => PlayClip(hardLvl);
-    public void PlayEndLvl() => PlayClip(endLvl);
-    public void PlayWinLvl() => PlayClip(winLvl);
-    public void PlayLoseLvl() => PlayClip(loseLvl);
-    public void PlayBossLvl() => PlayClip(bossLvl);
 
 
     void PlayClip(AudioClip clip)

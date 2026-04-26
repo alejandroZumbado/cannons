@@ -5,9 +5,7 @@ public class LvlUpCannonSkin : MonoBehaviour
     [Header("Assign in Inspector (level 1..N)")]
     [SerializeField] private GameObject[] skins;
 
-    /// <summary>
-    /// Activa solo la skin del nivel indicado (1..N) y apaga las demás.
-    /// </summary>
+    // activa la skin correspondiente al damage del cañon, apaga las demas
     public void SetLevel(int level)
     {
         if (skins == null || skins.Length == 0)

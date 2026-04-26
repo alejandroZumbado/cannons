@@ -18,11 +18,10 @@ public class CannonManagement : MonoBehaviour
     public ReceiptCannon receipt;
     public Transform center;
 
-    public void ShootUp(int up) {
+    public void ShootUp(int up)
+    {
         damage += up;
         LvlUpSkin();
-        Debug.Log("Cannon damage increased to: " + damage);
-
     }
 
     public void LvlUpSkin()
@@ -33,12 +32,9 @@ public class CannonManagement : MonoBehaviour
 
     public void Shoot()
     {
-        //deployCannon.GetComponentInChildren
         GameObject newShoot = Instantiate(shootPrefab, shootPoint.position, shootPoint.rotation);
-
-        Rigidbody balaRigidbody = newShoot.GetComponent<Rigidbody>();
-
-        balaRigidbody.linearVelocity = shootPoint.forward * shootSpeed;
+        newShoot.GetComponent<BulletDamage>().SetDamage(damage); // aplica el damage real del cañon (merges incluidos)
+        newShoot.GetComponent<Rigidbody>().linearVelocity = shootPoint.forward * shootSpeed;
     }
 
     public void SetManager(GameManager newManager) => manager = newManager;
