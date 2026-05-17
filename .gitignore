@@ -63,5 +63,11 @@ UserSettings/
 **/ReflectionProbe-*.exr
 **/ReflectionProbe-*.exr.meta
 
+# Baked lighting folders in third-party asset demos
+Assets/Stylish Cannon Pack/Scenes/Demo_*/
+Assets/Stylish Cannon Pack/Scenes/Demo_*.meta
+Assets/PBR Ground Free/Scenes/SampleScene/
+Assets/PBR Ground Free/Scenes/SampleScene.meta
+
 # Local notes
 init.txt
