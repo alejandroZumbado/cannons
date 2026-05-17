@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f252442dff2f646b57aa8fdd902686, type: 3}
+  m_Name: Level_113
+  m_EditorClassIdentifier: Assembly-CSharp::Level
+  levelNumber: 113
+  password: I8753
+  isHard: 0
+  skybox: {fileID: 0}
+  filas:
+  - cuadros:
+    - index: 3
+      tipo: 3
+      hp: 1
+  - cuadros: []
+  - cuadros:
+    - index: 3
+      tipo: 2
+      hp: 1
+  - cuadros:
+    - index: 3
+      tipo: 4
+      hp: 1

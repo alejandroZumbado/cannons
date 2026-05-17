@@ -58,6 +58,7 @@ ehthumbs.db
 Logs/
 UserSettings/
 .utmp/
+**/LightingData.asset
 
 # Local notes
 init.txt
