@@ -59,7 +59,9 @@ Logs/
 UserSettings/
 .utmp/
 **/LightingData.asset
+**/LightingData.asset.meta
 **/ReflectionProbe-*.exr
+**/ReflectionProbe-*.exr.meta
 
 # Local notes
 init.txt
