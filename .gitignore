@@ -59,6 +59,7 @@ Logs/
 UserSettings/
 .utmp/
 **/LightingData.asset
+**/ReflectionProbe-*.exr
 
 # Local notes
 init.txt
