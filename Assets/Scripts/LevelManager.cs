@@ -65,12 +65,21 @@ public class LevelManager : MonoBehaviour
         if (level == null) return;
         _currentIndex = index;
         CurrentLevel = level;
-        SceneManager.LoadScene("Game");
+        if (SceneLoader.Instance != null)
+            SceneLoader.Instance.LoadScene("Game");
+        else
+            SceneManager.LoadScene("Game");
     }
 
     public void ReloadCurrentLevel() => LoadLevel(_currentIndex);
 
-    public void LoadMenu() => SceneManager.LoadScene("Menu");
+    public void LoadMenu()
+    {
+        if (SceneLoader.Instance != null)
+            SceneLoader.Instance.LoadScene("Menu");
+        else
+            SceneManager.LoadScene("Menu");
+    }
 
     public int DatabaseCount => database != null ? database.Count : 0;
 
