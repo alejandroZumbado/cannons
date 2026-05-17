@@ -84,7 +84,10 @@ public class GameManager : MonoBehaviour
         LevelManager.Instance?.LevelCompleted();
         AudioManager.PlayWinLvl();
         winUI?.Show();
+        Invoke(nameof(ShowWinDelayed), 3f);
     }
+
+    void ShowWinDelayed() => winUI?.Show();
 
     public void GameOver()
     {

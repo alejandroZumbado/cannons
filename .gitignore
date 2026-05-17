@@ -57,6 +57,7 @@ ehthumbs.db
 # Unity editor auto-generated
 Logs/
 UserSettings/
+.utmp/
 
 # Local notes
 init.txt
