@@ -28,7 +28,16 @@ public class SceneLoader : MonoBehaviour
     {
         _loading = true;
 
-        GameObject bg = Instantiate(bgLoadingPrefab);
+        // oculta UI, luces y camaras de la escena actual antes de mostrar el loading
+        foreach (Canvas c in FindObjectsByType<Canvas>(FindObjectsSortMode.None))
+            c.enabled = false;
+        foreach (Light l in FindObjectsByType<Light>(FindObjectsSortMode.None))
+            l.enabled = false;
+        foreach (Camera cam in FindObjectsByType<Camera>(FindObjectsSortMode.None))
+            cam.enabled = false;
+        RenderSettings.skybox = null;
+
+        GameObject bg = Instantiate(bgLoadingPrefab, Vector3.up * 100f, Quaternion.identity);
         yield return null;
         DontDestroyOnLoad(bg);
 

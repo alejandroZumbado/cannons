@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private WinUI winUI;
     private Level _level;
     private bool _gameEnded = false;
+    public bool GameEnded => _gameEnded;
     public int round = 0;
     public bool canDrag = false;
     void Start()
@@ -83,8 +84,7 @@ public class GameManager : MonoBehaviour
         canDrag = false;
         LevelManager.Instance?.LevelCompleted();
         AudioManager.PlayWinLvl();
-        winUI?.Show();
-        Invoke(nameof(ShowWinDelayed), 3f);
+        Invoke(nameof(ShowWinDelayed), 1.5f);
     }
 
     void ShowWinDelayed() => winUI?.Show();
@@ -95,8 +95,10 @@ public class GameManager : MonoBehaviour
         _gameEnded = true;
         canDrag = false;
         AudioManager.PlayLoseLvl();
-        gameOverUI?.Show();
+        Invoke(nameof(ShowGameOverDelayed), 1.5f);
     }
+
+    void ShowGameOverDelayed() => gameOverUI?.Show();
     public void PirateAdvance()
     {
         foreach (PirateManager pirate in pirates)

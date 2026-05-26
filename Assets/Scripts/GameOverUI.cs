@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
+    [SerializeField] private GameObject btnPausar;
+
     void Awake() => gameObject.SetActive(false);
 
-    public void Show() => gameObject.SetActive(true);
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        if (btnPausar != null) btnPausar.SetActive(false);
+    }
 
     public void OnRestartPressed()
     {
