@@ -116,6 +116,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 7351065203584257956, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
+      propertyPath: m_fontSize
+      value: 42.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351065203584257956, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 42.87
+      objectReference: {fileID: 0}
     - target: {fileID: 9144249743191169352, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
       propertyPath: m_Name
       value: Menu
@@ -228,11 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351065203584257956, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 42.87
       objectReference: {fileID: 0}
     - target: {fileID: 7351065203584257956, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 42.87
       objectReference: {fileID: 0}
     - target: {fileID: 9144249743191169352, guid: 56624cedcbc550e4e925296caddcffd8, type: 3}
       propertyPath: m_Name

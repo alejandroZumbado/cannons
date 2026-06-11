@@ -4,16 +4,20 @@ public class PauseUI : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject optionsPanel;
-    [SerializeField] private GameObject btnPausar;
 
     void Awake() => gameObject.SetActive(false);
 
-    public void Show()
+    public void Toggle()
+    {
+        if (gameObject.activeSelf) Hide();
+        else Show();
+    }
+
+    void Show()
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
         if (gameManager != null) gameManager.canDrag = false;
-        if (btnPausar != null) btnPausar.SetActive(false);
     }
 
     void Hide()
@@ -22,7 +26,6 @@ public class PauseUI : MonoBehaviour
         Time.timeScale = 1f;
         if (gameManager != null && !gameManager.GameEnded)
             gameManager.canDrag = true;
-        if (btnPausar != null) btnPausar.SetActive(true);
     }
 
     public void OnResumePressed() => Hide();
