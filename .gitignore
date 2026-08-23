@@ -71,3 +71,9 @@ Assets/PBR Ground Free/Scenes/SampleScene.meta
 
 # Local notes
 init.txt
+
+# Secrets
+.env
+
+# Auto-generated levels dropped by CannonsLevelGen — reviewed before import
+GeneratedLevels/
