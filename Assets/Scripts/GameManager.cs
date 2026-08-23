@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool GameEnded => _gameEnded;
     public int round = 0;
     public bool canDrag = false;
+    private ReceiptCannon[] slots;
     void Start()
     {
         _level = LevelManager.Instance != null
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         spawnCannon = GetComponent<CannonCreator>();
         spawnPirate = GetComponent<PirateSpawnManager>();
         spawnPirate.SetMatriz(matriz);
+        slots = FindObjectsByType<ReceiptCannon>(FindObjectsSortMode.None);
         nextRound();
         GameFlow1();
         if (_level != null && _level.isHard)
@@ -108,21 +110,21 @@ public class GameManager : MonoBehaviour
     }
     public CannonCreator SpawnCannon() => spawnCannon;
 
+    // busca el slot cuya area se superpone con el area del cañon soltado, o null si no hay ninguno
+    public ReceiptCannon FindSlotAt(Bounds cannonBounds)
+    {
+        foreach (ReceiptCannon slot in slots)
+            if (slot.GetBounds().Intersects(cannonBounds))
+                return slot;
+        return null;
+    }
+
     public void GameFlow2()
     {
         canDrag = false; // bloquea drag al entrar en fase de acción
         foreach (CannonManagement cannon in cannons)
         {
-            cannon.SetCannon();
-        }
-        foreach (CannonManagement cannon in cannons)
-        {
             cannon.Shoot();
-        }
-
-        foreach (CannonManagement cannon in cannons)
-        {
-            cannon.UnsetCannon();
         }
         Invoke(nameof(GameFlow1), 5f);
         Invoke(nameof(nextRound), 5f);
@@ -138,17 +140,14 @@ public class GameManager : MonoBehaviour
             newCannon.SetManager(this);
             newCannon.SetCenter(centerCannon);
             newCannon.CenterCannon();
-        }
-
-        foreach (CannonManagement cannon in cannons)
-        {
-            cannon.UnsetCannon();
+            newCannon.ShowIcon();
         }
     }
 
     public void AddCannonInTable(CannonManagement cannon)
     {
-        cannons.Add(cannon);
+        if (!cannons.Contains(cannon))
+            cannons.Add(cannon);
     }
 
     public void RemoveCannonInTable(CannonManagement cannon)
