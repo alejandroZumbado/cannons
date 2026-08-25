@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cannons — build pendiente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { background:#111; color:#eee; font-family: system-ui, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; text-align:center; }
+    div { max-width: 32em; padding: 2em; }
+    code { background:#222; padding:0.15em 0.4em; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Cannons</h1>
+    <p>Todavía no hay un build WebGL publicado acá.</p>
+    <p>El build viejo (sep-2024) no sirve para GitHub Pages: usa <code>.gz</code> sin "Decompression Fallback",
+    y Pages no puede mandar el header <code>Content-Encoding</code> que ese loader necesita.</p>
+    <p>Falta: rebuild en Unity con Publishing Settings → <code>Decompression Fallback: ON</code>
+    (+ Compression Format: Brotli), luego correr <code>scripts/deploy-webgl.sh</code> con la carpeta del build nuevo.</p>
+  </div>
+</body>
+</html>
