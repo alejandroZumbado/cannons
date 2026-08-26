@@ -15,6 +15,7 @@ public class CannonManagement : MonoBehaviour
     public Transform center;          // posicion a la que vuelve si se suelta fuera de un slot valido
     private Collider hitbox;
     private Vector3 deployCannonLocalPos; // posicion local "correcta" del modelo grande respecto al root
+    private Plane dragPlane; // plano horizontal a la altura del cañón al agarrarlo, usado durante el drag
 
     private void Awake()
     {
@@ -90,19 +91,31 @@ public class CannonManagement : MonoBehaviour
         }
     }
 
-    private Vector3 MousePos => Camera.main.WorldToScreenPoint(transform.position);
+    // punto en el mundo donde el rayo cámara->mouse cruza dragPlane.
+    // reemplaza el viejo truco de Camera.ScreenToWorldPoint(mouse - offset), que
+    // congelaba la profundidad (distancia a la camara) del momento del agarre: como
+    // el tablero se aleja de la camara en diagonal, cada slot esta a una profundidad
+    // distinta, y esa profundidad fija nunca dejaba llegar el cañon a los slots mas
+    // lejanos del punto de spawn (solo el mas cercano en profundidad "conectaba").
+    private Vector3 GetMouseOnDragPlane()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        dragPlane.Raycast(ray, out float distance);
+        return ray.GetPoint(distance);
+    }
 
     private void OnMouseDown()
     {
         if (!manager.canDrag) return; // ignora agarrar fuera de fase de agarre
-        mousePosition = Input.mousePosition - MousePos;
+        dragPlane = new Plane(Vector3.up, transform.position);
+        mousePosition = transform.position - GetMouseOnDragPlane();
         ShowIcon(); // pasa a modo icono mientras se arrastra
     }
 
     private void OnMouseDrag()
     {
         if (!manager.canDrag) return; // solo permite drag en fase de agarre
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
+        transform.position = GetMouseOnDragPlane() + mousePosition;
         UpdatePreview(manager.FindSlotAt(GetBounds()));
     }
 
