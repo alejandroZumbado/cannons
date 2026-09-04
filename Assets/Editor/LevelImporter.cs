@@ -8,8 +8,9 @@ using System.Linq;
 // Imports Level JSON files dropped by CannonsLevelGen into Assets/Levels/,
 // following the exact same AssetDatabase pattern as LevelGenerator.cs.
 // Source folder lives OUTSIDE Assets/ on purpose (GeneratedLevels/incoming at
-// the repo root, gitignored) so raw AI output never lands in the asset
-// database until this explicit, reviewable step runs.
+// the repo root, tracked in git so each drop is reviewable as a commit diff)
+// so raw AI output never lands in the asset database until this explicit
+// step runs.
 public static class LevelImporter
 {
     private const string LevelsFolder = "Assets/Levels";

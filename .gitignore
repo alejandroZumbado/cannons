@@ -75,5 +75,7 @@ init.txt
 # Secrets
 .env
 
-# Auto-generated levels dropped by CannonsLevelGen — reviewed before import
-GeneratedLevels/
+# Levels dropped by CannonsLevelGen land in incoming/ and ARE tracked — review
+# happens by reading the commit diff before running Levels > Import Generated
+# Levels (JSON) in the Editor. processed/ (already-imported archive) stays local.
+GeneratedLevels/processed/
