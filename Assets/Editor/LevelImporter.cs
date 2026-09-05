@@ -11,8 +11,35 @@ using System.Linq;
 // the repo root, tracked in git so each drop is reviewable as a commit diff)
 // so raw AI output never lands in the asset database until this explicit
 // step runs.
+//
+// [InitializeOnLoad] added 2026-09-05: importing was easy to forget entirely
+// (Level_501 sat unimported for 2 weeks) since nothing surfaced that new
+// levels had arrived short of manually checking the incoming/ folder. This
+// just logs a reminder on every Editor load/recompile — it does not import
+// automatically, since a human should still eyeball each AI-generated level
+// before it becomes part of the real game.
+[InitializeOnLoad]
 public static class LevelImporter
 {
+    static LevelImporter()
+    {
+        EditorApplication.delayCall += WarnIfLevelsPending;
+    }
+
+    static void WarnIfLevelsPending()
+    {
+        string projectRoot = Directory.GetParent(Application.dataPath).FullName;
+        string incomingPath = Path.Combine(projectRoot, IncomingFolder);
+        if (!Directory.Exists(incomingPath)) return;
+
+        string[] files = Directory.GetFiles(incomingPath, "*.json");
+        if (files.Length == 0) return;
+
+        Debug.LogWarning($"CannonsLevelGen: {files.Length} nivel(es) generado(s) esperando revisión en " +
+                          $"{IncomingFolder}/ — Levels > Import Generated Levels (JSON) para importarlos " +
+                          "(revisa cada uno antes, esto no importa nada automáticamente).");
+    }
+
     private const string LevelsFolder = "Assets/Levels";
     private const string DatabasePath = "Assets/Levels/LevelDatabase.asset";
     private const string IncomingFolder = "GeneratedLevels/incoming";
