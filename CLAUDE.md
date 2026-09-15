@@ -19,8 +19,26 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 ### Editor menu commands (`Assets/Editor/`)
 - `Levels > Generate Intro Level` (`LevelGenerator.cs`) — creates `Level_01.asset` in `Assets/Levels/`, inserts into `LevelDatabase` sorted by `levelNumber`.
 - `Levels > Generate All Levels` (`LevelGeneratorMass.cs`) — bulk level generation.
+- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) — see "AI-generated levels pipeline" below.
 - `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`).
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
+- `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
+
+## AI-generated levels pipeline (`GeneratedLevels/`)
+
+A separate project (CannonsLevelGen) plays this game headless, learns which level shapes are winnable/fun, and pushes generated levels as JSON into `GeneratedLevels/incoming/` at the repo root (outside `Assets/` on purpose, so raw AI output never enters the asset database until reviewed — each drop lands as a reviewable git commit).
+
+- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) parses each `*.json` in `GeneratedLevels/incoming/`, creates a `Level_###_generated.asset` in `Assets/Levels/`, inserts/replaces it in `LevelDatabase` (matched by `levelNumber`), then moves the source file to `GeneratedLevels/processed/`. Import is a manual, explicit step — a human should eyeball each AI-generated level before it becomes part of the real game.
+- An `[InitializeOnLoad]` hook in the same file logs a `Debug.LogWarning` on every Editor load/recompile when `GeneratedLevels/incoming/` has pending files, since without it new drops were easy to forget entirely.
+- JSON shape: `{ levelNumber, password, isHard, filas: [{ cuadros: [{ index, tipo, hp }] }] }` — mirrors `Level`/`Fila`/`Cuadro` directly (see "Level data model" above).
+
+## WebGL build & deploy
+
+WebGL is a third target (alongside PC/Android) used to publish quick playable builds, not part of the Build Profiles described above.
+
+- `Dev > Build WebGL` (`WebGLBuildScript.cs`) builds straight into `E:\Users\Alejandro\Opal\Builds\Cannons`, a separate git clone of `alejandroZumbado/cannons-build` (GitHub Pages, served from that repo's main branch root). Forces `PlayerSettings.WebGL.decompressionFallback = true` — GitHub Pages never sends `Content-Encoding`, so a compressed build silently fails to load once hosted there even though it works locally.
+- `scripts/deploy-webgl.sh` publishes that build: offloads any `Build/` file over 95MB to a `cannons-build` GitHub Release (git's 100MB hard limit) and rewrites `index.html`'s asset URLs to point at the release download, then commits and pushes `cannons-build`. Run it after `Dev > Build WebGL`.
+- Live at `https://alejandrozumbado.github.io/cannons-build/`.
 
 ## Scene flow
 
