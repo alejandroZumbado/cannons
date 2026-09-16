@@ -20,6 +20,7 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - `Levels > Generate Intro Level` (`LevelGenerator.cs`) — creates `Level_01.asset` in `Assets/Levels/`, inserts into `LevelDatabase` sorted by `levelNumber`.
 - `Levels > Generate All Levels` (`LevelGeneratorMass.cs`) — bulk level generation.
 - `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) — see "AI-generated levels pipeline" below.
+- `Levels > Level Grid Editor` (`LevelGridEditor.cs`) — `EditorWindow` for browsing/editing any `Level` in `LevelDatabase` as a visual 5-column grid (search by number/password, add/remove rounds and pirates per column, edit HP/tipo/password/isHard inline). Edits apply to the loaded asset immediately but only reach disk on "Guardar cambios" (`AssetDatabase.SaveAssets`) — no undo/discard button, revert via git if already saved.
 - `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`).
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
