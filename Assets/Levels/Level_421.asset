@@ -21,7 +21,10 @@ MonoBehaviour:
     - index: 0
       tipo: 3
       hp: 1
-  - cuadros: []
+  - cuadros:
+    - index: 1
+      tipo: 1
+      hp: 1
   - cuadros:
     - index: 0
       tipo: 3

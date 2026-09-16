@@ -68,7 +68,7 @@ MonoBehaviour:
       hp: 2
     - index: 0
       tipo: 2
-      hp: 1
+      hp: 6
   - cuadros:
     - index: 0
       tipo: 3

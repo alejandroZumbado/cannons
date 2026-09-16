@@ -23,7 +23,7 @@ MonoBehaviour:
       hp: 1
     - index: 0
       tipo: 2
-      hp: 3
+      hp: 2
     - index: 1
       tipo: 1
       hp: 3

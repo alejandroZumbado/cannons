@@ -17,7 +17,10 @@ MonoBehaviour:
   isHard: 1
   skybox: {fileID: 0}
   filas:
-  - cuadros: []
+  - cuadros:
+    - index: 1
+      tipo: 1
+      hp: 1
   - cuadros:
     - index: 1
       tipo: 1

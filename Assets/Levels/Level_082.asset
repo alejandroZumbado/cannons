@@ -38,10 +38,10 @@ MonoBehaviour:
   - cuadros:
     - index: 0
       tipo: 3
-      hp: 1
+      hp: 3
     - index: 1
       tipo: 3
-      hp: 2
+      hp: 4
   - cuadros:
     - index: 1
       tipo: 1

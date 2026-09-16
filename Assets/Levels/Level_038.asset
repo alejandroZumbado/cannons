@@ -51,10 +51,10 @@ MonoBehaviour:
       hp: 1
     - index: 3
       tipo: 3
-      hp: 1
+      hp: 2
     - index: 1
       tipo: 2
-      hp: 1
+      hp: 6
   - cuadros:
     - index: 1
       tipo: 2

@@ -43,7 +43,10 @@ MonoBehaviour:
     - index: 1
       tipo: 2
       hp: 1
-  - cuadros: []
+  - cuadros:
+    - index: 2
+      tipo: 1
+      hp: 1
   - cuadros:
     - index: 4
       tipo: 3

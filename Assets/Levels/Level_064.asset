@@ -21,12 +21,18 @@ MonoBehaviour:
     - index: 1
       tipo: 2
       hp: 1
-  - cuadros: []
+  - cuadros:
+    - index: 1
+      tipo: 1
+      hp: 1
   - cuadros:
     - index: 3
       tipo: 3
       hp: 2
-  - cuadros: []
+  - cuadros:
+    - index: 3
+      tipo: 1
+      hp: 1
   - cuadros:
     - index: 3
       tipo: 4
