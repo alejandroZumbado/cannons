@@ -1,0 +1,70 @@
+{
+  "levelNumber": 504,
+  "password": "B0420",
+  "isHard": false,
+  "filas": [
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 2,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 3,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 2,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 4,
+          "hp": 4
+        }
+      ]
+    }
+  ]
+}
