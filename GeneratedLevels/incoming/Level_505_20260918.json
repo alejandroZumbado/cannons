@@ -1,0 +1,103 @@
+{
+  "levelNumber": 505,
+  "password": "T9816",
+  "isHard": false,
+  "filas": [
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 2,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 1
+        },
+        {
+          "index": 4,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 5
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 2,
+          "hp": 5
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 4,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 4,
+          "tipo": 4,
+          "hp": 8
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    }
+  ]
+}
