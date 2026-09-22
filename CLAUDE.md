@@ -21,7 +21,8 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - `Levels > Generate All Levels` (`LevelGeneratorMass.cs`) — bulk level generation. **Destructive**: overwrites Level_001..500 (losing all verified CannonsLevelGen fixes) and the curated `LevelDatabase` — asks for confirmation.
 - `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) — see "AI-generated levels pipeline" below.
 - `Levels > Level Grid Editor` (`LevelGridEditor.cs`) — `EditorWindow` for browsing/editing any `Level` in `LevelDatabase` (release levels only; reserve levels aren't listed) as a visual 5-column grid (search by number/password, add/remove rounds and pirates per column, edit HP/tipo/password/isHard inline). Edits apply to the loaded asset immediately but only reach disk on "Guardar cambios" (`AssetDatabase.SaveAssets`) — no undo/discard button, revert via git if already saved.
-- `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`).
+- `Levels > Validate Release` (`ReleaseValidator.cs`) — checks the release (null refs, duplicate `levelNumber`, level data ranges, rounds without pirates) and ALL level assets (globally unique `levelNumber` and password). Runs automatically after an import; headless: `-executeMethod ReleaseValidator.RunHeadless` (exit 1 on errors).
+- `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`, `MaxLevelId`).
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
 
@@ -39,7 +40,22 @@ A separate project (CannonsLevelGen) plays this game headless, learns which leve
 
 - `levelNumber` is now only a stable internal ID (audit/manifest/importer key on it). The player sees the **position** (`LevelManager.CurrentLevelPosition` = index + 1).
 - Level assets not in `LevelDatabase` are the **reserve pool** — still on disk, still audited weekly, playable only once curated into a release. Their passwords don't work in-game.
-- Never re-sort `LevelDatabase` by `levelNumber`.
+- Never re-sort `LevelDatabase` by `levelNumber`. New batches are only ever **appended** after the last position, so saved progress never points at a different level.
+
+### Adding a batch of levels (e.g. +100)
+
+Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); close the Unity Editor for the headless steps.
+1. **Get levels** into `GeneratedLevels/incoming/`: `python -m production.batch_generator --count 100` — local and free (no LLM): procedural candidates, each verified by the champion policy/solver, reskins rejected, unique passwords, difficulty skewed harder than the first release; ~15-25 min for 100. The daily LLM bot also drops 1/day there. Hand-made levels: create the asset in `Assets/Levels/` with a unique `levelNumber`/password.
+2. **Import**: Unity `Levels > Import Generated Levels (JSON)` (or headless `-executeMethod LevelImporter.ImportGeneratedLevels`). New levels become reserve assets; the validator runs automatically.
+3. **Link**: `python -m verification.extend_release --count 100 --dry-run` to see the plan, then again without `--dry-run`. It refreshes the audit if needed (~10 min), appends the levels in difficulty arcs, rewrites `LevelDatabase.asset`, and runs the Unity validator. Fails explicitly if the ready pool can't fill the batch (`--allow-fewer` takes what's there).
+4. **Play-test** the new positions, then commit both repos.
+
+## Save & passwords (`LevelManager.cs`)
+
+- Progress = highest unlocked level, saved as BOTH `PlayerPrefs["MaxLevel"]` (position index) and `PlayerPrefs["MaxLevelId"]` (its `levelNumber`), with `PlayerPrefs.Save()` right away (WebGL/Android can be killed without a quit event). Reading prefers the ID, falls back to the index clamped to `[0, Count]` — a save can never point outside the array.
+- Index `== Count` = campaign complete: "Continuar" shows "Completado", `WinUI` shows `comingSoonText`. When a batch is appended, that same index becomes the first new level, so finished players continue straight into it.
+- `WinUI` "Siguiente" = `PlayNext()` (level after the one just played), not the max — replaying an old level no longer jumps to the frontier.
+- Passwords: `TryPassword` trims + upper-cases both sides, skips null entries, unlocks up to that level. Only release levels' passwords work.
 
 ## WebGL build & deploy
 
@@ -57,14 +73,14 @@ Build order: `Menu` (index 0) → `Game` (index 1). Both are the only real gamep
 MainMenu → LevelManager.PlayCurrent() → Game
 Game Win     → LevelManager.LevelCompleted() → WinUI.Show()
 Game Lose    → GameOverUI.Show()
-WinUI "Siguiente"    → LevelManager.PlayCurrent() (already points at new MaxLevel)
+WinUI "Siguiente"    → LevelManager.PlayNext() (level after the one just won)
 GameOverUI "Reiniciar" → LevelManager.ReloadCurrentLevel()
 Any "Menu" button → LevelManager.LoadMenu()
 ```
 
 `SceneLoader` (singleton, `DontDestroyOnLoad`) wraps scene transitions with a loading screen (`minDisplayTime = 1.2f`), used automatically by `LevelManager.LoadLevel`/`LoadMenu` when present; falls back to plain `SceneManager.LoadScene` otherwise.
 
-`LevelManager` (singleton, `DontDestroyOnLoad`, lives in `MainMenu`) owns progression: `PlayerPrefs["MaxLevel"]` is the unlocked-level index (position in `LevelDatabase`, not `levelNumber`), `CurrentLevel` is the level about to be played, `TryPassword` jumps to any level whose `Level.password` matches (case-insensitive), `LevelCompleted` advances `MaxLevel` only if the completed level *was* the max.
+`LevelManager` (singleton, `DontDestroyOnLoad`, lives in `MainMenu`) owns progression (storage details in "Save & passwords" above): `CurrentLevel` is the level about to be played, `TryPassword` jumps to any release level whose `Level.password` matches (case-insensitive), `LevelCompleted` advances the max only if the completed level *was* the max.
 
 ## Level data model (`Assets/Scripts/Terrain/Level.cs`)
 

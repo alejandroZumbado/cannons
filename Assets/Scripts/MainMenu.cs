@@ -18,13 +18,27 @@ public class MainMenu : MonoBehaviour
 
     public void OnContinuePressed()
     {
+        // sin LevelManager no hay nivel que cargar; se avisa en vez de tirar NullReference
+        if (LevelManager.Instance == null)
+        {
+            Debug.LogError("[MainMenu] No hay LevelManager en la escena.");
+            return;
+        }
         LevelManager.Instance.PlayCurrent();
     }
 
     public void OnPasswordSubmit()
     {
-        string input = passwordInput.text.Trim().ToUpper();
-        if (string.IsNullOrEmpty(input)) return;
+        // LevelManager normaliza (trim + mayúsculas); acá solo se evita el vacío
+        string input = passwordInput.text;
+        if (string.IsNullOrWhiteSpace(input)) return;
+
+        // sin LevelManager (escena abierta suelta en el Editor) no hay progresión
+        if (LevelManager.Instance == null)
+        {
+            passwordFeedback.text = "Error: abre el juego desde la escena Menu";
+            return;
+        }
 
         bool valid = LevelManager.Instance.TryPassword(input);
         passwordFeedback.text = valid ? "" : "Password incorrecto";

@@ -129,7 +129,12 @@ public static class LevelImporter
             AssetDatabase.Refresh();
         }
         Debug.Log($"Importación completa: {imported} nivel(es) importado(s). Los nuevos quedan en reserva " +
-                  "hasta que la curación del lanzamiento (CannonsLevelGen verification/curate_release.py) les asigne posición.");
+                  "hasta que la curación del lanzamiento (CannonsLevelGen verification/extend_release.py) les asigne posición.");
+
+        // valida todo tras importar: un password repetido o un nivel mal
+        // formado se detecta acá y no cuando un jugador lo encuentra
+        if (imported > 0)
+            ReleaseValidator.Validate(out _, out _);
     }
 
     // Desde el lanzamiento curado (2026-09-22) LevelDatabase = SOLO los niveles
