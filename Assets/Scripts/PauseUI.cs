@@ -5,6 +5,11 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject optionsPanel;
 
+    // estado de drag al pausar: se restaura tal cual al reanudar. Si se forzara
+    // true, pausar durante la fase de disparo (canDrag=false 5s) y reanudar
+    // dejaría arrastrar en pleno disparo y el turno se ejecutaría dos veces.
+    private bool _dragBeforePause;
+
     void Awake() => gameObject.SetActive(false);
 
     public void Toggle()
@@ -17,7 +22,11 @@ public class PauseUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
-        if (gameManager != null) gameManager.canDrag = false;
+        if (gameManager != null)
+        {
+            _dragBeforePause = gameManager.canDrag;
+            gameManager.canDrag = false;
+        }
     }
 
     void Hide()
@@ -25,7 +34,7 @@ public class PauseUI : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         if (gameManager != null && !gameManager.GameEnded)
-            gameManager.canDrag = true;
+            gameManager.canDrag = _dragBeforePause;
     }
 
     public void OnResumePressed() => Hide();
