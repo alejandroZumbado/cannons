@@ -105,16 +105,22 @@ public static class LevelImporter
             }).ToList();
 
             string assetPath = $"{LevelsFolder}/Level_{json.levelNumber:D3}_generated.asset";
+            // posición en el lanzamiento ANTES de borrar: después del DeleteAsset
+            // la referencia vieja ya es null y no se podría encontrar
+            int releaseIndex = FindInDatabase(json.levelNumber);
             AssetDatabase.DeleteAsset(assetPath);
             AssetDatabase.CreateAsset(level, assetPath);
-            AddToDatabase(level);
+            bool inRelease = releaseIndex >= 0;
+            if (inRelease) ReplaceInDatabase(releaseIndex, level);
 
             string dest = Path.Combine(processedPath, Path.GetFileName(file));
             File.Delete(dest); // overwrite if a same-named file was processed before
             File.Move(file, dest);
 
             imported++;
-            Debug.Log($"Importado: {assetPath} (nivel {json.levelNumber}, password {json.password})");
+            Debug.Log(inRelease
+                ? $"Importado: {assetPath} (nivel {json.levelNumber}, password {json.password}) — reemplazado en su posición del LevelDatabase."
+                : $"Importado: {assetPath} (nivel {json.levelNumber}, password {json.password}) — queda en RESERVA (no está en LevelDatabase).");
         }
 
         if (imported > 0)
@@ -122,32 +128,35 @@ public static class LevelImporter
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
-        Debug.Log($"Importación completa: {imported} nivel(es) agregado(s) a LevelDatabase.");
+        Debug.Log($"Importación completa: {imported} nivel(es) importado(s). Los nuevos quedan en reserva " +
+                  "hasta que la curación del lanzamiento (CannonsLevelGen verification/curate_release.py) les asigne posición.");
     }
 
-    static void AddToDatabase(Level level)
+    // Desde el lanzamiento curado (2026-09-22) LevelDatabase = SOLO los niveles
+    // del lanzamiento, en su orden de dificultad (no por levelNumber). Por eso
+    // un nivel importado que ya está en el lanzamiento se reemplaza en la misma
+    // posición (DeleteAsset+CreateAsset le da un GUID nuevo), y uno nuevo NO se
+    // agrega: queda como asset suelto en reserva. Agregarlo y reordenar por
+    // levelNumber (lo que hacía antes) destruiría el orden curado.
+
+    // índice del nivel en LevelDatabase, o -1 si no está (o no hay database)
+    static int FindInDatabase(int levelNumber)
     {
         LevelDatabase db = AssetDatabase.LoadAssetAtPath<LevelDatabase>(DatabasePath);
-
-        if (db == null)
+        if (db == null || db.levels == null)
         {
-            db = ScriptableObject.CreateInstance<LevelDatabase>();
-            db.levels = new Level[] { level };
-            AssetDatabase.CreateAsset(db, DatabasePath);
+            Debug.LogError($"No se encontró {DatabasePath} — el nivel {levelNumber} queda solo como asset.");
+            return -1;
         }
-        else
-        {
-            var list = new List<Level>(db.levels ?? new Level[0]);
-            int existing = list.FindIndex(l => l != null && l.levelNumber == level.levelNumber);
-            if (existing >= 0)
-                list[existing] = level;
-            else
-                list.Add(level);
+        return Array.FindIndex(db.levels, l => l != null && l.levelNumber == levelNumber);
+    }
 
-            list.Sort((a, b) => a.levelNumber.CompareTo(b.levelNumber));
-            db.levels = list.ToArray();
-            EditorUtility.SetDirty(db);
-        }
+    // apunta la posición `index` del lanzamiento al asset recién creado
+    static void ReplaceInDatabase(int index, Level level)
+    {
+        LevelDatabase db = AssetDatabase.LoadAssetAtPath<LevelDatabase>(DatabasePath);
+        db.levels[index] = level;
+        EditorUtility.SetDirty(db);
     }
 
     static void EnsureFolder()

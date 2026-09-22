@@ -9,6 +9,11 @@ public class LevelManager : MonoBehaviour
 
     public Level CurrentLevel { get; private set; }
 
+    // numero que ve el jugador: posicion en la campaña (1..N), no levelNumber.
+    // levelNumber es solo el ID interno del asset; desde la curacion del
+    // lanzamiento de 200 el orden jugable ya no coincide con ese ID.
+    public int CurrentLevelPosition => _currentIndex + 1;
+
     private int _currentIndex;
     private const string MaxLevelKey = "MaxLevel";
 
@@ -88,6 +93,7 @@ public class LevelManager : MonoBehaviour
     {
         Level l = database.Get(GetMaxLevelIndex());
         if (l == null) return "Jugar";
-        return GetMaxLevelIndex() == 0 ? "Jugar" : $"Continuar - Nivel {l.levelNumber}";
+        // posicion en la campaña, no levelNumber (ver CurrentLevelPosition)
+        return GetMaxLevelIndex() == 0 ? "Jugar" : $"Continuar - Nivel {GetMaxLevelIndex() + 1}";
     }
 }

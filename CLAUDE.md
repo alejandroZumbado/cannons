@@ -17,10 +17,10 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - **Active Input Handling must stay `Input Manager (Old)` or `Both`.** All drag/drop uses `OnMouseDown/Drag/Up`, which breaks entirely under `New Input System` only.
 
 ### Editor menu commands (`Assets/Editor/`)
-- `Levels > Generate Intro Level` (`LevelGenerator.cs`) — creates `Level_01.asset` in `Assets/Levels/`, inserts into `LevelDatabase` sorted by `levelNumber`.
-- `Levels > Generate All Levels` (`LevelGeneratorMass.cs`) — bulk level generation.
+- `Levels > Generate Intro Level` (`LevelGenerator.cs`) — creates `Level_01.asset` in `Assets/Levels/`, inserts into `LevelDatabase` sorted by `levelNumber`. **Breaks the curated release order** — asks for confirmation.
+- `Levels > Generate All Levels` (`LevelGeneratorMass.cs`) — bulk level generation. **Destructive**: overwrites Level_001..500 (losing all verified CannonsLevelGen fixes) and the curated `LevelDatabase` — asks for confirmation.
 - `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) — see "AI-generated levels pipeline" below.
-- `Levels > Level Grid Editor` (`LevelGridEditor.cs`) — `EditorWindow` for browsing/editing any `Level` in `LevelDatabase` as a visual 5-column grid (search by number/password, add/remove rounds and pirates per column, edit HP/tipo/password/isHard inline). Edits apply to the loaded asset immediately but only reach disk on "Guardar cambios" (`AssetDatabase.SaveAssets`) — no undo/discard button, revert via git if already saved.
+- `Levels > Level Grid Editor` (`LevelGridEditor.cs`) — `EditorWindow` for browsing/editing any `Level` in `LevelDatabase` (release levels only; reserve levels aren't listed) as a visual 5-column grid (search by number/password, add/remove rounds and pirates per column, edit HP/tipo/password/isHard inline). Edits apply to the loaded asset immediately but only reach disk on "Guardar cambios" (`AssetDatabase.SaveAssets`) — no undo/discard button, revert via git if already saved.
 - `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`).
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
@@ -29,9 +29,17 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 
 A separate project (CannonsLevelGen) plays this game headless, learns which level shapes are winnable/fun, and pushes generated levels as JSON into `GeneratedLevels/incoming/` at the repo root (outside `Assets/` on purpose, so raw AI output never enters the asset database until reviewed — each drop lands as a reviewable git commit).
 
-- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) parses each `*.json` in `GeneratedLevels/incoming/`, creates a `Level_###_generated.asset` in `Assets/Levels/`, inserts/replaces it in `LevelDatabase` (matched by `levelNumber`), then moves the source file to `GeneratedLevels/processed/`. Import is a manual, explicit step — a human should eyeball each AI-generated level before it becomes part of the real game.
+- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) parses each `*.json` in `GeneratedLevels/incoming/`, creates a `Level_###_generated.asset` in `Assets/Levels/`, then moves the source file to `GeneratedLevels/processed/`. A level already in `LevelDatabase` (matched by `levelNumber`) is replaced in place; a new one is **not** added — it stays in the reserve pool until curation assigns it a position (see "Release curation" below). Import is a manual, explicit step — a human should eyeball each AI-generated level before it becomes part of the real game.
 - An `[InitializeOnLoad]` hook in the same file logs a `Debug.LogWarning` on every Editor load/recompile when `GeneratedLevels/incoming/` has pending files, since without it new drops were easy to forget entirely.
 - JSON shape: `{ levelNumber, password, isHard, filas: [{ cuadros: [{ index, tipo, hp }] }] }` — mirrors `Level`/`Fila`/`Cuadro` directly (see "Level data model" above).
+
+## Release curation (since 2026-09-22)
+
+`LevelDatabase.levels` holds **only the shipped release (200 levels), in curated difficulty order** — not all levels, not sorted by `levelNumber`. Order comes from CannonsLevelGen: `verification/curate_release.py` (picks from the manifest's `ready` pool, Candy-Crush-style arcs: breather → rising body → peak) writes `reports/release_order.json`; `verification/apply_release_order.py` rewrites the `levels:` list of `LevelDatabase.asset`.
+
+- `levelNumber` is now only a stable internal ID (audit/manifest/importer key on it). The player sees the **position** (`LevelManager.CurrentLevelPosition` = index + 1).
+- Level assets not in `LevelDatabase` are the **reserve pool** — still on disk, still audited weekly, playable only once curated into a release. Their passwords don't work in-game.
+- Never re-sort `LevelDatabase` by `levelNumber`.
 
 ## WebGL build & deploy
 
@@ -56,11 +64,11 @@ Any "Menu" button → LevelManager.LoadMenu()
 
 `SceneLoader` (singleton, `DontDestroyOnLoad`) wraps scene transitions with a loading screen (`minDisplayTime = 1.2f`), used automatically by `LevelManager.LoadLevel`/`LoadMenu` when present; falls back to plain `SceneManager.LoadScene` otherwise.
 
-`LevelManager` (singleton, `DontDestroyOnLoad`, lives in `MainMenu`) owns progression: `PlayerPrefs["MaxLevel"]` is the unlocked-level index, `CurrentLevel` is the level about to be played, `TryPassword` jumps to any level whose `Level.password` matches (case-insensitive), `LevelCompleted` advances `MaxLevel` only if the completed level *was* the max.
+`LevelManager` (singleton, `DontDestroyOnLoad`, lives in `MainMenu`) owns progression: `PlayerPrefs["MaxLevel"]` is the unlocked-level index (position in `LevelDatabase`, not `levelNumber`), `CurrentLevel` is the level about to be played, `TryPassword` jumps to any level whose `Level.password` matches (case-insensitive), `LevelCompleted` advances `MaxLevel` only if the completed level *was* the max.
 
 ## Level data model (`Assets/Scripts/Terrain/Level.cs`)
 
-`Level` is a `ScriptableObject` (`Assets/Levels/*.asset`, indexed by `LevelDatabase.asset`, ordered by `levelNumber`). `Fila` and `Cuadro` are `[Serializable]` nested classes, not separate SOs:
+`Level` is a `ScriptableObject` (`Assets/Levels/*.asset`, indexed by `LevelDatabase.asset` in curated release order — see "Release curation"). `Fila` and `Cuadro` are `[Serializable]` nested classes, not separate SOs:
 - `Fila.cuadros: List<Cuadro>` — one wave/round.
 - `Cuadro`: `index` (0-4, column: 0=right, 4=left), `tipo` (0=none, 1-3=normal pirate skin variants, 4=last-pirate-of-level skin, 5=reserved/unused), `hp` (1-10).
 

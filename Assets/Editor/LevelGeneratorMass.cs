@@ -182,6 +182,15 @@ public static class LevelGeneratorMass
     [MenuItem("Levels/Generate All Levels")]
     static void GenerateAllLevels()
     {
+        // destructivo: regenera Level_001..500 desde cero (pierde los arreglos
+        // verificados de CannonsLevelGen) y reemplaza el orden curado del
+        // LevelDatabase por 1..500. Exige confirmación explícita.
+        if (!EditorUtility.DisplayDialog("Generate All Levels",
+                "Esto SOBRESCRIBE los 500 niveles (se pierden reparaciones/rebalanceos aplicados) " +
+                "y reemplaza el orden curado del LevelDatabase. ¿Continuar?",
+                "Sí, sobrescribir", "Cancelar"))
+            return;
+
         if (!AssetDatabase.IsValidFolder(LevelsFolder))
             AssetDatabase.CreateFolder("Assets", "Levels");
 

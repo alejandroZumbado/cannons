@@ -8,8 +8,9 @@ public class LvlDisplay : MonoBehaviour
 
     void Start()
     {
-        Level current = LevelManager.Instance?.CurrentLevel;
-        if (lvlText != null && current != null)
-            lvlText.text = current.levelNumber.ToString();
+        // muestra la posicion en la campaña, no el levelNumber interno
+        LevelManager manager = LevelManager.Instance;
+        if (lvlText != null && manager != null && manager.CurrentLevel != null)
+            lvlText.text = manager.CurrentLevelPosition.ToString();
     }
 }

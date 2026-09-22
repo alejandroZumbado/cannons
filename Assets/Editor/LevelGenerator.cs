@@ -10,6 +10,13 @@ public static class LevelGenerator
     [MenuItem("Levels/Generate Intro Level")]
     static void GenerateIntroLevel()
     {
+        // reordena el LevelDatabase por levelNumber y rompería el orden curado
+        // del lanzamiento; exige confirmación explícita
+        if (!EditorUtility.DisplayDialog("Generate Intro Level",
+                "Esto reordena el LevelDatabase por levelNumber y rompe el orden curado del lanzamiento. ¿Continuar?",
+                "Sí", "Cancelar"))
+            return;
+
         EnsureFolder();
 
         Level level = ScriptableObject.CreateInstance<Level>();
