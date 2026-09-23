@@ -25,6 +25,7 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`, `MaxLevelId`).
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
+- `Dev > Build Windows` / `Dev > Build Android APK` (`PlatformBuilds.cs`) — output to `E:\Users\Alejandro\Opal\Builds\Cannons Windows\Cannons.exe` and `...\Cannons Android\Cannons.apk` (debug-signed: for testing, not Play Store). Every build runs `ReleaseValidator` first and refuses to build on level errors. Headless (no Editor open): `Unity.exe -batchmode -quit -projectPath <Cannons> -buildTarget Win64|Android|WebGL -executeMethod PlatformBuilds.BuildWindows|BuildAndroid|BuildWebGL` — exits 1 on failure. Run one at a time (the three chained ran the 16 GB machine out of memory).
 
 ## AI-generated levels pipeline (`GeneratedLevels/`)
 

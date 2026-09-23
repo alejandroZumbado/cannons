@@ -79,3 +79,9 @@ init.txt
 # happens by reading the commit diff before running Levels > Import Generated
 # Levels (JSON) in the Editor. processed/ (already-imported archive) stays local.
 GeneratedLevels/processed/
+
+# Generated on every build by the Performance Testing package (test-framework
+# dependency) - build-time run info, not project content.
+Assets/Resources/PerformanceTestRun*
+# The folder exists only for those files; remove this line if real Resources are ever added.
+Assets/Resources.meta
