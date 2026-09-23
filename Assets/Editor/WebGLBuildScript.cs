@@ -12,7 +12,11 @@ public static class WebGLBuildScript
     private const string OutputPath = @"E:\Users\Alejandro\Opal\Builds\Cannons";
 
     [MenuItem("Dev/Build WebGL")]
-    public static void Build()
+    public static void Build() => BuildAndReport();
+
+    // true si el build salió bien (usado por PlatformBuilds.BuildWebGL para
+    // devolver código de salida en modo headless)
+    public static bool BuildAndReport()
     {
         // GitHub Pages never sends a Content-Encoding: gzip/br header, so a
         // compressed WebGL build silently fails to load once hosted there —
@@ -40,9 +44,10 @@ public static class WebGLBuildScript
         if (report.summary.result != BuildResult.Succeeded)
         {
             Debug.LogError($"[Build WebGL] {report.summary.result} — {report.summary.totalErrors} error(s). See full log above.");
-            return;
+            return false;
         }
 
         Debug.Log($"[Build WebGL] OK — {report.summary.totalSize / (1024 * 1024)} MB in {report.summary.totalTime}. Output: {OutputPath}");
+        return true;
     }
 }
