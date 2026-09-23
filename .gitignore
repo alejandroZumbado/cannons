@@ -85,3 +85,6 @@ GeneratedLevels/processed/
 Assets/Resources/PerformanceTestRun*
 # The folder exists only for those files; remove this line if real Resources are ever added.
 Assets/Resources.meta
+
+# Local session entry point (see global CLAUDE.md "PROJECT INIT") - never pushed.
+INIT.md
