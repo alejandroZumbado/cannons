@@ -131,6 +131,7 @@ These aren't enforced in code — they're invariants a hand-authored or generate
 ## Build configuration (PC + Android)
 
 - Canvas Scaler on both `Menu` and `Game`: **Scale With Screen Size**, reference **1920×1080**, Match Width Or Height, **Match = 1**.
-- Android Player Settings: min API **23**, target API **34**, **IL2CPP**, **ARM64**, landscape-left orientation.
+- Studio/brand: `companyName` **Drixwave**, Android package **`com.drixwave.cannons`**, version **1.0.0** (Android `bundleVersionCode` 1) — set 2026-09-23 before any public release. Don't change `companyName`/package after publishing: the package is permanent on Play Store, and `companyName` is part of where PlayerPrefs (the save) live, so changing it wipes players' progress. Drixwave is the user's studio name for Cannons only — don't apply it to other projects without asking.
+- Android Player Settings: min API **25** in the project (since 2026-01; `Dev > Setup Android` still sets 23 — unresolved), target API **34**, **IL2CPP**, **ARM64**, landscape-left orientation.
 - Two separate Build Profiles (Menu=0, Game=1 in both): one targeting Windows/Mac/Linux, one targeting Android.
 - Distribution: `.apk` for direct testing, `.aab` + signed keystore for Play Store.

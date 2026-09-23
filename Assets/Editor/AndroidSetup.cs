@@ -8,7 +8,7 @@ using System.IO;
 // Dev → Verify Android  — solo lee y reporta, no cambia nada
 public static class AndroidSetup
 {
-    const string PackageName = "com.mandrix.cannons";
+    const string PackageName = "com.drixwave.cannons"; // estudio Drixwave (2026-09-23)
     const string SceneGame   = "Game";
     const string SceneMenu   = "Menu";
 
