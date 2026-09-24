@@ -10,97 +10,137 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9f252442dff2f646b57aa8fdd902686, type: 3}
-  m_Name: Level_500
+  m_Name: Level_508_generated
   m_EditorClassIdentifier: Assembly-CSharp::Level
-  levelNumber: 500
-  password: G1205
-  isHard: 1
+  levelNumber: 508
+  password: K1234
+  isHard: 0
   skybox: {fileID: 0}
   filas:
   - cuadros:
+    - index: 0
+      tipo: 1
+      hp: 2
+  - cuadros:
+    - index: 2
+      tipo: 1
+      hp: 2
+    - index: 3
+      tipo: 1
+      hp: 2
+  - cuadros:
+    - index: 4
+      tipo: 1
+      hp: 2
+  - cuadros:
+    - index: 3
+      tipo: 1
+      hp: 1
+  - cuadros:
     - index: 1
-      tipo: 2
+      tipo: 1
       hp: 3
-    - index: 2
-      tipo: 1
-      hp: 2
-  - cuadros:
-    - index: 2
-      tipo: 2
-      hp: 1
-  - cuadros:
-    - index: 1
-      tipo: 3
-      hp: 2
-    - index: 0
-      tipo: 1
-      hp: 2
-    - index: 2
-      tipo: 2
-      hp: 1
-    - index: 4
-      tipo: 1
-      hp: 2
-  - cuadros:
-    - index: 1
-      tipo: 3
-      hp: 1
-    - index: 2
-      tipo: 2
-      hp: 1
-    - index: 4
-      tipo: 1
-      hp: 1
     - index: 3
-      tipo: 2
-      hp: 1
-  - cuadros:
-    - index: 0
-      tipo: 3
-      hp: 2
-    - index: 3
-      tipo: 2
-      hp: 1
-  - cuadros:
-    - index: 2
-      tipo: 2
-      hp: 2
-    - index: 0
-      tipo: 2
-      hp: 2
-  - cuadros:
-    - index: 2
-      tipo: 2
-      hp: 2
-    - index: 0
-      tipo: 3
-      hp: 1
-  - cuadros:
-    - index: 1
-      tipo: 2
+      tipo: 1
       hp: 3
+  - cuadros:
     - index: 0
+      tipo: 1
+      hp: 2
+    - index: 2
+      tipo: 2
+      hp: 1
+    - index: 3
+      tipo: 3
+      hp: 2
+  - cuadros:
+    - index: 4
+      tipo: 1
+      hp: 2
+    - index: 1
+      tipo: 3
+      hp: 2
+  - cuadros:
+    - index: 4
+      tipo: 1
+      hp: 1
+  - cuadros:
+    - index: 3
+      tipo: 1
+      hp: 5
+  - cuadros:
+    - index: 2
+      tipo: 1
+      hp: 6
+    - index: 0
+      tipo: 3
+      hp: 2
+  - cuadros:
+    - index: 0
+      tipo: 1
+      hp: 1
+    - index: 1
+      tipo: 1
+      hp: 7
+  - cuadros:
+    - index: 3
+      tipo: 1
+      hp: 7
+  - cuadros:
+    - index: 2
+      tipo: 1
+      hp: 8
+  - cuadros:
+    - index: 4
+      tipo: 1
+      hp: 2
+    - index: 3
+      tipo: 2
+      hp: 6
+    - index: 1
+      tipo: 1
+      hp: 1
+    - index: 0
+      tipo: 3
+      hp: 2
+  - cuadros:
+    - index: 1
+      tipo: 1
+      hp: 5
+    - index: 0
+      tipo: 1
+      hp: 4
+    - index: 2
+      tipo: 2
+      hp: 2
+  - cuadros:
+    - index: 3
+      tipo: 1
+      hp: 7
+    - index: 0
+      tipo: 2
+      hp: 2
+  - cuadros:
+    - index: 0
+      tipo: 1
+      hp: 10
+    - index: 3
       tipo: 3
       hp: 2
     - index: 4
       tipo: 2
-      hp: 2
-    - index: 3
-      tipo: 2
       hp: 1
+  - cuadros:
     - index: 2
       tipo: 1
-      hp: 2
+      hp: 10
+    - index: 4
+      tipo: 3
+      hp: 1
   - cuadros:
     - index: 4
       tipo: 4
-      hp: 2
-    - index: 3
-      tipo: 3
-      hp: 1
-    - index: 0
-      tipo: 3
-      hp: 1
+      hp: 10
     - index: 1
       tipo: 1
       hp: 1
