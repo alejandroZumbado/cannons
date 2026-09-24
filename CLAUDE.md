@@ -22,7 +22,8 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) — see "AI-generated levels pipeline" below.
 - `Levels > Level Grid Editor` (`LevelGridEditor.cs`) — `EditorWindow` for browsing/editing any `Level` in `LevelDatabase` (release levels only; reserve levels aren't listed) as a visual 5-column grid (search by number/password, add/remove rounds and pirates per column, edit HP/tipo/password/isHard inline). Edits apply to the loaded asset immediately but only reach disk on "Guardar cambios" (`AssetDatabase.SaveAssets`) — no undo/discard button, revert via git if already saved.
 - `Levels > Validate Release` (`ReleaseValidator.cs`) — checks the release (null refs, duplicate `levelNumber`, level data ranges, rounds without pirates) and ALL level assets (globally unique `levelNumber` and password). Runs automatically after an import; headless: `-executeMethod ReleaseValidator.RunHeadless` (exit 1 on errors).
-- `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`, `MaxLevelId`).
+- `Dev > Clear PlayerPrefs` (`DevTools.cs`) — resets save progress (`MaxLevel`, `MaxLevelId`) and the saved volume (`MasterVolume`).
+- `Dev > Setup Pause Volume Panel` (`PauseOptionsSetup.cs`) — builds the pause menu's "Opciones" overlay in `Game` (master-volume slider + "Cerrar") and assigns `PauseUI.optionsPanel`. Idempotent (no-op if already assigned). Already run 2026-09-24; only needed again if the panel is deleted.
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
 - `Dev > Build Windows` / `Dev > Build Android APK` (`PlatformBuilds.cs`) — output to `E:\Users\Alejandro\Opal\Builds\Cannons Windows\Cannons.exe` and `...\Cannons Android\Cannons.apk` (debug-signed: for testing, not Play Store). Every build runs `ReleaseValidator` first and refuses to build on level errors. Headless (no Editor open): `Unity.exe -batchmode -quit -projectPath <Cannons> -buildTarget Win64|Android|WebGL -executeMethod PlatformBuilds.BuildWindows|BuildAndroid|BuildWebGL` — exits 1 on failure. Run one at a time (the three chained ran the 16 GB machine out of memory).
@@ -31,9 +32,21 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 
 A separate project (CannonsLevelGen) plays this game headless, learns which level shapes are winnable/fun, and pushes generated levels as JSON into `GeneratedLevels/incoming/` at the repo root (outside `Assets/` on purpose, so raw AI output never enters the asset database until reviewed — each drop lands as a reviewable git commit).
 
-- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) parses each `*.json` in `GeneratedLevels/incoming/`, creates a `Level_###_generated.asset` in `Assets/Levels/`, then moves the source file to `GeneratedLevels/processed/`. A level already in `LevelDatabase` (matched by `levelNumber`) is replaced in place; a new one is **not** added — it stays in the reserve pool until curation assigns it a position (see "Release curation" below). Import is a manual, explicit step — a human should eyeball each AI-generated level before it becomes part of the real game.
+- `Levels > Import Generated Levels (JSON)` (`LevelImporter.cs`) parses each `*.json` in `GeneratedLevels/incoming/`, creates a `Level_###_generated.asset` in `Assets/Levels/`, then moves the source file to `GeneratedLevels/processed/` (gitignored). Drops reviewed and NOT imported go to `GeneratedLevels/rejected/` (tracked, with the reason in its README) — CannonsLevelGen's `level_registry` scans it so their number/password/shape are never reused. A level already in `LevelDatabase` (matched by `levelNumber`) is replaced in place; a new one is **not** added — it stays in the reserve pool until curation assigns it a position (see "Release curation" below). Import is a manual, explicit step — a human should eyeball each AI-generated level before it becomes part of the real game.
 - An `[InitializeOnLoad]` hook in the same file logs a `Debug.LogWarning` on every Editor load/recompile when `GeneratedLevels/incoming/` has pending files, since without it new drops were easy to forget entirely.
 - JSON shape: `{ levelNumber, password, isHard, filas: [{ cuadros: [{ index, tipo, hp }] }] }` — mirrors `Level`/`Fila`/`Cuadro` directly (see "Level data model" above).
+
+## Whole-campaign regulation (since 2026-09-24)
+
+The curated-200 release below is being REPLACED: CannonsLevelGen's
+`level_regulation.yml` reworks all 509 levels (repairs broken/empty ones,
+restores late-level pressure, balances archetypes), pushes the edited assets
+here, then rebuilds `LevelDatabase` with EVERY winnable level in arcs
+(`curate_release --rebuild-all`). Allowed only because the game isn't
+published yet — after release, positions must never move again (append-only,
+as described below). Commits from it are `[bot] Regulate levels ...` /
+`[bot] Regulated campaign ...`. Level 508 gets its asset created by the bot
+(`Level_508_generated.asset` + script-written .meta).
 
 ## Release curation (since 2026-09-22)
 
@@ -46,7 +59,7 @@ A separate project (CannonsLevelGen) plays this game headless, learns which leve
 ### Adding a batch of levels (e.g. +100)
 
 Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); close the Unity Editor for the headless steps.
-1. **Get levels** into `GeneratedLevels/incoming/`: `python -m production.batch_generator --count 100` — local and free (no LLM): procedural candidates, each verified by the champion policy/solver, reskins rejected, unique passwords, difficulty skewed harder than the first release; ~15-25 min for 100. The daily LLM bot also drops 1/day there. Hand-made levels: create the asset in `Assets/Levels/` with a unique `levelNumber`/password.
+1. **Get levels** into `GeneratedLevels/incoming/`: `python -m production.batch_generator --count 100` — local and free (no LLM): procedural candidates, each verified by the champion policy/solver, reskins rejected, pacing/variety gate (`verification/pacing.py`: pressure must keep up with the player's growing cannon count, <=50% single-pirate rounds, <=12 rounds; archetype mix capped), unique passwords, difficulty skewed harder than the first release; ~15-25 min for 100. The daily LLM bot also drops 1/day there. Hand-made levels: create the asset in `Assets/Levels/` with a unique `levelNumber`/password.
 2. **Import**: Unity `Levels > Import Generated Levels (JSON)` (or headless `-executeMethod LevelImporter.ImportGeneratedLevels`). New levels become reserve assets; the validator runs automatically.
 3. **Link**: `python -m verification.extend_release --count 100 --dry-run` to see the plan, then again without `--dry-run`. It refreshes the audit if needed (~10 min), appends the levels in difficulty arcs, rewrites `LevelDatabase.asset`, and runs the Unity validator. Fails explicitly if the ready pool can't fill the batch (`--allow-fewer` takes what's there).
 4. **Play-test** the new positions, then commit both repos.
@@ -126,12 +139,12 @@ These aren't enforced in code — they're invariants a hand-authored or generate
 - **Blocking**: two pirates in the same column on consecutive rows (N and N+1) — the row-N pirate blocks shots meant for row N+1. If row N has HP `h`, row N+1 effectively only receives `4-h` shots.
 - Merge budget: with `N` rows (rounds) in a level, at most `N - 5` merges are possible (1 round is needed per base column).
 - Passwords: 1 uppercase letter + 4 digits (e.g. `B2341`); compared case-sensitively against the input after `.ToUpper()`.
-- `isHard` should be true only for the two hardest tiers (columns fully active, HP4, 2+ forced merges, zero margin for error).
+- `isHard` (hard-level music only) = the **peak** of each curated arc, nothing else (since 2026-09-24; 18 in the 200-level release). Set automatically by CannonsLevelGen `verification/apply_release_order.py` from `release_order.json` roles — don't hand-edit it on release levels, it gets overwritten.
 
 ## Build configuration (PC + Android)
 
 - Canvas Scaler on both `Menu` and `Game`: **Scale With Screen Size**, reference **1920×1080**, Match Width Or Height, **Match = 1**.
 - Studio/brand: `companyName` **Drixwave**, Android package **`com.drixwave.cannons`**, version **1.0.0** (Android `bundleVersionCode` 1) — set 2026-09-23 before any public release. Don't change `companyName`/package after publishing: the package is permanent on Play Store, and `companyName` is part of where PlayerPrefs (the save) live, so changing it wipes players' progress. Drixwave is the user's studio name for Cannons only — don't apply it to other projects without asking.
-- Android Player Settings: min API **25** in the project (since 2026-01; `Dev > Setup Android` still sets 23 — unresolved), target API **34**, **IL2CPP**, **ARM64**, landscape-left orientation.
+- Android Player Settings: min API **25** in the project (`Dev > Setup Android` sets/checks 25 since 2026-09-24), target API **34**, **IL2CPP**, **ARM64**, landscape-left orientation.
 - Two separate Build Profiles (Menu=0, Game=1 in both): one targeting Windows/Mac/Linux, one targeting Android.
-- Distribution: `.apk` for direct testing, `.aab` + signed keystore for Play Store.
+- Distribution: `.apk` for direct testing, `.aab` + signed keystore for Play Store: `Dev > Build Android AAB (Play Store)` / `-executeMethod PlatformBuilds.BuildAndroidAab` → `...\Cannons Android\Cannons.aab`. Signing comes ONLY from env vars `CANNONS_KEYSTORE_PATH`, `CANNONS_KEYSTORE_PASS`, `CANNONS_KEY_ALIAS`, `CANNONS_KEY_PASS` (build refuses if any is missing; settings are restored afterwards so nothing lands in ProjectSettings). `*.keystore`/`*.jks` are gitignored — keep the keystore outside the repo and backed up (losing it = can't update the Play Store app). Bump `bundleVersionCode` on every upload.
