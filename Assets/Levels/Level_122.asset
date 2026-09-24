@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level
   levelNumber: 122
   password: X2731
-  isHard: 0
+  isHard: 1
   skybox: {fileID: 0}
   filas:
   - cuadros:
