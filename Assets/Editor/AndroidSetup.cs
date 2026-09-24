@@ -25,7 +25,7 @@ public static class AndroidSetup
         Check(ref ok, ref fail, $"Package = {PackageName}",   PlayerSettings.GetApplicationIdentifier(BuildTargetGroup.Android) == PackageName);
         Check(ref ok, ref fail, "Backend = IL2CPP",            PlayerSettings.GetScriptingBackend(BuildTargetGroup.Android) == ScriptingImplementation.IL2CPP);
         Check(ref ok, ref fail, "Arquitectura = ARM64",        PlayerSettings.Android.targetArchitectures == AndroidArchitecture.ARM64);
-        Check(ref ok, ref fail, "Min API = 23",                (int)PlayerSettings.Android.minSdkVersion    == 23);
+        Check(ref ok, ref fail, "Min API = 25",                (int)PlayerSettings.Android.minSdkVersion    == 25);
         Check(ref ok, ref fail, "Target API = 34",             (int)PlayerSettings.Android.targetSdkVersion == 34);
 
         CheckCanvasScalersInScene(SceneGame, ref ok, ref fail);
@@ -94,7 +94,7 @@ public static class AndroidSetup
             $"- Package: {PackageName}\n"        +
             $"- Backend: IL2CPP\n"               +
             $"- Arquitectura: ARM64\n"           +
-            $"- API Min: 23 / Target: 34\n"      +
+            $"- API Min: 25 / Target: 34\n"      +
             $"- Input Handling: Both\n"          +
             $"- Canvas Scaler en Game y Menu\n\n"+
             $"Al terminar se abre la escena Game.\nContinuar?",
@@ -122,7 +122,7 @@ public static class AndroidSetup
         PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, PackageName);
         PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
-        PlayerSettings.Android.minSdkVersion       = (AndroidSdkVersions)23;
+        PlayerSettings.Android.minSdkVersion       = (AndroidSdkVersions)25; // 25 = valor real del proyecto desde 2026-01 (antes forzaba 23)
         PlayerSettings.Android.targetSdkVersion    = (AndroidSdkVersions)34;
 
         AssetDatabase.SaveAssets();

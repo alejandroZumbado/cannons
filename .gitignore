@@ -88,3 +88,7 @@ Assets/Resources.meta
 
 # Local session entry point (see global CLAUDE.md "PROJECT INIT") - never pushed.
 INIT.md
+
+# Play Store signing keys: never commit (see PlatformBuilds.BuildAndroidAab)
+*.keystore
+*.jks
