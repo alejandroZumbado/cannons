@@ -23,6 +23,26 @@ SIZE_LIMIT=$((95 * 1024 * 1024))
   exit 1
 }
 
+# Release gate (CannonsLevelGen verification/release_gate.py): replays every
+# release level and checks the batch-of-100 rule before anything goes live.
+# BLOCK (broken levels, moved saves after publishing) always stops the deploy;
+# HOLD (e.g. not a multiple of 100 new levels) stops it unless ALLOW_HOLD=1.
+LEVELGEN_REPO="${LEVELGEN_REPO:-/e/Users/Alejandro/Opal/CannonsLevelGen}"
+set +e
+(cd "$LEVELGEN_REPO" && python -X utf8 -m verification.release_gate --no-live)
+gate_status=$?
+set -e
+if (( gate_status == 1 )); then
+  echo "error: release gate says BLOCK — see $LEVELGEN_REPO/reports/release_gate/latest.md" >&2
+  exit 1
+elif (( gate_status == 2 )) && [[ "${ALLOW_HOLD:-0}" != "1" ]]; then
+  echo "error: release gate says HOLD — see its report; rerun with ALLOW_HOLD=1 to deploy anyway" >&2
+  exit 1
+elif (( gate_status != 0 && gate_status != 2 )); then
+  echo "error: release gate crashed (exit $gate_status) — not deploying blind" >&2
+  exit 1
+fi
+
 cd "$BUILD_REPO"
 
 gh release view "$RELEASE_TAG" --repo alejandroZumbado/cannons-build >/dev/null 2>&1 || \
@@ -52,3 +72,5 @@ fi
 git commit -m "Rebuild WebGL - $(date -u '+%Y-%m-%d %H:%M UTC')"
 git push origin main
 echo "Published: https://alejandrozumbado.github.io/cannons-build/"
+# remember what is live now, so the next gate run measures new batches from here
+(cd "$LEVELGEN_REPO" && python -X utf8 -m verification.release_gate --snapshot-deployed)
