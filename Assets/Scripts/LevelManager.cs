@@ -19,8 +19,8 @@ public class LevelManager : MonoBehaviour
     // ID ya no está en el lanzamiento, se usa el índice (acotado al rango).
     // Índice == Count significa "campaña completa": cuando se agregan niveles
     // nuevos al final, ese mismo índice pasa a ser el primer nivel nuevo.
-    private const string MaxLevelKey = "MaxLevel";
-    private const string MaxLevelIdKey = "MaxLevelId";
+    private const string MaxLevelKey = GameStorage.MaxLevelKey;
+    private const string MaxLevelIdKey = GameStorage.MaxLevelIdKey;
     private const int NoLevelId = -1;
 
     void Awake()
@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
     public int GetMaxLevelIndex()
     {
         // 1) por ID estable, si sigue existiendo en el lanzamiento
-        int savedId = PlayerPrefs.GetInt(MaxLevelIdKey, NoLevelId);
+        int savedId = GameStorage.GetInt(MaxLevelIdKey, NoLevelId);
         if (savedId != NoLevelId)
         {
             int byId = FindIndexByLevelNumber(savedId);
@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour
 
         // 2) por índice (partidas viejas sin ID, campaña completa, o nivel
         // sacado del lanzamiento); se acota para no apuntar fuera del array
-        return Mathf.Clamp(PlayerPrefs.GetInt(MaxLevelKey, 0), 0, DatabaseCount);
+        return Mathf.Clamp(GameStorage.GetInt(MaxLevelKey, 0), 0, DatabaseCount);
     }
 
     // índice jugable para "Continuar": si la campaña está completa, el último
@@ -157,9 +157,9 @@ public class LevelManager : MonoBehaviour
     void SaveMaxLevel(int index)
     {
         Level level = database != null ? database.Get(index) : null;
-        PlayerPrefs.SetInt(MaxLevelKey, index);
-        PlayerPrefs.SetInt(MaxLevelIdKey, level != null ? level.levelNumber : NoLevelId);
-        PlayerPrefs.Save();
+        GameStorage.SetInt(MaxLevelKey, index);
+        GameStorage.SetInt(MaxLevelIdKey, level != null ? level.levelNumber : NoLevelId);
+        GameStorage.Save();
     }
 
     int FindIndexByLevelNumber(int levelNumber)

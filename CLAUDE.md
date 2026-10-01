@@ -26,6 +26,7 @@ This is a Unity project, not a CLI-buildable one — there is no `npm`/`make`/te
 - `Dev > Setup Pause Volume Panel` (`PauseOptionsSetup.cs`) — builds the pause menu's "Opciones" overlay in `Game` (master-volume slider + "Cerrar") and assigns `PauseUI.optionsPanel`. Idempotent (no-op if already assigned). Already run 2026-09-24; only needed again if the panel is deleted.
 - `Dev > Verify Android` / `Dev > Setup Android` (`AndroidSetup.cs`) — checks/applies Android player settings.
 - `Dev > Build WebGL` (`WebGLBuildScript.cs`) — see "WebGL build & deploy" below.
+- `Dev > Optimize Web Size` (`WebSizeOptimizer.cs`, since 2026-09-30) — idempotent: crunch (WebGL+Android, max 2048) on every texture the build scenes use, mesh compression Medium on their models, splash off. Headless: `-executeMethod WebSizeOptimizer.RunHeadless`. Already run 2026-09-30. Why: WebGL was ~53 MB (CrazyGames max 50 MB, 20 MB for its mobile home; Poki aims ~8 MB). Also that day: music Vorbis quality 0.4, unused Sentis package (`com.unity.ai.inference`) removed, Makaka welcome icons moved to an `Editor/Resources` folder, 3 UI sprites resized to multiples of 4 (DXT/crunch need it). Sprites must stay multiple-of-4 or they ship uncompressed.
 - `Dev > Build Windows` / `Dev > Build Android APK` (`PlatformBuilds.cs`) — output to `E:\Users\Alejandro\Opal\Builds\Cannons Windows\Cannons.exe` and `...\Cannons Android\Cannons.apk` (debug-signed: for testing, not Play Store). Every build runs `ReleaseValidator` first and refuses to build on level errors. Headless (no Editor open): `Unity.exe -batchmode -quit -projectPath <Cannons> -buildTarget Win64|Android|WebGL -executeMethod PlatformBuilds.BuildWindows|BuildAndroid|BuildWebGL` — exits 1 on failure. Run one at a time (the three chained ran the 16 GB machine out of memory).
 
 ## AI-generated levels pipeline (`GeneratedLevels/`)
@@ -50,6 +51,8 @@ as described below). Commits from it are `[bot] Regulate levels ...` /
 
 ## Release curation (since 2026-09-22)
 
+**Since 2026-09-30:** the release is **500 levels** (45 arcs), rebuilt with a quality gate (`curate_release`): arc bodies/peaks must pass the pacing gate and have tension (manifest `tension` = audit `champion_max_position_reached` >= 1, i.e. a pirate got past the first row). Weak levels are only breathers; leftovers stay in reserve. `--rebuild-all` defaults to the largest multiple of 100 the pool fills (`--size N` to force). 80 short easy-but-tense levels (512-591) were generated for the start with `batch_generator --profile early`. Notes below about "200 levels" are history.
+
 `LevelDatabase.levels` holds **only the shipped release (200 levels), in curated difficulty order** — not all levels, not sorted by `levelNumber`. Order comes from CannonsLevelGen: `verification/curate_release.py` (picks from the manifest's `ready` pool, Candy-Crush-style arcs: breather → rising body → peak) writes `reports/release_order.json`; `verification/apply_release_order.py` rewrites the `levels:` list of `LevelDatabase.asset`.
 
 - `levelNumber` is now only a stable internal ID (audit/manifest/importer key on it). The player sees the **position** (`LevelManager.CurrentLevelPosition` = index + 1).
@@ -59,7 +62,7 @@ as described below). Commits from it are `[bot] Regulate levels ...` /
 ### Adding a batch of levels (e.g. +100)
 
 Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); close the Unity Editor for the headless steps.
-1. **Get levels** into `GeneratedLevels/incoming/`: `python -m production.batch_generator --count 100` — local and free (no LLM): procedural candidates, each verified by the champion policy/solver, reskins rejected, pacing/variety gate (`verification/pacing.py`: pressure must keep up with the player's growing cannon count, <=50% single-pirate rounds, <=12 rounds; archetype mix capped), unique passwords, difficulty skewed harder than the first release; ~15-25 min for 100. The daily LLM bot also drops 1/day there. Hand-made levels: create the asset in `Assets/Levels/` with a unique `levelNumber`/password.
+1. **Get levels** into `GeneratedLevels/incoming/`: `python -m production.batch_generator --count 100` — local and free (no LLM): procedural candidates, each verified by the champion policy/solver, reskins rejected, pacing/variety gate (`verification/pacing.py`: pressure must keep up with the player's growing cannon count, <=50% single-pirate rounds, <=12 rounds; archetype mix capped), unique passwords, difficulty skewed harder than the first release; ~15-25 min for 100. `--profile early` = short easy-but-tense levels for the campaign start (4-7 rounds, HP 1-2, some with one HP-4 pirate to teach merging, must threaten the player). The daily LLM bot also drops 1/day there. Hand-made levels: create the asset in `Assets/Levels/` with a unique `levelNumber`/password.
 2. **Import**: Unity `Levels > Import Generated Levels (JSON)` (or headless `-executeMethod LevelImporter.ImportGeneratedLevels`). New levels become reserve assets; the validator runs automatically.
 3. **Link**: `python -m verification.extend_release --count 100 --dry-run` to see the plan, then again without `--dry-run`. It refreshes the audit if needed (~10 min), appends the levels in difficulty arcs, rewrites `LevelDatabase.asset`, and runs the Unity validator. Fails explicitly if the ready pool can't fill the batch (`--allow-fewer` takes what's there).
 4. **Play-test** the new positions, then commit both repos.
@@ -70,6 +73,12 @@ Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); clo
 - Index `== Count` = campaign complete: "Continuar" shows "Completado", `WinUI` shows `comingSoonText`. When a batch is appended, that same index becomes the first new level, so finished players continue straight into it.
 - `WinUI` "Siguiente" = `PlayNext()` (level after the one just played), not the max — replaying an old level no longer jumps to the frontier.
 - Passwords: `TryPassword` trims + upper-cases both sides, skips null entries, unlocks up to that level. Only release levels' passwords work.
+- All saves go through `GameStorage` (`Assets/Scripts/Portal/`): PlayerPrefs, or CrazyGames' Data module when built with define `CRAZYGAMES_SDK` (keys listed there; `MigrateLocalProgress` copies old local progress once). Don't call PlayerPrefs directly in game code.
+
+## Portal SDK & tutorial (since 2026-09-30)
+
+- `PortalSdk` (`Assets/Scripts/Portal/`): `Init`, `GameplayStart/Stop` (level start/resume vs win/lose/pause), `HappyTime`. No-op unless `CRAZYGAMES_SDK` is defined. The CrazyGames SDK package is **not imported** on purpose: its SiteLock freezes the game on any non-CrazyGames domain (GitHub Pages included) and `CrazySDK.Init` throws outside WebGL/Editor. Import it (`https://sdk.crazygames.com/UnityCrazySDK.unitypackage`) + define the symbol only for the CrazyGames build. The `#if CRAZYGAMES_SDK` branches have never been compiled yet.
+- `TutorialHints` (added by `GameManager.Start`, builds its own overlay UI, no scene objects): drag hint at position 1 until 2 cannons are placed; merge hint the first time a level has an HP>=4 pirate (shown while one with HP>=3 is alive and a cannon is placed), remembered in `TutMergeSeen` once the player merges.
 
 ## WebGL build & deploy
 
@@ -140,7 +149,7 @@ These aren't enforced in code — they're invariants a hand-authored or generate
 - **Blocking**: two pirates in the same column on consecutive rows (N and N+1) — the row-N pirate blocks shots meant for row N+1. If row N has HP `h`, row N+1 effectively only receives `4-h` shots.
 - Merge budget: with `N` rows (rounds) in a level, at most `N - 5` merges are possible (1 round is needed per base column).
 - Passwords: 1 uppercase letter + 4 digits (e.g. `B2341`); compared case-sensitively against the input after `.ToUpper()`.
-- `isHard` (hard-level music only) = the **peak** of each curated arc, nothing else (since 2026-09-24; 18 in the 200-level release). Set automatically by CannonsLevelGen `verification/apply_release_order.py` from `release_order.json` roles — don't hand-edit it on release levels, it gets overwritten.
+- `isHard` (hard-level music only) = the **peak** of each curated arc, nothing else (since 2026-09-24; 45 in the 500-level release). Set automatically by CannonsLevelGen `verification/apply_release_order.py` from `release_order.json` roles — don't hand-edit it on release levels, it gets overwritten.
 
 ## Build configuration (PC + Android)
 

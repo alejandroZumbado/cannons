@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int round = 0;
     public bool canDrag = false;
     private ReceiptCannon[] slots;
+    public IReadOnlyList<ReceiptCannon> Slots => slots; // solo lectura, lo usa TutorialHints
     void Start()
     {
         _level = LevelManager.Instance != null
@@ -31,8 +32,11 @@ public class GameManager : MonoBehaviour
         spawnPirate = GetComponent<PirateSpawnManager>();
         spawnPirate.SetMatriz(matriz);
         slots = FindObjectsByType<ReceiptCannon>(FindObjectsSortMode.None);
+        int position = LevelManager.Instance != null ? LevelManager.Instance.CurrentLevelPosition : 0;
+        gameObject.AddComponent<TutorialHints>().Init(this, _level, position); // se apaga solo si no hay nada que enseñar
         nextRound();
         GameFlow1();
+        PortalSdk.GameplayStart(); // portal: empieza el juego real (mide la carga hasta acá)
         if (_level != null && _level.isHard)
             AudioManager.PlayHardLvl();
         else
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
         _gameEnded = true;
         canDrag = false;
         LevelManager.Instance?.LevelCompleted();
+        PortalSdk.GameplayStop();
         AudioManager.PlayWinLvl();
         Invoke(nameof(ShowWinDelayed), 1.5f);
     }
@@ -97,6 +102,7 @@ public class GameManager : MonoBehaviour
         _gameEnded = true;
         canDrag = false;
         AudioManager.PlayLoseLvl();
+        PortalSdk.GameplayStop();
         Invoke(nameof(ShowGameOverDelayed), 1.5f);
     }
 

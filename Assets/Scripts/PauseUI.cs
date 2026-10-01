@@ -22,6 +22,7 @@ public class PauseUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+        PortalSdk.GameplayStop(); // portal: pausa = corte de juego
         if (gameManager != null)
         {
             _dragBeforePause = gameManager.canDrag;
@@ -34,7 +35,10 @@ public class PauseUI : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         if (gameManager != null && !gameManager.GameEnded)
+        {
             gameManager.canDrag = _dragBeforePause;
+            PortalSdk.GameplayStart(); // portal: retoma el juego
+        }
     }
 
     public void OnResumePressed() => Hide();

@@ -11,8 +11,20 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         passwordFeedback.text = "";
+        RefreshContinueText();
+        // con portal, el progreso puede venir de la cuenta del jugador: se refresca al terminar el init
+        PortalSdk.Init(OnPortalReady);
+    }
 
-        if (LevelManager.Instance != null)
+    void OnPortalReady()
+    {
+        RefreshContinueText();
+        AudioListener.volume = VolumeSettings.Master; // el volumen guardado en la cuenta también
+    }
+
+    void RefreshContinueText()
+    {
+        if (this != null && LevelManager.Instance != null) // this: el menú pudo destruirse antes del callback
             continueButtonText.text = LevelManager.Instance.ContinueButtonText();
     }
 
@@ -24,6 +36,8 @@ public class MainMenu : MonoBehaviour
             Debug.LogError("[MainMenu] No hay LevelManager en la escena.");
             return;
         }
+        // sin esto se podría cargar el nivel del guardado local antes de leer el del portal
+        if (!PortalSdk.Ready) return;
         LevelManager.Instance.PlayCurrent();
     }
 

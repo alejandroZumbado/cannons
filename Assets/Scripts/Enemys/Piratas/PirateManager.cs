@@ -59,6 +59,8 @@ public class PirateManager : MonoBehaviour
     }
     public void SetManager(GameManager newManager) => manager = newManager;
 
+    public int Hp => hp; // solo lectura, lo usa TutorialHints
+
     public void SetPositionPirate(Transform center)
     {
         transform.position = center.position;
