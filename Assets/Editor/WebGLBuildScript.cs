@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -29,6 +30,17 @@ public static class WebGLBuildScript
             Debug.Log("[Build WebGL] Decompression Fallback: OFF -> ON (required to host on GitHub Pages)");
         }
 
+        // Archivos con hash en el nombre (2026-10-01): con nombres fijos, un
+        // navegador que ya tenía el build anterior en caché (Pages: 10 min)
+        // mezclaba wasm viejo + data nuevo y crasheaba al arrancar
+        // ("memory access out of bounds"). Con hash cada build pide archivos nuevos.
+        if (!PlayerSettings.WebGL.nameFilesAsHashes)
+        {
+            PlayerSettings.WebGL.nameFilesAsHashes = true;
+            Debug.Log("[Build WebGL] Name Files As Hashes: OFF -> ON (no cache mixing between deploys)");
+        }
+        ClearOldBuildFiles();
+
         var scenes = new string[EditorBuildSettings.scenes.Length];
         for (int i = 0; i < scenes.Length; i++)
             scenes[i] = EditorBuildSettings.scenes[i].path;
@@ -49,5 +61,15 @@ public static class WebGLBuildScript
 
         Debug.Log($"[Build WebGL] OK — {report.summary.totalSize / (1024 * 1024)} MB in {report.summary.totalTime}. Output: {OutputPath}");
         return true;
+    }
+
+    // con nombres hash Unity no pisa los archivos viejos: se acumularían en el
+    // repo de deploy. Solo se borra Build/ (index.html y TemplateData se regeneran);
+    // es un clon git, así que cualquier borrado se recupera con git checkout.
+    static void ClearOldBuildFiles()
+    {
+        string buildDir = Path.Combine(OutputPath, "Build");
+        if (Directory.Exists(buildDir))
+            Directory.Delete(buildDir, true);
     }
 }
