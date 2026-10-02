@@ -174,10 +174,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  menu: {fileID: 0}
-  normalLvl: {fileID: 0}
-  hardLvl: {fileID: 0}
-  endLvl: {fileID: 0}
-  winLvl: {fileID: 0}
-  loseLvl: {fileID: 0}
-  bossLvl: {fileID: 0}

@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
             AudioManager.PlayHardLvl();
         else
             AudioManager.PlayNormalLvl();
+        AudioManager.PreloadLevelTracks(_level != null && _level.isHard); // la música se baja aparte: se adelantan las que vienen
     }
 
     public void nextRound()

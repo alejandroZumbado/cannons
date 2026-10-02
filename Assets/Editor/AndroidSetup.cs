@@ -9,6 +9,8 @@ using System.IO;
 public static class AndroidSetup
 {
     const string PackageName = "com.drixwave.cannons"; // estudio Drixwave (2026-09-23)
+    // Google Play exige target API 36 para apps nuevas desde 2026-08-31 (antes 34)
+    const int TargetApi = 36;
     const string SceneGame   = "Game";
     const string SceneMenu   = "Menu";
 
@@ -26,7 +28,7 @@ public static class AndroidSetup
         Check(ref ok, ref fail, "Backend = IL2CPP",            PlayerSettings.GetScriptingBackend(BuildTargetGroup.Android) == ScriptingImplementation.IL2CPP);
         Check(ref ok, ref fail, "Arquitectura = ARM64",        PlayerSettings.Android.targetArchitectures == AndroidArchitecture.ARM64);
         Check(ref ok, ref fail, "Min API = 25",                (int)PlayerSettings.Android.minSdkVersion    == 25);
-        Check(ref ok, ref fail, "Target API = 34",             (int)PlayerSettings.Android.targetSdkVersion == 34);
+        Check(ref ok, ref fail, $"Target API = {TargetApi}",    (int)PlayerSettings.Android.targetSdkVersion == TargetApi);
 
         CheckCanvasScalersInScene(SceneGame, ref ok, ref fail);
         CheckCanvasScalersInScene(SceneMenu, ref ok, ref fail);
@@ -123,7 +125,7 @@ public static class AndroidSetup
         PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
         PlayerSettings.Android.minSdkVersion       = (AndroidSdkVersions)25; // 25 = valor real del proyecto desde 2026-01 (antes forzaba 23)
-        PlayerSettings.Android.targetSdkVersion    = (AndroidSdkVersions)34;
+        PlayerSettings.Android.targetSdkVersion    = (AndroidSdkVersions)TargetApi;
 
         AssetDatabase.SaveAssets();
         Debug.Log("[AndroidSetup] Player Settings aplicados.");

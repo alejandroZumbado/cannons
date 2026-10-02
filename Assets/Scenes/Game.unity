@@ -4682,45 +4682,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 8300000, guid: 121a05926f33b6c468668ef1ced46669, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: endLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 0a50c79264b8a214e83c1371697c620f, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: winLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: f55176f7aca6ff247b410227b5c6a8f0, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: bossLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 3de2099a05d34254f992a49e3c872e6e, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: hardLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 06cbde7bc212a354e9b34eba19f89a77, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: loseLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: d7e1290704475b340b3448eb445dfacd, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: normalLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 9bb1a0a4898605f4bbf4f75a4d28d258, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1534485239148364249}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: hardFinalLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 07ec6238bd39495449e8e5a68c71d078, type: 3}
-    - target: {fileID: -1027762731464288287, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
-      propertyPath: normalFinalLvl
-      value: 
-      objectReference: {fileID: 8300000, guid: 50ba18c1328b8254dacc9083c1522b44, type: 3}
     - target: {fileID: 7040388767968738719, guid: e136037ba2e013d488c7d4a624a5c108, type: 3}
       propertyPath: m_Name
       value: AudioManager

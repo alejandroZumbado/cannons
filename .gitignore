@@ -92,3 +92,6 @@ INIT.md
 # Play Store signing keys: never commit (see PlatformBuilds.BuildAndroidAab)
 *.keystore
 *.jks
+
+# master de la intro (la versión liviana va en StreamingAssets/Intro)
+/drixwave_intro_*.mp4
