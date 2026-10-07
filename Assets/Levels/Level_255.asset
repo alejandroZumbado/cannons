@@ -44,11 +44,8 @@ MonoBehaviour:
   - cuadros:
     - index: 0
       tipo: 3
-      hp: 1
+      hp: 2
     - index: 1
-      tipo: 3
-      hp: 1
-    - index: 3
       tipo: 3
       hp: 1
   - cuadros:
@@ -57,6 +54,9 @@ MonoBehaviour:
       hp: 1
     - index: 4
       tipo: 1
+      hp: 1
+    - index: 3
+      tipo: 3
       hp: 1
   - cuadros:
     - index: 0
@@ -70,4 +70,4 @@ MonoBehaviour:
       hp: 1
     - index: 3
       tipo: 4
-      hp: 3
+      hp: 6

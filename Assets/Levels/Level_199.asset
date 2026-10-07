@@ -44,15 +44,17 @@ MonoBehaviour:
       hp: 3
     - index: 3
       tipo: 1
-      hp: 4
-  - cuadros:
-    - index: 1
-      tipo: 1
       hp: 2
+    - index: 0
+      tipo: 3
+      hp: 2
+  - cuadros:
     - index: 3
       tipo: 1
-      hp: 2
-  - cuadros:
+      hp: 1
     - index: 4
       tipo: 4
+      hp: 2
+    - index: 1
+      tipo: 1
       hp: 2

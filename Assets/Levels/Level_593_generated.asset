@@ -10,41 +10,59 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9f252442dff2f646b57aa8fdd902686, type: 3}
-  m_Name: Level_008
+  m_Name: Level_593_generated
   m_EditorClassIdentifier: Assembly-CSharp::Level
-  levelNumber: 8
-  password: H3327
+  levelNumber: 593
+  password: D5838
   isHard: 0
   skybox: {fileID: 0}
   filas:
   - cuadros:
-    - index: 4
-      tipo: 2
-      hp: 1
-    - index: 3
-      tipo: 1
-      hp: 2
-  - cuadros:
-    - index: 4
-      tipo: 3
-      hp: 1
     - index: 0
       tipo: 1
       hp: 2
   - cuadros:
-    - index: 4
+    - index: 1
       tipo: 2
-      hp: 1
+      hp: 2
+  - cuadros:
+    - index: 2
+      tipo: 1
+      hp: 2
+    - index: 3
+      tipo: 2
+      hp: 2
+  - cuadros:
+    - index: 4
+      tipo: 3
+      hp: 2
+    - index: 0
+      tipo: 1
+      hp: 2
+  - cuadros:
+    - index: 1
+      tipo: 2
+      hp: 2
+    - index: 2
+      tipo: 3
+      hp: 2
+  - cuadros:
+    - index: 0
+      tipo: 1
+      hp: 3
+    - index: 1
+      tipo: 2
+      hp: 3
+    - index: 2
+      tipo: 3
+      hp: 3
     - index: 3
       tipo: 1
       hp: 3
-  - cuadros:
     - index: 4
+      tipo: 2
+      hp: 3
+  - cuadros:
+    - index: 0
       tipo: 4
-      hp: 1
-    - index: 1
-      tipo: 3
-      hp: 1
-    - index: 3
-      tipo: 3
-      hp: 1
+      hp: 2
