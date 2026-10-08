@@ -18,12 +18,15 @@ MonoBehaviour:
   skybox: {fileID: 0}
   filas:
   - cuadros:
-    - index: 0
+    - index: 1
       tipo: 1
       hp: 1
   - cuadros:
     - index: 4
       tipo: 1
+      hp: 1
+    - index: 2
+      tipo: 2
       hp: 1
   - cuadros:
     - index: 2
@@ -31,8 +34,8 @@ MonoBehaviour:
       hp: 1
   - cuadros:
     - index: 4
-      tipo: 3
+      tipo: 4
       hp: 2
     - index: 2
-      tipo: 4
+      tipo: 1
       hp: 2
