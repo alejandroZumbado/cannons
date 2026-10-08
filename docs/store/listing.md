@@ -39,8 +39,9 @@ Every round you get a new cannon. Place it in the right column, move it when the
 - No ads, no sign-up, plays offline.
 
 ## Assets still needed (Play)
-- Icon 512x512 PNG (32-bit, no transparency issues).
-- Feature graphic 1024x500.
+- Icon 512x512: `graphics/icon_512.png` (from Assets/UI/iconApp.png, inner square — Play masks it itself).
+- Feature graphic 1024x500: `graphics/feature_1024x500.png` (menu art, right part — the left has leftover ghost text).
+  Both regenerable with PIL from Assets/UI (2026-10-08).
 - 2-8 phone screenshots, landscape (16:9, min 320 px side; 1920x1080 works).
 - Category: Strategy (or Puzzle). Content rating questionnaire: no violence beyond cartoon, no data collection.
 - Privacy policy URL: https://alejandrozumbado.github.io/cannons-build/privacy.html (after publishing docs/store/privacy.html there).
