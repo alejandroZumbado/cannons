@@ -89,3 +89,6 @@ MonoBehaviour:
     - index: 3
       tipo: 1
       hp: 5
+    - index: 4
+      tipo: 2
+      hp: 3

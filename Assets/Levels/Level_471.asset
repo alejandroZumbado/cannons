@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level
   levelNumber: 471
   password: Y2513
-  isHard: 1
+  isHard: 0
   skybox: {fileID: 0}
   filas:
   - cuadros:
@@ -30,9 +30,6 @@ MonoBehaviour:
       tipo: 1
       hp: 2
   - cuadros:
-    - index: 0
-      tipo: 2
-      hp: 1
     - index: 4
       tipo: 1
       hp: 1
@@ -41,6 +38,9 @@ MonoBehaviour:
       tipo: 1
       hp: 2
     - index: 3
+      tipo: 2
+      hp: 1
+    - index: 0
       tipo: 2
       hp: 1
   - cuadros:
@@ -73,10 +73,13 @@ MonoBehaviour:
   - cuadros:
     - index: 1
       tipo: 4
-      hp: 4
+      hp: 6
     - index: 3
       tipo: 2
       hp: 4
     - index: 4
       tipo: 1
       hp: 4
+    - index: 2
+      tipo: 1
+      hp: 3
