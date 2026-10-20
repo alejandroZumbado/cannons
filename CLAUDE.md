@@ -88,6 +88,16 @@ Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); clo
 - `IntroVideo` (since 2026-10-01, `Assets/Scripts/IntroVideo.cs`): Drixwave brand intro (`Assets/StreamingAssets/Intro/drixwave_intro.mp4`, 1280x720 H.264 baseline (Unity warns on main/B-frames for native playback) + AAC 96k, 8.5 s, 3.7 MB — re-encoded with ffmpeg crf 26 from the 7.3 MB master `drixwave_intro_piratas_v4.mp4`, kept untracked at the repo root) played full-screen once per launch over `Menu` (self-created via `RuntimeInitializeOnLoadMethod`, no scene objects). Played by URL from StreamingAssets (only mode WebGL supports; keeps it out of the web's initial download). Skippable by click/tap/key; auto-skips on error or if not prepared in 6 s. Muted on WebGL (browser autoplay blocks sound). The Unity splash is off (`m_ShowUnitySplashScreen: 0`, allowed on Unity 6 Personal).
 - **Music is not in the build** (since 2026-10-01): `AudioManager` loads tracks on demand from `Assets/StreamingAssets/Music/<track>.mp3` through `MusicLibrary` (static cache, max 4 clips in memory, warns and stays silent on failure). Why: music was ~47% of the WebGL initial download. Tracks are mono 64 kbps mp3 re-encoded from `Assets/Pirate Music Album - 050418/mp3 - 320kbps/` (menu=4 Through The Storm, normal=1 To The Sea, normal_final=6 Dark Sea, hard=10 Great Sails, hard_final=8 Monster Fight, win=9 Heroic Adventure, lose=7 Finding Path). To change a track: re-encode into that folder with the same name. Don't assign AudioClips to `AudioManager` again — any clip referenced by a scene goes back into the download.
 
+## Localization EN/ES (since 2026-10-20)
+
+CrazyGames requires English; the game ships English + Spanish (`Assets/Scripts/Localization/`).
+- `Loc`: one string table (key -> en, es). First language = system/browser language (Spanish -> ES, anything else -> EN); the player's choice is saved in `GameStorage` key `Language` (0 auto, 1 EN, 2 ES). `MainMenu.OnPortalReady` calls `Loc.Reload()` because with the portal the choice lives in the player's account.
+- Code-set texts use `Loc.T(key)` / `Loc.Format(key, args)`. Never hardcode a visible string.
+- Fixed scene/prefab texts are NOT edited in the scenes: `SceneTextLocalizer` (runtime, on every scene load) finds each `TMP_Text` whose content matches a table entry (either language, or `SceneAliases`) and adds a `LocalizedText`. A new scene text only needs its table entry.
+- `LanguageToggle` builds its own button (top-right) in `Menu`.
+- `Dev > Audit UI Texts` (`UiTextAudit.cs`, headless `-executeMethod UiTextAudit.RunHeadless`) writes `Logs/ui_texts.txt`: every TMP/legacy text and button of the build scenes (incl. inactive) plus where `WinUI`/`MainMenu`/`LvlDisplay` fields point. It found that `WinUI.comingSoonText` is the Next button's own label and `MainMenu.passwordFeedback` is the input field's inner text; both are now handled in code (copy label outside the button / own feedback label under the input).
+- The legacy `Settings` window in `Menu` (asset-pack demo: Gameplay/Video/Audio, Perma Death...) is inactive and unreachable — not translated on purpose.
+
 ## WebGL build & deploy
 
 WebGL is a third target (alongside PC/Android) used to publish quick playable builds, not part of the Build Profiles described above.

@@ -143,13 +143,13 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("Menu");
     }
 
-    // texto para el botón continuar: "Continuar - Nivel 5"
+    // texto para el botón continuar: "Continuar - Nivel 5" (en el idioma elegido, ver Loc)
     public string ContinueButtonText()
     {
-        if (DatabaseCount == 0) return "Jugar";
-        if (IsCampaignComplete) return $"Completado - Nivel {DatabaseCount}";
+        if (DatabaseCount == 0) return Loc.T("menu.play");
+        if (IsCampaignComplete) return Loc.Format("menu.completed", DatabaseCount);
         int max = GetMaxLevelIndex();
-        return max == 0 ? "Jugar" : $"Continuar - Nivel {max + 1}";
+        return max == 0 ? Loc.T("menu.play") : Loc.Format("menu.continue", max + 1);
     }
 
     // guarda índice + ID del nivel máximo y escribe a disco de inmediato

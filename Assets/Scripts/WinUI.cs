@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class WinUI : MonoBehaviour
@@ -8,7 +9,8 @@ public class WinUI : MonoBehaviour
     [SerializeField] private TMP_Text comingSoonText;
     [SerializeField] private GameObject btnPausar;
 
-    private const string CampaignCompleteMessage = "¡Completaste todos los niveles!\nPronto habrá más.";
+    // copia de comingSoonText fuera del botón (ver CampaignDoneLabel); se crea una sola vez
+    private TMP_Text campaignDoneLabel;
 
     void Awake() => gameObject.SetActive(false);
 
@@ -23,17 +25,52 @@ public class WinUI : MonoBehaviour
         if (nextLevelButton != null)
             nextLevelButton.SetActive(hasNext);
 
-        if (comingSoonText != null)
+        if (comingSoonText == null) return;
+        if (TextIsButtonLabel())
         {
-            comingSoonText.text = CampaignCompleteMessage;
-            comingSoonText.gameObject.SetActive(!hasNext);
-
-            // si el texto vive dentro del botón, al ocultar el botón también se
-            // oculta el texto; se avisa para moverlo en la escena
-            if (!hasNext && nextLevelButton != null &&
-                comingSoonText.transform.IsChildOf(nextLevelButton.transform))
-                Debug.LogWarning("[WinUI] comingSoonText es hijo de nextLevelButton y queda oculto — moverlo fuera del botón.");
+            // en la escena, comingSoonText es la etiqueta del propio botón "Siguiente"
+            // (encontrado 2026-10-20: antes se apagaba y el botón quedaba sin texto).
+            // La etiqueta se deja como está (la traduce SceneTextLocalizer) y el
+            // mensaje final va en una copia fuera del botón, que sí queda visible.
+            if (!hasNext) ShowMessage(CampaignDoneLabel());
         }
+        else
+        {
+            comingSoonText.gameObject.SetActive(!hasNext);
+            if (!hasNext) ShowMessage(comingSoonText);
+        }
+    }
+
+    bool TextIsButtonLabel() =>
+        nextLevelButton != null && comingSoonText.transform.IsChildOf(nextLevelButton.transform);
+
+    static void ShowMessage(TMP_Text label)
+    {
+        label.text = Loc.T("game.campaign_done");
+        label.gameObject.SetActive(true);
+    }
+
+    // copia la etiqueta (misma fuente y estilo) como hijo del panel, en el lugar del botón oculto
+    TMP_Text CampaignDoneLabel()
+    {
+        if (campaignDoneLabel != null) return campaignDoneLabel;
+
+        campaignDoneLabel = Instantiate(comingSoonText, transform);
+        campaignDoneLabel.name = "CampaignDoneText";
+        // la copia trae el LocalizedText del botón: lo quitaría y pondría "Siguiente nivel"
+        var localized = campaignDoneLabel.GetComponent<LocalizedText>();
+        if (localized != null) DestroyImmediate(localized);
+        // el panel puede ordenar sus hijos con un layout: el mensaje no debe correr los botones
+        campaignDoneLabel.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
+
+        RectTransform rect = campaignDoneLabel.rectTransform;
+        // la etiqueta venía estirada al tamaño del botón; con anclas al centro el tamaño es fijo
+        rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.position = nextLevelButton.transform.position;
+        rect.sizeDelta = new Vector2(900, 160); // dos líneas a lo ancho del panel
+        campaignDoneLabel.alignment = TextAlignmentOptions.Center;
+        campaignDoneLabel.enableAutoSizing = true;
+        return campaignDoneLabel;
     }
 
     public void OnNextLevelPressed()

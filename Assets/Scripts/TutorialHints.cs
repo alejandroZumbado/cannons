@@ -19,8 +19,9 @@ public class TutorialHints : MonoBehaviour
     const string MergeSeenKey = GameStorage.TutorialMergeSeenKey;
     const float PointerCycle = 1.4f;    // segundos de un recorrido de la flecha
 
-    const string DragText = "Arrastra el cañón del barril a una casilla del frente";
-    const string MergeText = "¡Pirata fuerte! Suelta un cañón sobre otro para fusionarlos: su daño se suma";
+    // claves de Loc: el texto se pide en cada Show, así sigue el idioma elegido
+    const string DragKey = "tutorial.drag";
+    const string MergeKey = "tutorial.merge";
 
     GameManager manager;
     bool teachDrag;
@@ -65,9 +66,9 @@ public class TutorialHints : MonoBehaviour
         }
 
         if (teachMerge && manager.cannons.Count >= 1 && StrongPirateOnBoard())
-            Show(MergeText, NearestSlot(occupied: true));
+            Show(Loc.T(MergeKey), NearestSlot(occupied: true));
         else if (teachDrag && manager.cannons.Count < MinCannonsTaught)
-            Show(DragText, NearestSlot(occupied: false));
+            Show(Loc.T(DragKey), NearestSlot(occupied: false));
         else
             Hide();
     }
