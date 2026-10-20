@@ -39,3 +39,6 @@ MonoBehaviour:
     - index: 2
       tipo: 4
       hp: 1
+    - index: 4
+      tipo: 3
+      hp: 1

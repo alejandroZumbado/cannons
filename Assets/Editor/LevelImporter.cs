@@ -95,6 +95,19 @@ public static class LevelImporter
                 continue;
             }
 
+            // choque de número (2026-10-18): el bot numera según lo pusheado, así
+            // que un asset local sin commitear con el mismo levelNumber es OTRO
+            // nivel. Importarlo lo pisaría (y si está en el lanzamiento, también
+            // su posición). Misma contraseña = re-import intencional de un fix.
+            Level existing = FindExistingLevel(json.levelNumber);
+            if (existing != null && !string.Equals(existing.password?.Trim(), json.password?.Trim(), StringComparison.OrdinalIgnoreCase))
+            {
+                Debug.LogError($"CHOQUE de número en {Path.GetFileName(file)}: el nivel {json.levelNumber} ya existe " +
+                               $"({AssetDatabase.GetAssetPath(existing)}, password {existing.password}) y el JSON trae " +
+                               $"password {json.password}. NO importado — renumerá el JSON (levelNumber + nombre de archivo) y reimportá.");
+                continue; // el archivo queda en incoming/ para renumerarlo
+            }
+
             Level level = ScriptableObject.CreateInstance<Level>();
             level.levelNumber = json.levelNumber;
             level.password = json.password;
@@ -154,6 +167,18 @@ public static class LevelImporter
             return -1;
         }
         return Array.FindIndex(db.levels, l => l != null && l.levelNumber == levelNumber);
+    }
+
+    // cualquier asset Level (lanzamiento o reserva, con cualquier nombre de
+    // archivo) que ya use este levelNumber, o null si está libre
+    static Level FindExistingLevel(int levelNumber)
+    {
+        foreach (string guid in AssetDatabase.FindAssets("t:Level", new[] { LevelsFolder }))
+        {
+            Level l = AssetDatabase.LoadAssetAtPath<Level>(AssetDatabase.GUIDToAssetPath(guid));
+            if (l != null && l.levelNumber == levelNumber) return l;
+        }
+        return null;
     }
 
     // apunta la posición `index` del lanzamiento al asset recién creado

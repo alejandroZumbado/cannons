@@ -49,10 +49,13 @@ MonoBehaviour:
     - index: 4
       tipo: 3
       hp: 2
+    - index: 2
+      tipo: 2
+      hp: 2
   - cuadros:
     - index: 1
       tipo: 3
-      hp: 3
+      hp: 5
   - cuadros:
     - index: 1
       tipo: 1
