@@ -12,6 +12,10 @@ public class WinUI : MonoBehaviour
     // copia de comingSoonText fuera del botón (ver CampaignDoneLabel); se crea una sola vez
     private TMP_Text campaignDoneLabel;
 
+    // título y contraseña del siguiente nivel, creados por código la primera vez (ver EndScreenText)
+    private TMP_Text title;
+    private TMP_Text passwordLine;
+
     void Awake() => gameObject.SetActive(false);
 
     public void Show()
@@ -24,6 +28,8 @@ public class WinUI : MonoBehaviour
 
         if (nextLevelButton != null)
             nextLevelButton.SetActive(hasNext);
+
+        ShowTexts();
 
         if (comingSoonText == null) return;
         if (TextIsButtonLabel())
@@ -39,6 +45,25 @@ public class WinUI : MonoBehaviour
             comingSoonText.gameObject.SetActive(!hasNext);
             if (!hasNext) ShowMessage(comingSoonText);
         }
+    }
+
+    // "¡Nivel 12 completado!" + la contraseña del siguiente (para retomar en otro dispositivo)
+    void ShowTexts()
+    {
+        if (title == null)
+        {
+            title = EndScreenText.AddLine(transform, "WinTitle", 80f, 90f, EndScreenText.TitleColor);
+            passwordLine = EndScreenText.AddLine(transform, "NextPassword", 200f, 48f, EndScreenText.DetailColor);
+        }
+
+        LevelManager levels = LevelManager.Instance;
+        int position = levels != null ? levels.CurrentLevelPosition : 0;
+        title.text = Loc.Format("game.win_title", position);
+
+        string password = levels != null ? levels.NextLevelPassword : null;
+        passwordLine.gameObject.SetActive(!string.IsNullOrEmpty(password));
+        if (!string.IsNullOrEmpty(password))
+            passwordLine.text = Loc.Format("game.next_password", password);
     }
 
     bool TextIsButtonLabel() =>

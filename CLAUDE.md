@@ -98,6 +98,16 @@ CrazyGames requires English; the game ships English + Spanish (`Assets/Scripts/L
 - `Dev > Audit UI Texts` (`UiTextAudit.cs`, headless `-executeMethod UiTextAudit.RunHeadless`) writes `Logs/ui_texts.txt`: every TMP/legacy text and button of the build scenes (incl. inactive) plus where `WinUI`/`MainMenu`/`LvlDisplay` fields point. It found that `WinUI.comingSoonText` is the Next button's own label and `MainMenu.passwordFeedback` is the input field's inner text; both are now handled in code (copy label outside the button / own feedback label under the input).
 - The legacy `Settings` window in `Menu` (asset-pack demo: Gameplay/Video/Audio, Perma Death...) is inactive and unreachable — not translated on purpose.
 
+## Game feel & navigation (since 2026-10-20)
+
+All built by code (no scene edits), same pattern as `TutorialHints`/`LanguageToggle`; shared UI helpers in `Assets/Scripts/UI/UiFactory.cs`.
+- **SFX** (`Assets/Scripts/Audio/Sfx.cs`): `Sfx.Play(SfxId.Shoot|Hit|Death|Place|Merge|Click)`. Clips are **synthesized placeholders** (`SfxSynth`) until a real file is dropped in `Assets/Resources/Sfx/<id lowercase>` (e.g. `shoot.wav`) — no code change needed. Same id within 50 ms plays once (a 5-cannon volley = one boom). `UiClickSounds` hooks every `Button` on scene load (+ `UiClickSounds.Hook` for code-built buttons). Follows master volume.
+- **Feedback**: `FloatingText.Spawn` (damage numbers "-N" on pirates, "xN" on merge; screen-space overlay), `PunchScale.Play` (merge pop).
+- **Tutorial "move"**: `TutorialHints` also teaches dragging a placed cannon, the first time a pirate is one advance from the front (`matriz.rows - 2`) in a column with an empty slot; arrow from the closest placed cannon. Seen flag `TutMoveSeen` set once the player moves a placed cannon (`GameManager.CannonMoves`).
+- **Esc / Android back** = pause (`PauseHotkey`, added by `GameManager.Start`; closes Options first via `PauseUI.HandleBack`). In Menu it closes the level selector.
+- **Win/Lose texts** (`EndScreenText`): win = "Level N complete!" + next level's password (`LevelManager.NextLevelPassword`); lose = title + random tip. Anchored top-center of the panel; font copied from the panel's buttons.
+- **Level selector** (`LevelSelectMenu`, Menu top-left "Levels"): 50 per page, unlocked up to `LevelManager.PlayableMaxIndex()`, the "Continue" level highlighted orange; waits for `PortalSdk.Ready`.
+
 ## WebGL build & deploy
 
 WebGL is a third target (alongside PC/Android) used to publish quick playable builds, not part of the Build Profiles described above.

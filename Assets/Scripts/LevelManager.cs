@@ -67,8 +67,20 @@ public class LevelManager : MonoBehaviour
         return Mathf.Clamp(GameStorage.GetInt(MaxLevelKey, 0), 0, DatabaseCount);
     }
 
-    // índice jugable para "Continuar": si la campaña está completa, el último
-    int PlayableMaxIndex() => Mathf.Clamp(GetMaxLevelIndex(), 0, Mathf.Max(DatabaseCount - 1, 0));
+    // índice jugable para "Continuar": si la campaña está completa, el último.
+    // También es el último nivel desbloqueado en el selector de niveles.
+    public int PlayableMaxIndex() => Mathf.Clamp(GetMaxLevelIndex(), 0, Mathf.Max(DatabaseCount - 1, 0));
+
+    // contraseña del nivel en esa posición (null si no hay nivel ahí)
+    public string PasswordAt(int index)
+    {
+        Level level = database != null ? database.Get(index) : null;
+        return level != null ? level.password : null;
+    }
+
+    // contraseña del nivel siguiente al que se juega: se muestra al ganar para
+    // que el jugador pueda volver a ese punto desde otro dispositivo
+    public string NextLevelPassword => HasNextLevel ? PasswordAt(_currentIndex + 1) : null;
 
     // carga el nivel donde el jugador quedó
     public void PlayCurrent() => LoadLevel(PlayableMaxIndex());

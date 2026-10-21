@@ -31,13 +31,19 @@ public class ReceiptCannon : MonoBehaviour
     {
         bool changed = cannon != newCannon;
 
+        bool merged = changed && cannon != null;
+
         if (changed)
         {
             // si newCannon ya estaba colocado en otro slot, ese slot queda vacio
+            // (y cuenta como "mover un cañón colocado", lo que enseña TutorialHints)
             if (newCannon.currentSlot != null)
+            {
                 newCannon.currentSlot.Clear();
+                newCannon.GetManager().RegisterCannonMove();
+            }
 
-            if (cannon != null) // merge: el cañon nuevo absorbe el daño del que ya estaba aqui
+            if (merged) // el cañon nuevo absorbe el daño del que ya estaba aqui
             {
                 newCannon.ShootUp(cannon.GetDamage());
                 newCannon.GetManager().RemoveCannonInTable(cannon);
@@ -50,6 +56,8 @@ public class ReceiptCannon : MonoBehaviour
         }
 
         newCannon.PlaceInSlot(this);
+        if (merged) newCannon.PlayMergeFeedback();
+        else if (changed) Sfx.Play(SfxId.Place);
         return changed;
     }
 }

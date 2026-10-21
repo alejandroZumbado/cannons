@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         slots = FindObjectsByType<ReceiptCannon>(FindObjectsSortMode.None);
         int position = LevelManager.Instance != null ? LevelManager.Instance.CurrentLevelPosition : 0;
         gameObject.AddComponent<TutorialHints>().Init(this, _level, position); // se apaga solo si no hay nada que enseñar
+        gameObject.AddComponent<PauseHotkey>().Init(this); // Esc / atrás de Android = pausa
         nextRound();
         GameFlow1();
         PortalSdk.GameplayStart(); // portal: empieza el juego real (mide la carga hasta acá)
@@ -150,6 +151,10 @@ public class GameManager : MonoBehaviour
             newCannon.ShowIcon();
         }
     }
+
+    // veces que el jugador movió un cañón ya colocado a otra casilla (lo usa TutorialHints)
+    public int CannonMoves { get; private set; }
+    public void RegisterCannonMove() => CannonMoves++;
 
     public void AddCannonInTable(CannonManagement cannon)
     {

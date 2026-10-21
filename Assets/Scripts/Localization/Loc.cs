@@ -38,11 +38,26 @@ public static class Loc
         ["game.volume"]           = ("Volume", "Volumen"),
         ["game.close"]            = ("Close", "Cerrar"),
         ["game.campaign_done"]    = ("You beat every level!\nMore coming soon.", "¡Completaste todos los niveles!\nPronto habrá más."),
+        ["game.win_title"]        = ("Level {0} complete!", "¡Nivel {0} completado!"),
+        ["game.next_password"]    = ("Next level password: {0}", "Contraseña del siguiente nivel: {0}"),
+        ["game.lose_title"]       = ("The pirates broke through!", "¡Los piratas pasaron!"),
+        // consejos al perder (se elige uno al azar)
+        ["game.tip.merge"]        = ("Tip: drop a cannon on another to merge them and add up their damage",
+                                     "Consejo: suelta un cañón sobre otro para fusionarlos y sumar su daño"),
+        ["game.tip.move"]         = ("Tip: placed cannons can be dragged to another column",
+                                     "Consejo: los cañones colocados se pueden arrastrar a otra columna"),
+        ["game.tip.block"]        = ("Tip: a cannon only hits the closest pirate in its column",
+                                     "Consejo: un cañón solo le pega al pirata más cercano de su columna"),
+        // selector de niveles
+        ["levels.button"]         = ("Levels", "Niveles"),
+        ["levels.title"]          = ("Choose a level", "Elige un nivel"),
         // tutorial
         ["tutorial.drag"]         = ("Drag the cannon from the barrel to a front slot",
                                      "Arrastra el cañón del barril a una casilla del frente"),
         ["tutorial.merge"]        = ("Strong pirate! Drop a cannon on another to merge them: their damage adds up",
                                      "¡Pirata fuerte! Suelta un cañón sobre otro para fusionarlos: su daño se suma"),
+        ["tutorial.move"]         = ("Danger! Placed cannons can be dragged to another column",
+                                     "¡Peligro! Los cañones colocados se pueden arrastrar a otra columna"),
     };
 
     // textos de escena que no son exactamente una entrada de la tabla -> su clave

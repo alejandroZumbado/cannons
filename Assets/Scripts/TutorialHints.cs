@@ -9,6 +9,10 @@ using UnityEngine.UI;
 //   menos de MinCannonsTaught cañones colocados.
 // - Fusión: la primera vez que un nivel trae un pirata de HP >= MergeHp
 //   (no se gana sin fusionar). Se marca vista (GameStorage) al fusionar.
+// - Mover (2026-10-20): hay niveles que solo se ganan arrastrando un cañón ya
+//   colocado a otra columna. La primera vez que un pirata está a un paso del
+//   frente en una columna sin cañón, la flecha va de un cañón colocado a esa
+//   columna. Se marca vista al mover un cañón colocado.
 // Se crea solo desde GameManager (AddComponent): no requiere objetos en la
 // escena. Todo es UI overlay sin raycast, así que no interfiere con los
 // OnMouse* del arrastre.
@@ -17,15 +21,18 @@ public class TutorialHints : MonoBehaviour
     const int MinCannonsTaught = 2;     // tras 2 colocaciones el arrastre ya se entendió
     const int MergeHp = 4;              // 3 disparos de daño 1 no alcanzan: hay que fusionar
     const string MergeSeenKey = GameStorage.TutorialMergeSeenKey;
+    const string MoveSeenKey = GameStorage.TutorialMoveSeenKey;
     const float PointerCycle = 1.4f;    // segundos de un recorrido de la flecha
 
     // claves de Loc: el texto se pide en cada Show, así sigue el idioma elegido
     const string DragKey = "tutorial.drag";
     const string MergeKey = "tutorial.merge";
+    const string MoveKey = "tutorial.move";
 
     GameManager manager;
     bool teachDrag;
     bool teachMerge;
+    bool teachMove;
 
     RectTransform pointer;
     GameObject banner;
@@ -38,7 +45,8 @@ public class TutorialHints : MonoBehaviour
         manager = gameManager;
         teachDrag = position == 1;
         teachMerge = GameStorage.GetInt(MergeSeenKey, 0) == 0 && HasStrongPirate(level);
-        if (teachDrag || teachMerge)
+        teachMove = GameStorage.GetInt(MoveSeenKey, 0) == 0 && level != null;
+        if (teachDrag || teachMerge || teachMove)
             BuildUI();
         else
             enabled = false; // nada que enseñar en este nivel: no gasta Update
@@ -59,18 +67,77 @@ public class TutorialHints : MonoBehaviour
 
         if (teachMerge && AnyMerged())
         {
-            // ya fusionó: lección aprendida para siempre (guardado inmediato, WebGL puede cerrarse sin aviso)
             teachMerge = false;
-            GameStorage.SetInt(MergeSeenKey, 1);
-            GameStorage.Save();
+            MarkSeen(MergeSeenKey);
+        }
+        if (teachMove && manager.CannonMoves > 0)
+        {
+            teachMove = false;
+            MarkSeen(MoveSeenKey);
         }
 
+        ReceiptCannon dangerSlot;
         if (teachMerge && manager.cannons.Count >= 1 && StrongPirateOnBoard())
-            Show(Loc.T(MergeKey), NearestSlot(occupied: true));
+            Show(Loc.T(MergeKey), manager.centerCannon.position, NearestSlot(occupied: true));
+        else if (teachMove && (dangerSlot = UnguardedDangerSlot()) != null && manager.cannons.Count >= 1)
+            Show(Loc.T(MoveKey), ClosestPlacedCannon(dangerSlot), dangerSlot);
         else if (teachDrag && manager.cannons.Count < MinCannonsTaught)
-            Show(Loc.T(DragKey), NearestSlot(occupied: false));
+            Show(Loc.T(DragKey), manager.centerCannon.position, NearestSlot(occupied: false));
         else
             Hide();
+    }
+
+    // lección aprendida para siempre (guardado inmediato, WebGL puede cerrarse sin aviso)
+    static void MarkSeen(string key)
+    {
+        GameStorage.SetInt(key, 1);
+        GameStorage.Save();
+    }
+
+    // casilla vacía de una columna donde un pirata llega al frente en el próximo avance; null si no hay
+    ReceiptCannon UnguardedDangerSlot()
+    {
+        Matriz matriz = manager.matriz;
+        // PirateManager.Advance pierde si no hay barril DOS filas adelante: la fila rows-2 es la última segura
+        int dangerRow = matriz.rows - 2;
+        foreach (var pirate in manager.pirates)
+        {
+            if (pirate == null || pirate.Hp <= 0) continue;
+            if (!matriz.TryGetCoordinates(pirate.Barrel, out int row, out int column) || row != dangerRow) continue;
+            ReceiptCannon slot = SlotOfColumn(column);
+            if (slot != null && slot.cannon == null) return slot;
+        }
+        return null;
+    }
+
+    // casilla alineada con la columna: la más cercana (en planta) al último barril de esa columna
+    ReceiptCannon SlotOfColumn(int column)
+    {
+        GameObject lastBarrel = manager.matriz.GetLastElementOfColumn(column);
+        if (lastBarrel == null) return null;
+        ReceiptCannon best = null;
+        float bestDist = float.MaxValue;
+        foreach (var slot in manager.Slots)
+        {
+            Vector3 delta = slot.parent.position - lastBarrel.transform.position;
+            float d = new Vector2(delta.x, delta.z).sqrMagnitude; // se ignora la altura
+            if (d < bestDist) { bestDist = d; best = slot; }
+        }
+        return best;
+    }
+
+    // posición del cañón colocado más cercano a `target` (origen de la flecha)
+    Vector3 ClosestPlacedCannon(ReceiptCannon target)
+    {
+        Vector3 best = manager.centerCannon.position; // no debería pasar: se pide con al menos 1 colocado
+        float bestDist = float.MaxValue;
+        foreach (var cannon in manager.cannons)
+        {
+            if (cannon == null) continue;
+            float d = Vector3.Distance(cannon.transform.position, target.parent.position);
+            if (d < bestDist) { bestDist = d; best = cannon.transform.position; }
+        }
+        return best;
     }
 
     // pirata vivo que todavía necesita fusión (con 1 disparo ya recibido, HP 3 sigue pidiéndola)
@@ -102,16 +169,16 @@ public class TutorialHints : MonoBehaviour
         return best;
     }
 
-    void Show(string text, ReceiptCannon target)
+    // banner + flecha que viaja de `from` a la casilla `target`, en bucle
+    void Show(string text, Vector3 from, ReceiptCannon target)
     {
         if (target == null) { Hide(); return; }
         banner.SetActive(true);
         bannerText.text = text;
         pointer.gameObject.SetActive(true);
 
-        // la flecha viaja del barril al slot destino, en bucle
         float t = Mathf.SmoothStep(0f, 1f, Mathf.PingPong(Time.time / PointerCycle, 1f));
-        Vector3 world = Vector3.Lerp(manager.centerCannon.position, target.parent.position, t);
+        Vector3 world = Vector3.Lerp(from, target.parent.position, t);
         pointer.anchoredPosition = WorldToCanvas(world);
     }
 

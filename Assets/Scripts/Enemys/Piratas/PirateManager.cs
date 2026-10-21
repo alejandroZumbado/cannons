@@ -31,6 +31,9 @@ public class PirateManager : MonoBehaviour
         hp -= damage;
         SetHp(hp);
         animatorManager.PlayGetHit();
+        // número de daño sobre el indicador de vida (rojo claro, legible sobre el agua)
+        FloatingText.Spawn(uiHp.transform.position, "-" + damage, new Color(1f, 0.4f, 0.35f));
+        Sfx.Play(hp <= 0 ? SfxId.Death : SfxId.Hit);
         if (hp <= 0)
         {
             manager.RemovePirate(this);

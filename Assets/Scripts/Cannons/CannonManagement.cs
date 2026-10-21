@@ -43,6 +43,15 @@ public class CannonManagement : MonoBehaviour
         GameObject newShoot = Instantiate(shootPrefab, shootPoint.position, shootPoint.rotation);
         newShoot.GetComponent<BulletDamage>().SetDamage(damage); // aplica el damage real del cañon (merges incluidos)
         newShoot.GetComponent<Rigidbody>().linearVelocity = shootPoint.forward * shootSpeed;
+        Sfx.Play(SfxId.Shoot);
+    }
+
+    // aviso visual + sonoro de fusión: el cañón "salta" y muestra su daño nuevo
+    public void PlayMergeFeedback()
+    {
+        PunchScale.Play(transform);
+        FloatingText.Spawn(transform.position, "x" + damage, new Color(1f, 0.85f, 0.2f)); // dorado = poder
+        Sfx.Play(SfxId.Merge);
     }
 
     public void SetManager(GameManager newManager) => manager = newManager;

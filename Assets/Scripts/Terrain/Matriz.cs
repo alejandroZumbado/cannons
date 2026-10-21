@@ -85,25 +85,27 @@ public class Matriz : MonoBehaviour
 
     public GameObject GetObjectInFrontOf(GameObject objeto)
     {
-        int x = -1;
-        int y = -1;
+        TryGetCoordinates(objeto, out int x, out int y); // si no esta, x = -1 y devuelve null
+        return GetObjectInFrontOf(x, y);
+    }
+
+    // fila (0 = donde aparecen los piratas) y columna de un barril; false (y -1, -1) si no esta en la matriz
+    public bool TryGetCoordinates(GameObject objeto, out int row, out int column)
+    {
         for (int i = 0; i < enemysMatriz.GetLength(0); i++)
         {
             for (int j = 0; j < enemysMatriz.GetLength(1); j++)
             {
                 if (enemysMatriz[i, j] == objeto)
                 {
-                    x = i;
-                    y = j;
-                    break;
+                    row = i;
+                    column = j;
+                    return true;
                 }
             }
-            if (x != -1 && y != -1)
-            {
-                break;
-            }
         }
-        return GetObjectInFrontOf(x, y);
+        row = column = -1;
+        return false;
     }
 
     public GameObject GetFirstElementOfColumn(int column)

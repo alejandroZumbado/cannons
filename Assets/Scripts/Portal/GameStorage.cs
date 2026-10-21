@@ -14,8 +14,9 @@ public static class GameStorage
     public const string MaxLevelIdKey = "MaxLevelId";
     public const string MasterVolumeKey = "MasterVolume";
     public const string TutorialMergeSeenKey = "TutMergeSeen";
+    public const string TutorialMoveSeenKey = "TutMoveSeen";
     public const string LanguageKey = "Language"; // ver Loc: 0 = idioma del sistema, 1 = EN, 2 = ES
-    static readonly string[] IntKeys = { MaxLevelKey, MaxLevelIdKey, TutorialMergeSeenKey, LanguageKey };
+    static readonly string[] IntKeys = { MaxLevelKey, MaxLevelIdKey, TutorialMergeSeenKey, TutorialMoveSeenKey, LanguageKey };
     static readonly string[] FloatKeys = { MasterVolumeKey };
 
     public static int GetInt(string key, int defaultValue)

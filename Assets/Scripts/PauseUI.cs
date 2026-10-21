@@ -18,6 +18,15 @@ public class PauseUI : MonoBehaviour
         else Show();
     }
 
+    // Esc / atrás: primero cierra Opciones si está abierto, si no alterna la pausa
+    public void HandleBack()
+    {
+        if (gameObject.activeSelf && optionsPanel != null && optionsPanel.activeSelf)
+            optionsPanel.SetActive(false);
+        else
+            Toggle();
+    }
+
     void Show()
     {
         gameObject.SetActive(true);
