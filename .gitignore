@@ -96,3 +96,6 @@ INIT_HISTORY.md
 
 # master de la intro (la versión liviana va en StreamingAssets/Intro)
 /drixwave_intro_*.mp4
+
+# Unity Test Framework run data (generated)
+Assets/Resources/PerformanceTestRun*

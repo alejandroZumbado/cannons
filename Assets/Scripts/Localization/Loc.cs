@@ -38,9 +38,7 @@ public static class Loc
         ["game.volume"]           = ("Volume", "Volumen"),
         ["game.close"]            = ("Close", "Cerrar"),
         ["game.campaign_done"]    = ("You beat every level!\nMore coming soon.", "¡Completaste todos los niveles!\nPronto habrá más."),
-        ["game.win_title"]        = ("Level {0} complete!", "¡Nivel {0} completado!"),
-        ["game.next_password"]    = ("Next level password: {0}", "Contraseña del siguiente nivel: {0}"),
-        ["game.lose_title"]       = ("The pirates broke through!", "¡Los piratas pasaron!"),
+        ["game.next_password"]    = ("Password for level {0}", "Contraseña del nivel {0}"),
         // consejos al perder (se elige uno al azar)
         ["game.tip.merge"]        = ("Tip: drop a cannon on another to merge them and add up their damage",
                                      "Consejo: suelta un cañón sobre otro para fusionarlos y sumar su daño"),

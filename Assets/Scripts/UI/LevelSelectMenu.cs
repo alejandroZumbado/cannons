@@ -20,10 +20,12 @@ public class LevelSelectMenu : MonoBehaviour
     static readonly Vector2 CellSize = new Vector2(120, 100);
     const float CellGap = 18f;
 
-    static readonly Color UnlockedColor = new Color(0.15f, 0.45f, 0.75f, 0.95f);
-    static readonly Color CurrentColor = new Color(0.95f, 0.6f, 0.1f, 0.95f);  // el nivel del "Continuar"
-    static readonly Color LockedColor = new Color(0.25f, 0.25f, 0.25f, 0.8f);
-    static readonly Color ButtonColor = new Color(0f, 0f, 0f, 0.6f);
+    // tintes sobre la madera del tema (blanco = madera natural), desde 10-21
+    static readonly Color UnlockedColor = Color.white;
+    static readonly Color CurrentColor = new Color(1f, 0.8f, 0.3f);           // el nivel del "Continuar": madera dorada
+    static readonly Color LockedColor = new Color(0.35f, 0.35f, 0.35f, 0.9f); // madera apagada
+    static readonly Color ButtonColor = Color.white;
+    static readonly Vector2 TitleSize = new Vector2(900, 130);
 
     RectTransform canvas;
     TMP_Text openLabel;
@@ -147,8 +149,13 @@ public class LevelSelectMenu : MonoBehaviour
         panel = dim.gameObject;
         RectTransform root = dim.rectTransform;
 
-        titleLabel = UiFactory.CreateLabel(root, "Title", 70f);
-        UiFactory.Anchor(titleLabel.rectTransform, new Vector2(0.5f, 1f), new Vector2(0, -60), new Vector2(1200, 100));
+        // título sobre una tabla de madera, como cartel
+        Image banner = UiFactory.CreatePanel(root, "TitleBanner", Color.white, blocksClicks: false);
+        UiFactory.Anchor(banner.rectTransform, new Vector2(0.5f, 1f), new Vector2(0, -40), TitleSize);
+        UiTheme.ApplyPlank(banner, Color.white);
+        titleLabel = UiFactory.CreateLabel(banner.rectTransform, "Title", 64f);
+        UiFactory.Stretch(titleLabel.rectTransform);
+        UiFactory.Outline(titleLabel);
 
         BuildGrid(root);
         BuildFooter(root);

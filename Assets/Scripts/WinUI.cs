@@ -12,9 +12,10 @@ public class WinUI : MonoBehaviour
     // copia de comingSoonText fuera del botón (ver CampaignDoneLabel); se crea una sola vez
     private TMP_Text campaignDoneLabel;
 
-    // título y contraseña del siguiente nivel, creados por código la primera vez (ver EndScreenText)
-    private TMP_Text title;
-    private TMP_Text passwordLine;
+    // placa con la contraseña del siguiente nivel, creada por código la primera vez (ver EndScreenText)
+    private GameObject passwordPlate;
+    private TMP_Text passwordCaption;
+    private TMP_Text passwordValue;
 
     void Awake() => gameObject.SetActive(false);
 
@@ -47,23 +48,22 @@ public class WinUI : MonoBehaviour
         }
     }
 
-    // "¡Nivel 12 completado!" + la contraseña del siguiente (para retomar en otro dispositivo)
+    // contraseña del siguiente nivel (para retomar en otro dispositivo); oculta si no hay siguiente
     void ShowTexts()
     {
-        if (title == null)
-        {
-            title = EndScreenText.AddLine(transform, "WinTitle", 80f, 90f, EndScreenText.TitleColor);
-            passwordLine = EndScreenText.AddLine(transform, "NextPassword", 200f, 48f, EndScreenText.DetailColor);
-        }
+        if (passwordPlate == null)
+            EndScreenText.AddPlate(transform, "NextPassword", EndScreenText.LowerArea,
+                                   out passwordPlate, out passwordCaption, out passwordValue);
 
         LevelManager levels = LevelManager.Instance;
-        int position = levels != null ? levels.CurrentLevelPosition : 0;
-        title.text = Loc.Format("game.win_title", position);
-
         string password = levels != null ? levels.NextLevelPassword : null;
-        passwordLine.gameObject.SetActive(!string.IsNullOrEmpty(password));
-        if (!string.IsNullOrEmpty(password))
-            passwordLine.text = Loc.Format("game.next_password", password);
+        bool hasPassword = !string.IsNullOrEmpty(password);
+        passwordPlate.SetActive(hasPassword);
+        if (!hasPassword) return;
+
+        // número que ve el jugador = posición del nivel recién ganado + 1
+        passwordCaption.text = Loc.Format("game.next_password", levels.CurrentLevelPosition + 1);
+        passwordValue.text = password;
     }
 
     bool TextIsButtonLabel() =>

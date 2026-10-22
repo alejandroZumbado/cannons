@@ -101,11 +101,12 @@ CrazyGames requires English; the game ships English + Spanish (`Assets/Scripts/L
 ## Game feel & navigation (since 2026-10-20)
 
 All built by code (no scene edits), same pattern as `TutorialHints`/`LanguageToggle`; shared UI helpers in `Assets/Scripts/UI/UiFactory.cs`.
+- **Pirate theme** (since 2026-10-21, `UiTheme`): code-built UI uses the same wooden plank (`Assets/UI/BGBtn.png`, 9-slice borders set in its .meta; scene buttons use it as Simple so they're unaffected) and font (`Fonts/Pirates Pro`, static atlas — a new character outside it renders as a box) as the scene buttons, via `Resources/UiTheme.asset`. `UiFactory.CreateButton`/`CreateLabel` apply it by default; `UiTheme.ApplyPlank(image, tint)` for other images. Anything referenced from `Resources` always ships in every build, so keep the theme small.
 - **SFX** (`Assets/Scripts/Audio/Sfx.cs`): `Sfx.Play(SfxId.Shoot|Hit|Death|Place|Merge|Click)`. Clips are **synthesized placeholders** (`SfxSynth`) until a real file is dropped in `Assets/Resources/Sfx/<id lowercase>` (e.g. `shoot.wav`) — no code change needed. Same id within 50 ms plays once (a 5-cannon volley = one boom). `UiClickSounds` hooks every `Button` on scene load (+ `UiClickSounds.Hook` for code-built buttons). Follows master volume.
 - **Feedback**: `FloatingText.Spawn` (damage numbers "-N" on pirates, "xN" on merge; screen-space overlay), `PunchScale.Play` (merge pop).
 - **Tutorial "move"**: `TutorialHints` also teaches dragging a placed cannon, the first time a pirate is one advance from the front (`matriz.rows - 2`) in a column with an empty slot; arrow from the closest placed cannon. Seen flag `TutMoveSeen` set once the player moves a placed cannon (`GameManager.CannonMoves`).
 - **Esc / Android back** = pause (`PauseHotkey`, added by `GameManager.Start`; closes Options first via `PauseUI.HandleBack`). In Menu it closes the level selector.
-- **Win/Lose texts** (`EndScreenText`): win = "Level N complete!" + next level's password (`LevelManager.NextLevelPassword`); lose = title + random tip. Anchored top-center of the panel; font copied from the panel's buttons.
+- **Win/Lose texts** (`EndScreenText`, reworked 2026-10-21): no title (the panel art already has its banner + level badge; a title overlapped both). Win = dark plate in the empty area under the buttons: caption "Password for level N" + next level's password large in gold (`LevelManager.NextLevelPassword`); lose = random tip in that same area (`EndScreenText.LowerArea`). Font copied from the panel's buttons.
 - **Level selector** (`LevelSelectMenu`, Menu top-left "Levels"): 50 per page, unlocked up to `LevelManager.PlayableMaxIndex()`, the "Continue" level highlighted orange; waits for `PortalSdk.Ready`.
 
 ## WebGL build & deploy

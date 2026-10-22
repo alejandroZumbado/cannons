@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 // Piezas de UI creadas por código (2026-10-20), con el mismo escalado que las
 // escenas (1920x1080, match 1). Las usan las pantallas que no viven en las
-// escenas (selector de niveles, números de daño, títulos de fin de nivel).
+// escenas (selector de niveles, números de daño, textos de fin de nivel).
+// Desde 10-21 con el estilo pirata de UiTheme (madera + fuente Pirates).
 public static class UiFactory
 {
     static readonly Vector2 ReferenceResolution = new Vector2(1920, 1080);
@@ -40,13 +41,14 @@ public static class UiFactory
         return image;
     }
 
-    // texto blanco centrado; font null = la fuente por defecto de TextMeshPro
+    // texto blanco centrado; font null = la fuente pirata del tema (o la de TextMeshPro si falta el tema)
     public static TMP_Text CreateLabel(RectTransform parent, string name, float fontSize, TMP_FontAsset font = null)
     {
         var go = new GameObject(name, typeof(TextMeshProUGUI));
         var rt = go.GetComponent<RectTransform>();
         rt.SetParent(parent, false);
         var label = go.GetComponent<TextMeshProUGUI>();
+        if (font == null) font = UiTheme.Font;
         if (font != null) label.font = font;
         label.fontSize = fontSize;
         label.alignment = TextAlignmentOptions.Center;
@@ -55,19 +57,28 @@ public static class UiFactory
         return label;
     }
 
-    // botón con fondo y texto que lo llena; ya trae el sonido de clic
-    public static Button CreateButton(RectTransform parent, string name, Vector2 size, Color color,
+    // botón de tabla de madera (tema pirata) teñida con `tint` y texto que lo llena; ya trae el sonido de clic
+    public static Button CreateButton(RectTransform parent, string name, Vector2 size, Color tint,
                                       float fontSize, UnityAction onClick, out TMP_Text label)
     {
-        Image background = CreatePanel(parent, name, color, blocksClicks: true);
-        background.rectTransform.sizeDelta = size;
+        Image background = CreatePanel(parent, name, tint, blocksClicks: true);
+        background.rectTransform.sizeDelta = size; // antes del tema: el marco se escala según el tamaño
+        UiTheme.ApplyPlank(background, tint);
         var button = background.gameObject.AddComponent<Button>();
         button.onClick.AddListener(onClick);
         UiClickSounds.Hook(button);
 
         label = CreateLabel(background.rectTransform, "Text", fontSize);
         Stretch(label.rectTransform);
+        Outline(label);
         return button;
+    }
+
+    // borde negro: texto legible sobre madera o sobre la escena
+    public static void Outline(TMP_Text label)
+    {
+        label.outlineWidth = 0.2f;
+        label.outlineColor = Color.black;
     }
 
     // ocupa todo el padre

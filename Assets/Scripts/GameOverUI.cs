@@ -8,8 +8,7 @@ public class GameOverUI : MonoBehaviour
     // consejos al perder: uno al azar por derrota (claves de Loc)
     static readonly string[] TipKeys = { "game.tip.merge", "game.tip.move", "game.tip.block" };
 
-    // título y consejo, creados por código la primera vez (ver EndScreenText)
-    private TMP_Text title;
+    // consejo, creado por código la primera vez (ver EndScreenText); sin título: el panel ya trae su cartel
     private TMP_Text tip;
 
     void Awake() => gameObject.SetActive(false);
@@ -23,12 +22,8 @@ public class GameOverUI : MonoBehaviour
 
     void ShowTexts()
     {
-        if (title == null)
-        {
-            title = EndScreenText.AddLine(transform, "LoseTitle", 80f, 90f, EndScreenText.TitleColor);
-            tip = EndScreenText.AddLine(transform, "LoseTip", 200f, 44f, EndScreenText.DetailColor);
-        }
-        title.text = Loc.T("game.lose_title");
+        if (tip == null)
+            tip = EndScreenText.AddLine(transform, "LoseTip", EndScreenText.LowerArea, 48f, EndScreenText.DetailColor);
         tip.text = Loc.T(TipKeys[Random.Range(0, TipKeys.Length)]);
     }
 

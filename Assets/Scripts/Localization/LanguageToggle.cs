@@ -11,6 +11,7 @@ public class LanguageToggle : MonoBehaviour
 {
     const string MenuScene = "Menu";
     const int SortingOrder = 10;   // sobre el menú (0-1), debajo de la intro (32000)
+    static readonly Vector2 ButtonSize = new Vector2(240, 80);
 
     TMP_Text label;
 
@@ -36,39 +37,13 @@ public class LanguageToggle : MonoBehaviour
 
     void Refresh() => label.text = Loc.T("menu.language");
 
-    // ─── UI por código (overlay propio, mismo escalado que el resto: 1920x1080, match 1) ───
+    // ─── UI por código (UiFactory: mismo escalado y tabla de madera que el resto, desde 10-21) ───
 
     void BuildUI()
     {
-        var canvasGo = new GameObject("LanguageCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
-        canvasGo.transform.SetParent(transform, false);
-        var canvas = canvasGo.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = SortingOrder;
-        var scaler = canvasGo.GetComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920, 1080);
-        scaler.matchWidthOrHeight = 1f;
-
-        var buttonGo = new GameObject("LanguageButton", typeof(Image), typeof(Button));
-        var rt = buttonGo.GetComponent<RectTransform>();
-        rt.SetParent(canvasGo.transform, false);
-        rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(1f, 1f); // esquina superior derecha
-        rt.anchoredPosition = new Vector2(-30, -30);
-        rt.sizeDelta = new Vector2(240, 80);
-        buttonGo.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0.6f);
-        buttonGo.GetComponent<Button>().onClick.AddListener(Loc.Toggle);
-
-        var textGo = new GameObject("Text", typeof(TextMeshProUGUI));
-        var trt = textGo.GetComponent<RectTransform>();
-        trt.SetParent(rt, false);
-        trt.anchorMin = Vector2.zero;
-        trt.anchorMax = Vector2.one;
-        trt.offsetMin = trt.offsetMax = Vector2.zero;
-        label = textGo.GetComponent<TextMeshProUGUI>();
-        label.alignment = TextAlignmentOptions.Center;
-        label.fontSize = 40;
-        label.color = Color.white;
-        label.raycastTarget = false; // el clic lo recibe la Image del botón
+        RectTransform canvas = UiFactory.CreateOverlayCanvas("LanguageCanvas", SortingOrder, clickable: true, transform);
+        Button button = UiFactory.CreateButton(canvas, "LanguageButton", ButtonSize, Color.white, 40f, Loc.Toggle, out label);
+        // esquina superior derecha
+        UiFactory.Anchor((RectTransform)button.transform, new Vector2(1f, 1f), new Vector2(-30, -30), ButtonSize);
     }
 }

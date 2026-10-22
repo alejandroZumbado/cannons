@@ -223,18 +223,19 @@ public class TutorialHints : MonoBehaviour
         rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 1f);
         rt.pivot = new Vector2(0.5f, 1f);
         rt.anchoredPosition = new Vector2(0, -40);
-        rt.sizeDelta = new Vector2(1300, 110);
+        rt.sizeDelta = new Vector2(1300, 130);
         var bg = go.GetComponent<Image>();
-        bg.color = new Color(0f, 0f, 0f, 0.65f);
         bg.raycastTarget = false;
+        UiTheme.ApplyPlank(bg, Color.white); // tabla de madera, como los botones del juego (10-21)
 
         var textGo = new GameObject("Text", typeof(TextMeshProUGUI));
         var trt = textGo.GetComponent<RectTransform>();
         trt.SetParent(rt, false);
         trt.anchorMin = Vector2.zero;
         trt.anchorMax = Vector2.one;
-        trt.offsetMin = new Vector2(30, 10);
-        trt.offsetMax = new Vector2(-30, -10);
+        // márgenes: el texto queda dentro del marco de la tabla
+        trt.offsetMin = new Vector2(90, 18);
+        trt.offsetMax = new Vector2(-90, -18);
         bannerText = textGo.GetComponent<TextMeshProUGUI>();
         bannerText.alignment = TextAlignmentOptions.Center;
         bannerText.fontSize = 44;
@@ -243,6 +244,8 @@ public class TutorialHints : MonoBehaviour
         bannerText.fontSizeMax = 44;
         bannerText.color = Color.white;
         bannerText.raycastTarget = false;
+        if (UiTheme.Font != null) bannerText.font = UiTheme.Font;
+        UiFactory.Outline(bannerText);
         return go;
     }
 
