@@ -1,0 +1,192 @@
+{
+  "levelNumber": 622,
+  "password": "D8491",
+  "isHard": true,
+  "filas": [
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 2
+        },
+        {
+          "index": 4,
+          "tipo": 3,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 2
+        },
+        {
+          "index": 4,
+          "tipo": 2,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 2,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 5
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 3,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 2,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 4,
+          "hp": 9
+        },
+        {
+          "index": 4,
+          "tipo": 2,
+          "hp": 6
+        }
+      ]
+    }
+  ]
+}
