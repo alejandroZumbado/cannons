@@ -53,6 +53,7 @@ public static class ReleaseValidator
         }
 
         CheckAllAssets(errors, warnings);
+        CheckTestLevels(warnings);
 
         foreach (string w in warnings) Debug.LogWarning("[ReleaseValidator] " + w);
         foreach (string e in errors) Debug.LogError("[ReleaseValidator] " + e);
@@ -62,6 +63,21 @@ public static class ReleaseValidator
         errorCount = errors.Count;
         warningCount = warnings.Count;
         return errors.Count == 0;
+    }
+
+    // Niveles de prueba (Resources/TestLevels.asset, ver LevelManager): se juegan
+    // con su contraseña en cualquier build. Advertencia (no error) para que no
+    // queden olvidados en un build que va a un portal.
+    static void CheckTestLevels(List<string> warnings)
+    {
+        const string testPath = "Assets/Resources/TestLevels.asset";
+        LevelDatabase test = AssetDatabase.LoadAssetAtPath<LevelDatabase>(testPath);
+        if (test == null || test.Count == 0) return;
+        var ids = new List<string>();
+        foreach (Level level in test.levels)
+            ids.Add(level != null ? $"{level.levelNumber} ({level.password})" : "null");
+        warnings.Add($"{testPath} tiene {test.Count} nivel(es) de PRUEBA jugables por contraseña: " +
+                     $"{string.Join(", ", ids)}. Vaciarlo antes de publicar en un portal.");
     }
 
     // chequeos del lanzamiento en sí (lo que el jugador puede jugar)

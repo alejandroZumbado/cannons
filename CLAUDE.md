@@ -79,6 +79,7 @@ Commands run in CannonsLevelGen (`E:\Users\Alejandro\Opal\CannonsLevelGen`); clo
 - Index `== Count` = campaign complete: "Continuar" shows "Completado", `WinUI` shows `comingSoonText`. When a batch is appended, that same index becomes the first new level, so finished players continue straight into it.
 - `WinUI` "Siguiente" = `PlayNext()` (level after the one just played), not the max — replaying an old level no longer jumps to the frontier.
 - Passwords: `TryPassword` trims + upper-cases both sides, skips null entries, unlocks up to that level. Only release levels' passwords work.
+- **Test levels** (since 2026-10-28): `Assets/Resources/TestLevels.asset` (a `LevelDatabase` instance) lists reserve levels playable ONLY by password, in any build, to test them without adding them to the release. They have no position (`CurrentLevelPosition` = 0, HUD shows `T<levelNumber>`), never save progress, have no "Next", and Retry reloads them (`LevelManager.IsTestLevel`). `ReleaseValidator` warns while the list isn't empty. Empty it before a portal release (Resources always ships). First use: 620 `G9923`.
 - All saves go through `GameStorage` (`Assets/Scripts/Portal/`): PlayerPrefs, or CrazyGames' Data module when built with define `CRAZYGAMES_SDK` (keys listed there; `MigrateLocalProgress` copies old local progress once). Don't call PlayerPrefs directly in game code.
 
 ## Portal SDK & tutorial (since 2026-09-30)

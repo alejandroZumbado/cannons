@@ -10,7 +10,10 @@ public class LvlDisplay : MonoBehaviour
     {
         // muestra la posicion en la campaña, no el levelNumber interno
         LevelManager manager = LevelManager.Instance;
-        if (lvlText != null && manager != null && manager.CurrentLevel != null)
-            lvlText.text = manager.CurrentLevelPosition.ToString();
+        if (lvlText == null || manager == null || manager.CurrentLevel == null) return;
+        // nivel de prueba: "T" + su ID interno, para distinguirlo de la campaña
+        lvlText.text = manager.IsTestLevel
+            ? "T" + manager.CurrentLevel.levelNumber
+            : manager.CurrentLevelPosition.ToString();
     }
 }

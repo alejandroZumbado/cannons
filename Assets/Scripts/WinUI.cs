@@ -32,6 +32,8 @@ public class WinUI : MonoBehaviour
 
         ShowTexts();
 
+        // nivel de prueba: no hay siguiente, pero tampoco es "campaña completa"
+        if (LevelManager.Instance != null && LevelManager.Instance.IsTestLevel) return;
         if (comingSoonText == null) return;
         if (TextIsButtonLabel())
         {

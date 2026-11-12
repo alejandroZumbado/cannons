@@ -11,6 +11,17 @@ public class LevelManager : MonoBehaviour
 
     private int _currentIndex;
 
+    // Niveles de prueba: jugables SOLO con su contraseña, fuera de la campaña
+    // (no tienen posición, no guardan progreso, no tienen "Siguiente").
+    // Sirven para probar un nivel de reserva en los builds sin meterlo al
+    // lanzamiento. Viven en Resources/TestLevels.asset (opcional: si no existe
+    // o está vacío, no hay modo prueba). Vaciarlo antes de publicar en un portal.
+    private const string TestLevelsResource = "TestLevels";
+    private LevelDatabase _testLevels;
+
+    // true mientras se juega un nivel de prueba (no uno de la campaña)
+    public bool IsTestLevel { get; private set; }
+
     // Guardado del progreso. Se guardan DOS cosas del nivel máximo desbloqueado:
     // - MaxLevel: su índice (posición) en el LevelDatabase.
     // - MaxLevelId: su levelNumber (ID estable del asset).
@@ -37,16 +48,22 @@ public class LevelManager : MonoBehaviour
         // sin database no hay juego; se avisa fuerte en vez de fallar callado
         if (database == null || database.Count == 0)
             Debug.LogError("[LevelManager] LevelDatabase no asignado o vacío — no se puede jugar ningún nivel.");
+
+        // lista de prueba opcional; se avisa si hay niveles para que no se olvide en un release
+        _testLevels = Resources.Load<LevelDatabase>(TestLevelsResource);
+        if (_testLevels != null && _testLevels.Count > 0)
+            Debug.LogWarning($"[LevelManager] {_testLevels.Count} nivel(es) de PRUEBA activos (Resources/{TestLevelsResource}).");
     }
 
     public int DatabaseCount => database != null ? database.Count : 0;
 
     // número que ve el jugador: posición en la campaña (1..N), no levelNumber.
     // levelNumber es solo el ID interno del asset.
-    public int CurrentLevelPosition => _currentIndex + 1;
+    // Un nivel de prueba no tiene posición: devuelve 0.
+    public int CurrentLevelPosition => IsTestLevel ? 0 : _currentIndex + 1;
 
-    // hay un nivel después del que se está jugando
-    public bool HasNextLevel => _currentIndex + 1 < DatabaseCount;
+    // hay un nivel después del que se está jugando (un nivel de prueba no tiene siguiente)
+    public bool HasNextLevel => !IsTestLevel && _currentIndex + 1 < DatabaseCount;
 
     // el jugador ya ganó el último nivel del lanzamiento actual
     public bool IsCampaignComplete => DatabaseCount > 0 && GetMaxLevelIndex() >= DatabaseCount;
@@ -115,12 +132,29 @@ public class LevelManager : MonoBehaviour
                 return true;
             }
         }
+        return TryTestPassword(normalized);
+    }
+
+    // busca la contraseña (ya normalizada) en los niveles de prueba; no desbloquea nada
+    bool TryTestPassword(string normalized)
+    {
+        if (_testLevels == null) return false;
+        for (int i = 0; i < _testLevels.Count; i++)
+        {
+            Level level = _testLevels.Get(i);
+            if (level == null || string.IsNullOrEmpty(level.password)) continue;
+            if (level.password.Trim().ToUpperInvariant() != normalized) continue;
+
+            LoadTestLevel(level);
+            return true;
+        }
         return false;
     }
 
     // llamado por GameManager al ganar un nivel
     public void LevelCompleted()
     {
+        if (IsTestLevel) return; // un nivel de prueba nunca toca el progreso guardado
         int next = _currentIndex + 1;
         // solo avanza el máximo si el nivel ganado era el máximo actual.
         // next puede ser == Count: eso guarda "campaña completa".
@@ -139,13 +173,32 @@ public class LevelManager : MonoBehaviour
         }
         _currentIndex = index;
         CurrentLevel = level;
+        IsTestLevel = false;
+        LoadGameScene();
+    }
+
+    // juega un nivel de prueba: sin posición en la campaña
+    void LoadTestLevel(Level level)
+    {
+        CurrentLevel = level;
+        IsTestLevel = true;
+        LoadGameScene();
+    }
+
+    void LoadGameScene()
+    {
         if (SceneLoader.Instance != null)
             SceneLoader.Instance.LoadScene("Game");
         else
             SceneManager.LoadScene("Game");
     }
 
-    public void ReloadCurrentLevel() => LoadLevel(_currentIndex);
+    // reintentar: un nivel de prueba se recarga a sí mismo, no la posición guardada
+    public void ReloadCurrentLevel()
+    {
+        if (IsTestLevel) LoadTestLevel(CurrentLevel);
+        else LoadLevel(_currentIndex);
+    }
 
     public void LoadMenu()
     {
