@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a24157e081e394488442162630fbc4b, type: 3}
   m_Name: TestLevels
   m_EditorClassIdentifier: Assembly-CSharp::LevelDatabase
-  levels:
-  - {fileID: 11400000, guid: 95f41924770f0f64aa505fcb75308d97, type: 2}
-  - {fileID: 11400000, guid: e4d62e6885750564e94fba91267340de, type: 2}
+  levels: []

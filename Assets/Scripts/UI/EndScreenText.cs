@@ -13,9 +13,11 @@ public static class EndScreenText
     static readonly Color PlateTint = new Color(0.75f, 0.75f, 0.75f);     // tabla algo más oscura que el panel: se despega del fondo
 
     // altura (0 = borde de abajo del panel, 1 = arriba) de la zona libre bajo los botones
-    public const float LowerArea = 0.3f;
+    // 11-12: bajado de 0.3 a 0.27 junto con la tabla más chica: antes su borde de arriba tapaba las etiquetas de los botones
+    public const float LowerArea = 0.27f;
 
-    static readonly Vector2 PlateSize = new Vector2(700f, 210f);
+    // alto 170 (antes 210): entra entre el marco inferior y las etiquetas de los botones (~0.13-0.41 del panel)
+    static readonly Vector2 PlateSize = new Vector2(640f, 170f);
 
     // texto suelto (consejo al perder), centrado a la altura relativa `heightRatio` del panel
     public static TMP_Text AddLine(Transform panel, string name, float heightRatio, float fontSize, Color color)
@@ -40,13 +42,13 @@ public static class EndScreenText
 
         // ancho sin los costados de la tabla (cortinas y marco)
         float inner = PlateSize.x - 160f;
-        caption = CreateText(background.rectTransform, "Caption", 36f, DetailColor, font);
-        UiFactory.Anchor(caption.rectTransform, new Vector2(0.5f, 1f), new Vector2(0f, -28f),
-                         new Vector2(inner, 46f));
+        caption = CreateText(background.rectTransform, "Caption", 30f, DetailColor, font);
+        UiFactory.Anchor(caption.rectTransform, new Vector2(0.5f, 1f), new Vector2(0f, -22f),
+                         new Vector2(inner, 40f));
 
-        value = CreateText(background.rectTransform, "Value", 90f, ValueColor, font);
-        UiFactory.Anchor(value.rectTransform, new Vector2(0.5f, 0f), new Vector2(0f, 24f),
-                         new Vector2(inner, 105f));
+        value = CreateText(background.rectTransform, "Value", 72f, ValueColor, font);
+        UiFactory.Anchor(value.rectTransform, new Vector2(0.5f, 0f), new Vector2(0f, 18f),
+                         new Vector2(inner, 85f));
         value.characterSpacing = 15f; // letras separadas: el código se lee (y se copia a mano) sin errores
     }
 
