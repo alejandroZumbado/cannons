@@ -1,0 +1,138 @@
+{
+  "levelNumber": 709,
+  "password": "H8929",
+  "isHard": true,
+  "filas": [
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 0,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 4,
+          "tipo": 1,
+          "hp": 7
+        },
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 1,
+          "hp": 3
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 2,
+          "tipo": 1,
+          "hp": 2
+        },
+        {
+          "index": 3,
+          "tipo": 1,
+          "hp": 2
+        }
+      ]
+    },
+    {
+      "cuadros": [
+        {
+          "index": 1,
+          "tipo": 1,
+          "hp": 1
+        },
+        {
+          "index": 2,
+          "tipo": 4,
+          "hp": 2
+        }
+      ]
+    }
+  ]
+}
